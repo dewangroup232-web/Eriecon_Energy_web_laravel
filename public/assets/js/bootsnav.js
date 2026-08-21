@@ -617,15 +617,24 @@
 
     });
 
+    // Global delegated mobile side menu toggle handlers for iOS Safari & Android Chrome
+    $(document).on('click touchstart', '.navbar-header .navbar-toggle, .open-mobile-menu', function(e) {
+        e.preventDefault();
+        $(".navbar-collapse").addClass("show").addClass("in");
+        $(".overlay-screen").addClass("opened");
+        $(".navbar").addClass("navbar-responsive");
+    });
+
     // Close mobile side menu when clicking non-dropdown page links
-    $(document).on('click', 'ul.nav li a:not(.dropdown-toggle)', function() {
+    $(document).on('click touchstart', 'ul.nav li a:not(.dropdown-toggle)', function() {
         $(".navbar-collapse").removeClass("show").removeClass("in");
         $(".overlay-screen").removeClass("opened");
         $(".navbar").removeClass("navbar-responsive");
     });
 
     // Close mobile side menu when clicking overlay screen or close toggle
-    $(document).on('click', '.overlay-screen, .close-mobile-menu', function() {
+    $(document).on('click touchstart', '.overlay-screen, .close-mobile-menu', function(e) {
+        e.preventDefault();
         $(".navbar-collapse").removeClass("show").removeClass("in");
         $(".overlay-screen").removeClass("opened");
         $(".navbar").removeClass("navbar-responsive");

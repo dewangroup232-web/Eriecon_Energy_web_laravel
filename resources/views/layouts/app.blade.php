@@ -406,9 +406,68 @@
                 padding: 64px 0 72px !important;
             }
 
-            .home-work-with-us .fun-fact {
-                min-height: 160px;
-            }
+        /* Mobile Navigation Drawer Header - iOS Safari & Chrome Compatibility */
+        .mobile-menu-header {
+            display: -webkit-flex !important;
+            display: flex !important;
+            -webkit-box-align: center !important;
+            -webkit-align-items: center !important;
+            align-items: center !important;
+            -webkit-box-pack: justify !important;
+            -webkit-justify-content: space-between !important;
+            justify-content: space-between !important;
+            width: 100% !important;
+            padding-bottom: 15px !important;
+            margin-bottom: 20px !important;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+            position: relative !important;
+            box-sizing: border-box !important;
+        }
+
+        nav.navbar.validnavs .navbar-collapse.collapse .mobile-menu-header img.mobile-nav-logo {
+            display: block !important;
+            height: 38px !important;
+            max-height: 38px !important;
+            width: auto !important;
+            margin: 0 !important;
+            float: none !important;
+            vertical-align: middle !important;
+        }
+
+        nav.navbar.validnavs .navbar-collapse.collapse button.mobile-menu-close {
+            position: relative !important;
+            top: auto !important;
+            right: auto !important;
+            left: auto !important;
+            bottom: auto !important;
+            margin: 0 !important;
+            height: 36px !important;
+            width: 36px !important;
+            min-width: 36px !important;
+            line-height: 34px !important;
+            text-align: center !important;
+            border: 1px solid #dcdcdc !important;
+            border-radius: 50% !important;
+            color: #222222 !important;
+            background-color: #f5f5f5 !important;
+            font-size: 16px !important;
+            display: -webkit-inline-flex !important;
+            display: inline-flex !important;
+            -webkit-align-items: center !important;
+            align-items: center !important;
+            -webkit-justify-content: center !important;
+            justify-content: center !important;
+            -webkit-appearance: none !important;
+            box-sizing: border-box !important;
+            cursor: pointer !important;
+            padding: 0 !important;
+            outline: none !important;
+        }
+
+        nav.navbar.validnavs .navbar-collapse.collapse button.mobile-menu-close i {
+            font-size: 16px !important;
+            line-height: 1 !important;
+            font-weight: 700 !important;
         }
     </style>
 
@@ -448,7 +507,7 @@
 
                 <!-- Start Header Navigation -->
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu" aria-label="Toggle navigation">
+                    <button type="button" class="navbar-toggle open-mobile-menu" aria-label="Open navigation">
                         <i class="fa fa-bars"></i>
                     </button>
                     <a class="navbar-brand" href="{{ url('/') }}">
@@ -460,9 +519,11 @@
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
-                    <div class="d-flex justify-content-between align-items-center mb-3 d-lg-none">
-                        <img src="assets/img/logo_aa.png" alt="Eirecon Energy Company" style="max-height: 42px;">
-                        <button type="button" class="navbar-toggle close-mobile-menu" aria-label="Close navigation">
+                    <div class="mobile-menu-header d-lg-none">
+                        <a href="{{ url('/') }}" class="mobile-logo-link">
+                            <img src="assets/img/logo_aa.png" alt="Eirecon Energy Company" class="mobile-nav-logo">
+                        </a>
+                        <button type="button" class="navbar-toggle mobile-menu-close close-mobile-menu" aria-label="Close navigation">
                             <i class="fa-solid fa-xmark"></i>
                         </button>
                     </div>
