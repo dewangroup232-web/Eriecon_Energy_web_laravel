@@ -340,7 +340,7 @@
 
         /* Balanced spacing for the homepage metrics section */
         .home-work-with-us {
-            padding: clamp(76px, 7vw, 104px) 0 clamp(80px, 7.5vw, 112px) !important;
+            padding: clamp(38px, 4vw, 54px) 0 !important;
         }
 
         .home-work-with-us .content-box>.row {
@@ -405,69 +405,78 @@
             .home-work-with-us {
                 padding: 64px 0 72px !important;
             }
+        }
 
         /* Mobile Navigation Drawer Header - iOS Safari & Chrome Compatibility */
-        .mobile-menu-header {
-            display: -webkit-flex !important;
-            display: flex !important;
-            -webkit-box-align: center !important;
-            -webkit-align-items: center !important;
-            align-items: center !important;
-            -webkit-box-pack: justify !important;
-            -webkit-justify-content: space-between !important;
-            justify-content: space-between !important;
-            width: 100% !important;
-            padding-bottom: 15px !important;
-            margin-bottom: 20px !important;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
-            position: relative !important;
-            box-sizing: border-box !important;
+        @media (max-width: 1023px) {
+            .mobile-menu-header {
+                display: -webkit-flex !important;
+                display: flex !important;
+                -webkit-box-align: center !important;
+                -webkit-align-items: center !important;
+                align-items: center !important;
+                -webkit-box-pack: justify !important;
+                -webkit-justify-content: space-between !important;
+                justify-content: space-between !important;
+                width: 100% !important;
+                padding-bottom: 15px !important;
+                margin-bottom: 20px !important;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+                position: relative !important;
+                box-sizing: border-box !important;
+            }
+
+            nav.navbar.validnavs .navbar-collapse.collapse .mobile-menu-header img.mobile-nav-logo {
+                display: block !important;
+                height: 38px !important;
+                max-height: 38px !important;
+                width: auto !important;
+                margin: 0 !important;
+                float: none !important;
+                vertical-align: middle !important;
+            }
+
+            nav.navbar.validnavs .navbar-collapse.collapse button.mobile-menu-close {
+                position: relative !important;
+                top: auto !important;
+                right: auto !important;
+                left: auto !important;
+                bottom: auto !important;
+                margin: 0 !important;
+                height: 36px !important;
+                width: 36px !important;
+                min-width: 36px !important;
+                line-height: 34px !important;
+                text-align: center !important;
+                border: 1px solid #dcdcdc !important;
+                border-radius: 50% !important;
+                color: #222222 !important;
+                background-color: #f5f5f5 !important;
+                font-size: 16px !important;
+                display: -webkit-inline-flex !important;
+                display: inline-flex !important;
+                -webkit-align-items: center !important;
+                align-items: center !important;
+                -webkit-justify-content: center !important;
+                justify-content: center !important;
+                -webkit-appearance: none !important;
+                box-sizing: border-box !important;
+                cursor: pointer !important;
+                padding: 0 !important;
+                outline: none !important;
+            }
+
+            nav.navbar.validnavs .navbar-collapse.collapse button.mobile-menu-close i {
+                font-size: 16px !important;
+                line-height: 1 !important;
+                font-weight: 700 !important;
+            }
         }
 
-        nav.navbar.validnavs .navbar-collapse.collapse .mobile-menu-header img.mobile-nav-logo {
-            display: block !important;
-            height: 38px !important;
-            max-height: 38px !important;
-            width: auto !important;
-            margin: 0 !important;
-            float: none !important;
-            vertical-align: middle !important;
-        }
-
-        nav.navbar.validnavs .navbar-collapse.collapse button.mobile-menu-close {
-            position: relative !important;
-            top: auto !important;
-            right: auto !important;
-            left: auto !important;
-            bottom: auto !important;
-            margin: 0 !important;
-            height: 36px !important;
-            width: 36px !important;
-            min-width: 36px !important;
-            line-height: 34px !important;
-            text-align: center !important;
-            border: 1px solid #dcdcdc !important;
-            border-radius: 50% !important;
-            color: #222222 !important;
-            background-color: #f5f5f5 !important;
-            font-size: 16px !important;
-            display: -webkit-inline-flex !important;
-            display: inline-flex !important;
-            -webkit-align-items: center !important;
-            align-items: center !important;
-            -webkit-justify-content: center !important;
-            justify-content: center !important;
-            -webkit-appearance: none !important;
-            box-sizing: border-box !important;
-            cursor: pointer !important;
-            padding: 0 !important;
-            outline: none !important;
-        }
-
-        nav.navbar.validnavs .navbar-collapse.collapse button.mobile-menu-close i {
-            font-size: 16px !important;
-            line-height: 1 !important;
-            font-weight: 700 !important;
+        @media (min-width: 1024px) {
+            .mobile-menu-header {
+                display: none !important;
+            }
         }
 
         /* Mobile Navigation Side Drawer - Fail-safe Chrome & iOS Fix */
@@ -479,36 +488,46 @@
 
             nav.navbar.validnavs.mobile-sidenav .navbar-collapse {
                 position: fixed !important;
-                left: -100% !important;
+                left: 0 !important;
                 top: 0 !important;
                 width: 320px !important;
                 max-width: 85vw !important;
                 height: 100vh !important;
                 min-height: 100vh !important;
+                height: 100dvh !important;
+                min-height: 100dvh !important;
                 background: #ffffff !important;
+                overflow-x: hidden !important;
                 overflow-y: auto !important;
                 -webkit-overflow-scrolling: touch !important;
                 z-index: 100000 !important;
-                transition: left 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+                -webkit-transform: translate3d(-104%, 0, 0) !important;
+                transform: translate3d(-104%, 0, 0) !important;
+                -webkit-transition: -webkit-transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.25s ease, visibility 0.35s !important;
+                transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.25s ease, visibility 0.35s !important;
                 display: block !important;
-                visibility: visible !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
                 padding: 25px 20px !important;
+                padding-top: max(25px, env(safe-area-inset-top)) !important;
+                padding-bottom: max(25px, env(safe-area-inset-bottom)) !important;
                 box-shadow: 4px 0 25px rgba(0, 0, 0, 0.15) !important;
-                pointer-events: auto !important;
-            }
-
-            nav.navbar.validnavs.mobile-sidenav .navbar-collapse * {
-                pointer-events: auto !important;
+                pointer-events: none !important;
             }
 
             nav.navbar.validnavs.mobile-sidenav .navbar-collapse.show,
             nav.navbar.validnavs.mobile-sidenav .navbar-collapse.in,
             nav.navbar.validnavs.mobile-sidenav .navbar-collapse.site-mobile-open {
-                left: 0 !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                pointer-events: auto !important;
+                -webkit-transform: translate3d(0, 0, 0) !important;
+                transform: translate3d(0, 0, 0) !important;
             }
 
             .overlay-screen {
                 position: fixed !important;
+                display: block !important;
                 top: 0 !important;
                 left: 0 !important;
                 width: 100vw !important;
@@ -519,6 +538,7 @@
                 visibility: hidden !important;
                 transition: opacity 0.3s ease, visibility 0.3s ease !important;
                 pointer-events: none !important;
+                -webkit-tap-highlight-color: transparent;
             }
 
             .overlay-screen.opened,
@@ -533,6 +553,28 @@
                 pointer-events: auto !important;
                 z-index: 100 !important;
                 display: inline-block !important;
+                touch-action: manipulation;
+            }
+        }
+
+        body.site-menu-open {
+            overflow: hidden !important;
+        }
+
+        .overlay-screen {
+            display: none;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse,
+            .overlay-screen {
+                -webkit-transition: none !important;
+                transition: none !important;
             }
         }
 
@@ -655,7 +697,7 @@
     <!-- Preloader Ends -->
 
     <!-- Overlay Screen for Mobile Navigation -->
-    <div class="overlay-screen"></div>
+    <button type="button" class="overlay-screen" aria-label="Close navigation" aria-hidden="true" tabindex="-1"></button>
 
     <!-- Header 
     ============================================= -->
@@ -681,7 +723,8 @@
 
                 <!-- Start Header Navigation -->
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle open-mobile-menu" aria-label="Open navigation">
+                    <button type="button" class="navbar-toggle open-mobile-menu" aria-label="Open navigation"
+                        aria-controls="navbar-menu" aria-expanded="false">
                         <i class="fa fa-bars"></i>
                     </button>
                     <a class="navbar-brand" href="{{ url('/') }}">
@@ -712,13 +755,18 @@
                                 class="{{ request()->is('about-us*') ? 'active' : '' }}">About Us</a>
                         </li>
                         <li>
+                            <a href="{{ url('/sectors') }}"
+                                class="{{ request()->is('sectors*') ? 'active' : '' }}">Sectors</a>
+                        </li>
+                        {{-- <li>
                             <a href="{{ url('/projects') }}"
                                 class="{{ request()->is('projects*') ? 'active' : '' }}">Projects</a>
-                        </li>
+                        </li> --}}
                         <li class="dropdown">
-                            <a href="{{ url('/services') }}" class="dropdown-toggle {{ request()->is('services*') ? 'active' : '' }}">Services</a>
-                            <ul class="dropdown-menu dropdown-services bg-dark-transparent">
-                                <li><a href="{{ url('/services') }}">All Services</a></li>
+                            <a href="javascript:void(0)" class="dropdown-toggle {{ request()->is('services*') ? 'active' : '' }}"
+                                aria-controls="services-navigation" aria-expanded="false">Services</a>
+                            <ul class="dropdown-menu dropdown-services bg-dark-transparent" id="services-navigation">
+                                {{-- <li><a href="{{ url('/services') }}">All Services</a></li> --}}
                                 <li><a href="{{ url('/services-EPC-Projects') }}">EPC Projects</a></li>
                                 <li><a href="{{ url('/services-Plant-Maintenance-Turnarounds') }}">Plant Maintenance & Turnarounds</a></li>
                                 <li><a href="{{ url('/services-Design-Manufacturing') }}">Design & Manufacturing of Steel Structure, Piping & Process Equipment</a></li>
@@ -729,12 +777,12 @@
                                 <li><a href="{{ url('/services-Equipmen-Rental') }}">Equipment Rental & Services</a></li>
                                 <li><a href="{{ url('/services-Project-Support') }}">Project Support Services</a></li>
                                 <li><a href="{{ url('/services-Procurement') }}">Procurement Services</a></li>
-                                <li><a href="{{ url('/services-major-equipment-list') }}">Major Equipment List</a></li>
+                                {{-- <li><a href="{{ url('/services-major-equipment-list') }}">Major Equipment List</a></li> --}}
                             </ul>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="{{ url('/blog') }}" class="{{ request()->is('blog*') ? 'active' : '' }}">Blog</a>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="{{ url('/contact') }}" class="{{ request()->is('contact*') ? 'active' : '' }}">Contact Us</a>
                         </li>
@@ -986,23 +1034,29 @@
                             <h4 class="widget-title">Know More</h4>
                             <ul>
                                 <li>
-                                    <a href="/about-us">About Us</a>
+                                    <a href="{{ url('/about-us') }}">About Us</a>
                                 </li>
                                 <li>
+                                    <a href="{{ url('/sectors') }}">Sectors</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('/contact') }}">Contact Us</a>
+                                </li>
+                                {{-- <li>
                                     <a href="#">Teams</a>
-                                </li>
-                                <li>
+                                </li> --}}
+                                {{-- <li>
                                     <a href="/services">Services</a>
-                                </li>
-                                <li>
+                                </li> --}}
+                                {{-- <li>
                                     <a href="/services-Infrastructure-Projects">Infrastructure</a>
-                                </li>
-                                <li>
+                                </li> --}}
+                                {{-- <li>
                                     <a href="/projects">Projects</a>
-                                </li>
-                                <li>
+                                </li> --}}
+                                {{-- <li>
                                     <a href="/blog">Blog</a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </div>
                     </div>
@@ -1096,68 +1150,6 @@
             });
         })();
 
-        /* Fail-safe Mobile Side Navbar Drawer Controller */
-        (function () {
-            "use strict";
-            document.addEventListener("DOMContentLoaded", function () {
-                function openMobileMenu(e) {
-                    if (e) {
-                        e.stopPropagation();
-                    }
-                    var navMenu = document.getElementById("navbar-menu");
-                    var overlay = document.querySelector(".overlay-screen");
-                    var navbar = document.querySelector("nav.navbar");
-
-                    if (navMenu) {
-                        navMenu.classList.add("show");
-                        navMenu.classList.add("in");
-                        navMenu.classList.add("site-mobile-open");
-                        navMenu.classList.add("collapse-mobile");
-                    }
-                    if (overlay) {
-                        overlay.classList.add("opened");
-                        overlay.classList.add("show");
-                    }
-                    if (navbar) {
-                        navbar.classList.add("navbar-responsive");
-                    }
-                }
-
-                function closeMobileMenu(e) {
-                    if (e) {
-                        e.stopPropagation();
-                    }
-                    var navMenu = document.getElementById("navbar-menu");
-                    var overlay = document.querySelector(".overlay-screen");
-                    var navbar = document.querySelector("nav.navbar");
-
-                    if (navMenu) {
-                        navMenu.classList.remove("show");
-                        navMenu.classList.remove("in");
-                        navMenu.classList.remove("site-mobile-open");
-                    }
-                    if (overlay) {
-                        overlay.classList.remove("opened");
-                        overlay.classList.remove("show");
-                    }
-                    if (navbar) {
-                        navbar.classList.remove("navbar-responsive");
-                    }
-                }
-
-                document.querySelectorAll(".navbar-header .navbar-toggle, .open-mobile-menu").forEach(function (btn) {
-                    btn.addEventListener("click", openMobileMenu);
-                });
-
-                document.querySelectorAll(".close-mobile-menu, .overlay-screen").forEach(function (btn) {
-                    btn.addEventListener("click", closeMobileMenu);
-                });
-
-                document.querySelectorAll("#navbar-menu ul.nav li a:not(.dropdown-toggle)").forEach(function (link) {
-                    link.addEventListener("click", closeMobileMenu);
-                });
-            });
-        })();
     </script>
     @stack('scripts')
 </body>

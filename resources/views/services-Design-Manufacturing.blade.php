@@ -16,8 +16,8 @@
         }
 
         /* =========================================================
-               GSAP STACKING CARDS — PREMIUM INDUSTRIAL EXPERIENCE
-            ========================================================= */
+                   GSAP STACKING CARDS — PREMIUM INDUSTRIAL EXPERIENCE
+                ========================================================= */
 
         /* ─── Base Reset for Section ─── */
         .svc-stack-section {
@@ -903,12 +903,12 @@
                 <p class="dm-hero-kicker">Engineering / Fabrication / Delivery</p>
                 <h1 id="dmHeroTitle">Design &amp; Manufacturing for <span>Steel Structures, Piping &amp; Process
                         Equipment</span></h1>
-                <p class="dm-hero-summary">Integrated industrial solutions&mdash;from detailed engineering and precision
-                    fabrication to quality-controlled delivery for complex energy and infrastructure projects.</p>
+                <!-- <p class="dm-hero-summary">Integrated industrial solutions&mdash;from detailed engineering and precision
+                        fabrication to quality-controlled delivery for complex energy and infrastructure projects.</p> -->
                 <div class="dm-hero-actions">
-                    <a class="dm-hero-cta" href="#sc-section">
-                        Explore capabilities <i class="fas fa-arrow-down" aria-hidden="true"></i>
-                    </a>
+                    <!-- <a class="dm-hero-cta" href="#sc-section">
+                            Explore capabilities <i class="fas fa-arrow-down" aria-hidden="true"></i>
+                        </a> -->
                     <div class="dm-hero-tags" aria-label="Core capabilities">
                         <span>Steel</span>
                         <span>Piping</span>
@@ -1084,8 +1084,10 @@
                                         <div class="svc-feat-item"><i class="fas fa-circle"></i> Fit-up and assembly</div>
                                         <div class="svc-feat-item"><i class="fas fa-circle"></i> Welding (SMAW, GTAW,
                                             GMAW, SAW)</div>
-                                        <div class="svc-feat-item"><i class="fas fa-circle"></i> Grinding and finishing</div>
-                                        <div class="svc-feat-item"><i class="fas fa-circle"></i> Dimensional inspection</div>
+                                        <div class="svc-feat-item"><i class="fas fa-circle"></i> Grinding and finishing
+                                        </div>
+                                        <div class="svc-feat-item"><i class="fas fa-circle"></i> Dimensional inspection
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1195,7 +1197,8 @@
                                         <div class="svc-feat-item"><i class="fas fa-circle"></i> 3D modeling using PDMS /
                                             SP3D / E3D</div>
                                         <div class="svc-feat-item"><i class="fas fa-circle"></i> Support design</div>
-                                        <div class="svc-feat-item"><i class="fas fa-circle"></i> Material specification</div>
+                                        <div class="svc-feat-item"><i class="fas fa-circle"></i> Material specification
+                                        </div>
                                         <div class="svc-feat-item"><i class="fas fa-circle"></i> Valve selection</div>
                                         <div class="svc-feat-item"><i class="fas fa-circle"></i> Line list preparation
                                         </div>
@@ -1435,7 +1438,8 @@
                                         <div class="svc-feat-item"><i class="fas fa-circle"></i> Internal coating</div>
                                         <div class="svc-feat-item"><i class="fas fa-circle"></i> External painting</div>
                                         <div class="svc-feat-item"><i class="fas fa-circle"></i> Rubber lining</div>
-                                        <div class="svc-feat-item"><i class="fas fa-circle"></i> Insulation preparation</div>
+                                        <div class="svc-feat-item"><i class="fas fa-circle"></i> Insulation preparation
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1536,7 +1540,7 @@
     <!-- End Services Details -->
 
     <!-- Start Footer 
-        ============================================= -->
+            ============================================= -->
 @endsection
 
 @push('scripts')

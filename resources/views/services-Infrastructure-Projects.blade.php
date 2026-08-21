@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @push('styles')
-<link rel="stylesheet" href="assets/css/service-stack.css">
-<style>
+    <link rel="stylesheet" href="assets/css/service-stack.css">
+    <style>
         .service-details-row {
             background: #ffffff;
             border: 1px solid #eceff4;
@@ -32,12 +32,12 @@
         }
 
         /*
-         * IMAGE SPEC — service-image-container
-         * Source image size : 800 × 600 px  (4 : 3 ratio)
-         * Desktop: height grows to match adjacent content column (no crop).
-         *          min-height: 400px prevents collapse when content is short.
-         * Mobile:  Columns stack → image reverts to natural 4:3 crop.
-         */
+             * IMAGE SPEC — service-image-container
+             * Source image size : 800 × 600 px  (4 : 3 ratio)
+             * Desktop: height grows to match adjacent content column (no crop).
+             *          min-height: 400px prevents collapse when content is short.
+             * Mobile:  Columns stack → image reverts to natural 4:3 crop.
+             */
         .service-image-container {
             min-height: 400px;
             height: 100%;
@@ -160,8 +160,8 @@
 @endpush
 
 @section('content')
-<!-- Start Service Hero
-    ============================================= -->
+    <!-- Start Service Hero
+        ============================================= -->
     <div class="breadcrumb-area gradient-bg bg-cover shadow dark text-light service-editorial-hero service-hero-ready"
         style="background-image: url(assets/img/services/5.png);">
         <div class="container">
@@ -170,14 +170,14 @@
                     <div class="service-hero-eyebrow">Planning / Engineering / Delivery</div>
                     <h1 class="service-hero-title">
                         <span>Infrastructure</span>
-                        <strong>Projects &amp; Utilities</strong>
+                        <!-- <strong>Projects &amp; Utilities</strong> -->
                     </h1>
-                    <p class="service-hero-description">Integrated infrastructure delivery across civil works, utility networks, electrical systems, and intelligent control—from early planning to site completion.</p>
+                    <!-- <p class="service-hero-description">Integrated infrastructure delivery across civil works, utility networks, electrical systems, and intelligent control—from early planning to site completion.</p> -->
                     <div class="service-hero-actions">
-                        <a class="service-hero-button" href="#service-capabilities">
-                            <span>Explore Capabilities</span>
-                            <i class="fas fa-arrow-down" aria-hidden="true"></i>
-                        </a>
+                        <!-- <a class="service-hero-button" href="#service-capabilities">
+                                <span>Explore Capabilities</span>
+                                <i class="fas fa-arrow-down" aria-hidden="true"></i>
+                            </a> -->
                         <div class="service-hero-tags" aria-label="Service capabilities">
                             <span class="service-hero-tag">Civil Works</span>
                             <span class="service-hero-tag">Utilities</span>
@@ -191,7 +191,7 @@
     <!-- End Service Hero -->
 
     <!-- Start Services Details 
-    ============================================= -->
+        ============================================= -->
     <div class="services-details-area default-padding">
         <div class="container">
 
@@ -199,8 +199,7 @@
             <div class="row align-items-stretch service-details-row">
                 <div class="col-lg-6">
                     <div class="service-image-container">
-                        <img src="assets/img/services/11.png" alt="EPC Projects - Civil & Mechanical"
-                            class="img-fluid">
+                        <img src="assets/img/services/11.png" alt="EPC Projects - Civil & Mechanical" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -287,8 +286,7 @@
             <div class="row align-items-stretch service-details-row">
                 <div class="col-lg-6">
                     <div class="service-image-container">
-                        <img src="assets/img/services/13.png" alt="EPC Projects - Civil & Mechanical"
-                            class="img-fluid">
+                        <img src="assets/img/services/13.png" alt="EPC Projects - Civil & Mechanical" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -326,7 +324,8 @@
             <div class="row align-items-stretch service-details-row alt-bg">
                 <div class="col-lg-6 order-lg-2">
                     <div class="service-image-container">
-                        <img src="assets/img/services/14.png" alt="Infrastructure earthworks, roads and structures" class="img-fluid">
+                        <img src="assets/img/services/14.png" alt="Infrastructure earthworks, roads and structures"
+                            class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-6 order-lg-1">
@@ -369,7 +368,8 @@
             <div class="row align-items-stretch service-details-row">
                 <div class="col-lg-6">
                     <div class="service-image-container">
-                        <img src="assets/img/services/15.png" alt="Infrastructure utilities, urban works and MEP" class="img-fluid">
+                        <img src="assets/img/services/15.png" alt="Infrastructure utilities, urban works and MEP"
+                            class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -395,7 +395,8 @@
                         <li class="col-md-6"><i class="fas fa-chevron-right"></i> Sidewalk and pedestrian facilities</li>
                     </ul>
 
-                    <h4 class="service-sub-title"><i class="fas fa-tools"></i> MECHANICAL, ELECTRICAL &amp; PLUMBING (MEP)</h4>
+                    <h4 class="service-sub-title"><i class="fas fa-tools"></i> MECHANICAL, ELECTRICAL &amp; PLUMBING (MEP)
+                    </h4>
                     <h4 class="service-sub-title"><i class="fas fa-cogs"></i> MECHANICAL</h4>
                     <ul class="service-list row">
                         <li class="col-md-6"><i class="fas fa-chevron-right"></i> HVAC installation</li>
@@ -418,7 +419,8 @@
             <div class="row align-items-stretch service-details-row alt-bg">
                 <div class="col-lg-6 order-lg-2">
                     <div class="service-image-container">
-                        <img src="assets/img/services/6.png" alt="Infrastructure instrumentation, ICT and quality assurance" class="img-fluid">
+                        <img src="assets/img/services/6.png" alt="Infrastructure instrumentation, ICT and quality assurance"
+                            class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-6 order-lg-1">
@@ -434,7 +436,8 @@
                         <li class="col-md-6"><i class="fas fa-chevron-right"></i> Smart monitoring systems</li>
                     </ul>
 
-                    <h4 class="service-sub-title"><i class="fas fa-check-double"></i> QUALITY ASSURANCE &amp; QUALITY CONTROL (QA/QC)</h4>
+                    <h4 class="service-sub-title"><i class="fas fa-check-double"></i> QUALITY ASSURANCE &amp; QUALITY
+                        CONTROL (QA/QC)</h4>
                     <ul class="service-list row">
                         <li class="col-md-6"><i class="fas fa-chevron-right"></i> Material inspection</li>
                         <li class="col-md-6"><i class="fas fa-chevron-right"></i> Concrete testing</li>
@@ -453,14 +456,16 @@
             <div class="row align-items-stretch service-details-row">
                 <div class="col-lg-6">
                     <div class="service-image-container">
-                        <img src="assets/img/services/9.png" alt="Infrastructure HSE, testing and commissioning" class="img-fluid">
+                        <img src="assets/img/services/9.png" alt="Infrastructure HSE, testing and commissioning"
+                            class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="service-badge">Infrastructure Projects</div>
                     <div class="service-meta-text">DELIVERY ASSURANCE</div>
 
-                    <h4 class="service-sub-title"><i class="fas fa-hard-hat"></i> HEALTH, SAFETY &amp; ENVIRONMENT (HSE)</h4>
+                    <h4 class="service-sub-title"><i class="fas fa-hard-hat"></i> HEALTH, SAFETY &amp; ENVIRONMENT (HSE)
+                    </h4>
                     <ul class="service-list row">
                         <li class="col-md-6"><i class="fas fa-chevron-right"></i> Safety planning</li>
                         <li class="col-md-6"><i class="fas fa-chevron-right"></i> Traffic management plans</li>
@@ -489,7 +494,8 @@
             <div class="row align-items-stretch service-details-row alt-bg">
                 <div class="col-lg-6 order-lg-2">
                     <div class="service-image-container">
-                        <img src="assets/img/services/10.png" alt="Infrastructure operation support and sectors" class="img-fluid">
+                        <img src="assets/img/services/10.png" alt="Infrastructure operation support and sectors"
+                            class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-6 order-lg-1">
@@ -525,9 +531,9 @@
     </div>
     <!-- End Services Details -->
     <!-- Start Footer 
-    ============================================= -->
+        ============================================= -->
 @endsection
 
 @push('scripts')
-<script src="assets/js/service-stack.js"></script>
+    <script src="assets/js/service-stack.js"></script>
 @endpush

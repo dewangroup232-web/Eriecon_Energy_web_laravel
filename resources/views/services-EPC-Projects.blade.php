@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @push('styles')
-<link rel="stylesheet" href="assets/css/service-stack.css">
-<style>
+    <link rel="stylesheet" href="assets/css/service-stack.css">
+    <style>
         .service-details-row {
             background: #ffffff;
             border: 1px solid #eceff4;
@@ -32,12 +32,12 @@
         }
 
         /*
-         * IMAGE SPEC — service-image-container
-         * Source image size : 800 × 600 px  (4 : 3 ratio)
-         * Desktop: height grows to match adjacent content column (no crop).
-         *          min-height: 400px prevents collapse when content is short.
-         * Mobile:  Columns stack → image reverts to natural 4:3 crop.
-         */
+                     * IMAGE SPEC — service-image-container
+                     * Source image size : 800 × 600 px  (4 : 3 ratio)
+                     * Desktop: height grows to match adjacent content column (no crop).
+                     *          min-height: 400px prevents collapse when content is short.
+                     * Mobile:  Columns stack → image reverts to natural 4:3 crop.
+                     */
         .service-image-container {
             min-height: 400px;
             height: 100%;
@@ -160,8 +160,8 @@
 @endpush
 
 @section('content')
-<!-- Start Service Hero
-    ============================================= -->
+    <!-- Start Service Hero
+                ============================================= -->
     <div class="breadcrumb-area gradient-bg bg-cover shadow dark text-light service-editorial-hero service-hero-ready"
         style="background-image: url(assets/img/services/2.png);">
         <div class="container">
@@ -169,15 +169,15 @@
                 <div class="service-hero-content">
                     <div class="service-hero-eyebrow">Engineering / Procurement / Construction</div>
                     <h1 class="service-hero-title">
-                        <span>Integrated EPC</span>
-                        <strong>Project Delivery</strong>
+                        <span>EPC Projects</span>
+                        <!-- <strong>Project Delivery</strong> -->
                     </h1>
-                    <p class="service-hero-description">End-to-end civil, mechanical, electrical, and instrumentation solutions—from engineering and procurement through construction and commissioning.</p>
+                    <!-- <p class="service-hero-description">End-to-end civil, mechanical, electrical, and instrumentation solutions—from engineering and procurement through construction and commissioning.</p> -->
                     <div class="service-hero-actions">
-                        <a class="service-hero-button" href="#service-capabilities">
-                            <span>Explore Capabilities</span>
-                            <i class="fas fa-arrow-down" aria-hidden="true"></i>
-                        </a>
+                        <!-- <a class="service-hero-button" href="#service-capabilities">
+                                        <span>Explore Capabilities</span>
+                                        <i class="fas fa-arrow-down" aria-hidden="true"></i>
+                                    </a> -->
                         <div class="service-hero-tags" aria-label="Service capabilities">
                             <span class="service-hero-tag">Civil</span>
                             <span class="service-hero-tag">Mechanical</span>
@@ -191,7 +191,7 @@
     <!-- End Service Hero -->
 
     <!-- Start Services Details 
-    ============================================= -->
+                ============================================= -->
     <div class="services-details-area default-padding">
         <div class="container">
 
@@ -199,8 +199,7 @@
             <div class="row align-items-stretch service-details-row">
                 <div class="col-lg-6">
                     <div class="service-image-container">
-                        <img src="assets/img/services/6.png" alt="EPC Projects - Civil & Mechanical"
-                            class="img-fluid">
+                        <img src="assets/img/services/6.png" alt="EPC Projects - Civil & Mechanical" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -242,8 +241,8 @@
             <div class="row align-items-stretch service-details-row alt-bg">
                 <div class="col-lg-6 order-lg-2">
                     <div class="service-image-container">
-                        <img src="assets/img/services/2.png"
-                            alt="EPC Projects - Electrical & Instrumentation" class="img-fluid">
+                        <img src="assets/img/services/2.png" alt="EPC Projects - Electrical & Instrumentation"
+                            class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-6 order-lg-1">
@@ -289,7 +288,8 @@
 
                     <h4 class="service-sub-title"><i class="fas fa-boxes"></i> PROCUREMENT</h4>
                     <ul class="service-list row">
-                        <li class="col-md-6"><i class="fas fa-chevron-right"></i> Vendor identification and qualification</li>
+                        <li class="col-md-6"><i class="fas fa-chevron-right"></i> Vendor identification and qualification
+                        </li>
                         <li class="col-md-6"><i class="fas fa-chevron-right"></i> Preparation of RFQ/RFP</li>
                         <li class="col-md-6"><i class="fas fa-chevron-right"></i> Technical bid evaluation</li>
                         <li class="col-md-6"><i class="fas fa-chevron-right"></i> Commercial bid evaluation</li>
@@ -376,7 +376,8 @@
                         <li class="col-md-6"><i class="fas fa-chevron-right"></i> Resource planning</li>
                         <li class="col-md-6"><i class="fas fa-chevron-right"></i> Progress monitoring</li>
                         <li class="col-md-6"><i class="fas fa-chevron-right"></i> HSE management</li>
-                        <li class="col-md-6"><i class="fas fa-chevron-right"></i> Quality assurance and quality control (QA/QC)</li>
+                        <li class="col-md-6"><i class="fas fa-chevron-right"></i> Quality assurance and quality control
+                            (QA/QC)</li>
                         <li class="col-md-6"><i class="fas fa-chevron-right"></i> Client coordination</li>
                         <li class="col-md-6"><i class="fas fa-chevron-right"></i> Reporting and documentation</li>
                     </ul>
@@ -413,9 +414,9 @@
     <!-- End Services Details -->
 
     <!-- Start Footer 
-    ============================================= -->
+                ============================================= -->
 @endsection
 
 @push('scripts')
-<script src="assets/js/service-stack.js"></script>
+    <script src="assets/js/service-stack.js"></script>
 @endpush

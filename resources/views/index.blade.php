@@ -50,7 +50,7 @@
     <!-- End Header -->
 
     <!-- Start Banner 
-                        ============================================= -->
+                                                                ============================================= -->
     <div class="banner-area inc-content text-medium top-pad-60">
         <div id="bootcarousel" class="carousel text-center slide text-light carousel-fade animate_text" data-ride="carousel"
             data-interval="4500" data-pause="false" data-wrap="true" data-bs-ride="carousel" data-bs-interval="4500"
@@ -61,8 +61,7 @@
                 @foreach($banners as $banner)
                     <div class="carousel-item {{ $loop->first ? 'active' : '' }}" role="group"
                         aria-label="Slide {{ $loop->iteration }} of {{ $loop->count }}">
-                        <div class="slider-thumb bg-cover"
-                            style="background-image: url('{{ $banner->image_url }}');"></div>
+                        <div class="slider-thumb bg-cover" style="background-image: url('{{ $banner->image_url }}');"></div>
                         <div class="box-table shadow dark">
                             <div class="box-cell">
                                 <div class="container">
@@ -87,97 +86,97 @@
                     </div>
                 @endforeach
                 @if($banners->isEmpty())
-                <div class="carousel-item active" role="group" aria-label="Slide 1 of 4">
-                    <div class="slider-thumb bg-cover" style="background-image: url(assets/img/banner/13.jpg);"></div>
-                    <div class="box-table shadow dark">
-                        <div class="box-cell">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-10 offset-lg-1">
-                                        <div class="content">
-                                            <h2 data-animation="animated slideInDown">EIRECON ENERGY COMPANY
-                                            </h2>
-                                            <h3 data-animation="animated slideInRight">
-                                                "Energy That Drives the World" </h3>
-                                            <a data-animation="animated slideInUp"
-                                                class="btn circle btn-light effect btn-md angle" href="projects.html">View
-                                                Projects</a>
+                    <div class="carousel-item active" role="group" aria-label="Slide 1 of 4">
+                        <div class="slider-thumb bg-cover" style="background-image: url(assets/img/banner/13.jpg);"></div>
+                        <div class="box-table shadow dark">
+                            <div class="box-cell">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-10 offset-lg-1">
+                                            <div class="content">
+                                                <h2 data-animation="animated slideInDown">EIRECON ENERGY COMPANY
+                                                </h2>
+                                                <h3 data-animation="animated slideInRight">
+                                                    "Energy That Drives the World" </h3>
+                                                {{-- <a data-animation="animated slideInUp"
+                                                    class="btn circle btn-light effect btn-md angle" href="projects.html">View
+                                                    Projects</a> --}}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item" role="group" aria-label="Slide 2 of 4">
-                    <div class="slider-thumb bg-cover" style="background-image: url(assets/img/banner/banner_2.jpeg);">
-                    </div>
-                    <div class="box-table shadow dark">
-                        <div class="box-cell">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-10 offset-lg-1">
-                                        <div class="content">
-                                            <h2 data-animation="animated slideInDown">EIRECON ENERGY COMPANY
-                                            </h2>
-                                            <h3 data-animation="animated slideInRight">
-                                                "Energy That Drives the World" </h3>
-                                            <a data-animation="animated slideInUp"
-                                                class="btn circle btn-light effect btn-md angle" href="projects.html">View
-                                                Projects</a>
+                    <div class="carousel-item" role="group" aria-label="Slide 2 of 4">
+                        <div class="slider-thumb bg-cover" style="background-image: url(assets/img/banner/banner_2.jpeg);">
+                        </div>
+                        <div class="box-table shadow dark">
+                            <div class="box-cell">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-10 offset-lg-1">
+                                            <div class="content">
+                                                <h2 data-animation="animated slideInDown">EIRECON ENERGY COMPANY
+                                                </h2>
+                                                <h3 data-animation="animated slideInRight">
+                                                    "Energy That Drives the World" </h3>
+                                                {{-- <a data-animation="animated slideInUp"
+                                                    class="btn circle btn-light effect btn-md angle" href="projects.html">View
+                                                    Projects</a> --}}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item" role="group" aria-label="Slide 3 of 4">
-                    <div class="slider-thumb bg-cover" style="background-image: url(assets/img/banner/banner_3.jpeg);">
-                    </div>
-                    <div class="box-table shadow dark">
-                        <div class="box-cell">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-10 offset-lg-1">
-                                        <div class="content">
-                                            <h2 data-animation="animated slideInDown">EIRECON ENERGY COMPANY
-                                            </h2>
-                                            <h3 data-animation="animated slideInRight">
-                                                "Energy That Drives the World" </h3>
-                                            <a data-animation="animated slideInUp"
-                                                class="btn circle btn-light effect btn-md angle" href="projects.html">View
-                                                Projects</a>
+                    <div class="carousel-item" role="group" aria-label="Slide 3 of 4">
+                        <div class="slider-thumb bg-cover" style="background-image: url(assets/img/banner/banner_3.jpeg);">
+                        </div>
+                        <div class="box-table shadow dark">
+                            <div class="box-cell">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-10 offset-lg-1">
+                                            <div class="content">
+                                                <h2 data-animation="animated slideInDown">EIRECON ENERGY COMPANY
+                                                </h2>
+                                                <h3 data-animation="animated slideInRight">
+                                                    "Energy That Drives the World" </h3>
+                                                {{-- <a data-animation="animated slideInUp"
+                                                    class="btn circle btn-light effect btn-md angle" href="projects.html">View
+                                                    Projects</a> --}}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item" role="group" aria-label="Slide 4 of 4">
-                    <div class="slider-thumb bg-cover" style="background-image: url(assets/img/banner/Banner4.jpeg);">
-                    </div>
-                    <div class="box-table shadow dark">
-                        <div class="box-cell">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-10 offset-lg-1">
-                                        <div class="content">
-                                            <h2 data-animation="animated slideInDown">EIRECON ENERGY COMPANY
-                                            </h2>
-                                            <h3 data-animation="animated slideInRight">
-                                                "Energy That Drives the World" </h3>
-                                            <a data-animation="animated slideInUp"
-                                                class="btn circle btn-light effect btn-md angle" href="projects.html">View
-                                                Projects</a>
+                    <div class="carousel-item" role="group" aria-label="Slide 4 of 4">
+                        <div class="slider-thumb bg-cover" style="background-image: url(assets/img/banner/Banner4.jpeg);">
+                        </div>
+                        <div class="box-table shadow dark">
+                            <div class="box-cell">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-10 offset-lg-1">
+                                            <div class="content">
+                                                <h2 data-animation="animated slideInDown">EIRECON ENERGY COMPANY
+                                                </h2>
+                                                <h3 data-animation="animated slideInRight">
+                                                    "Energy That Drives the World" </h3>
+                                                {{-- <a data-animation="animated slideInUp"
+                                                    class="btn circle btn-light effect btn-md angle" href="projects.html">View
+                                                    Projects</a> --}}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 @endif
                 <!-- Left and right controls -->
                 <button class="carousel-control-prev" type="button" data-bs-target="#bootcarousel" data-bs-slide="prev">
@@ -198,7 +197,7 @@
     <!-- End Banner -->
 
     <!-- Start Our About
-                        ============================================= -->
+                                                                ============================================= -->
     <div class="about-area overflow-hidden shape-box py-5">
         <div class="container">
             <div class="about-box">
@@ -209,13 +208,14 @@
                         </div>
                     </div>
                     <div class="col-lg-6 info">
-                        <div class="experiecne" style="margin-bottom: 18px;">
-                            <strong style="font-size: 85px; line-height: 70px;">25</strong>
-                            <h5 style="font-size: 18px; line-height: 1.4;">Years Work experience in Oil &amp; gas
-                                industry</h5>
+                        <div class="experiecne"
+                            style="margin-bottom: 22px; padding: 22px 30px; background: #022147; text-align: left; clip-path: polygon(100% 0, 100% 80%, 95% 100%, 0 100%, 0 0);">
+                            <h3
+                                style="color: #ffffff; margin: 0; font-size: 26px; font-weight: 700; text-transform: capitalize;">
+                                Chairman's Message</h3>
                         </div>
                         <blockquote style="margin-top: 18px; padding-left: 18px;">
-                            <p style="font-size: 16px; line-height: 1.7; margin-bottom: 12px;">
+                            <p style="font-size: 15.5px; line-height: 1.7; margin-bottom: 14px; color: #444444;">
                                 At EIRECON ENERGY COMPANY, our mission is to deliver excellence
                                 across the energy and infrastructure sectors through technical
                                 innovation and operational integrity. We pride ourselves on being a
@@ -223,11 +223,33 @@
                                 providing specialized EPC solutions and maintenance services that
                                 safeguard the Kingdom's critical industrial assets.
                             </p>
-                            <div class="home-ceo-actions">
+
+                            <div id="chairmanMoreContent" style="display: none;">
+                                <p style="font-size: 15.5px; line-height: 1.7; margin-bottom: 14px; color: #444444;">
+                                    Driven by a culture of safety and precision, we adhere to the highest
+                                    QHSE standards to ensure efficiency in every project. By integrating
+                                    specialized equipment rental with expert technical services, we
+                                    provide our clients with a seamless, reliable experience that
+                                    minimizes risk and maximizes performance in even the most
+                                    demanding environments.
+                                </p>
+                                <p style="font-size: 15.5px; line-height: 1.7; margin-bottom: 14px; color: #444444;">
+                                    Aligned with Saudi Vision 2030, we are dedicated to industrial
+                                    localization and the development of local talent. As we look forward,
+                                    EIRECON remains committed to driving economic diversification
+                                    and supporting the Kingdom's transformation into a premier global
+                                    industrial powerhouse.
+                                </p>
+                            </div>
+
+                            <div class="home-ceo-actions"
+                                style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; margin-top: 18px;">
                                 <span class="home-ceo-signature">CEO <strong>Manawar Khan</strong></span>
-                                <a class="home-ceo-link" href="{{ url('/about-us') }}">
-                                    Know More <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                                </a>
+                                <button type="button" id="chairmanToggleBtn" class="home-ceo-link"
+                                    style="background: transparent; border: none; padding: 0; cursor: pointer; color: #1B4FA8; font-weight: 700; font-size: 15px; display: inline-flex; align-items: center; gap: 8px;">
+                                    <span id="chairmanToggleText">Read More</span> <i id="chairmanToggleIcon"
+                                        class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </button>
                             </div>
                         </blockquote>
                     </div>
@@ -246,12 +268,7 @@
     <section class="home-services" id="home-services" aria-labelledby="homeServicesTitle">
         <div class="container">
             <div class="home-services-heading" data-reveal="fade-up">
-                <span class="home-services-eyebrow">Our Services</span>
-                <h2 id="homeServicesTitle">Built for Industry.<br><span>Ready for Every Challenge.</span></h2>
-                <p class="home-services-subheading">
-                    <span>From engineering and construction to maintenance, lifting and project support.</span>
-                    <span>Specialist teams deliver every scope with safety, precision and accountability.</span>
-                </p>
+                <h2 id="homeServicesTitle" style="color: #ffffff;">Our Services</h2>
             </div>
 
             <div class="home-services-grid">
@@ -273,7 +290,8 @@
                     data-reveal="fade-up" data-delay="120">
                     <img src="{{ asset('assets/img/services/Design and Manufacturing of Steel Structure, Piping & Process Equipment.png') }}"
                         alt="Design and Manufacturing of Steel Structure, Piping and Process Equipment" loading="lazy">
-                    <h3 class="home-service-name home-service-name--design">Design &amp; Manufacturing of Steel Structure, Piping &amp; Process
+                    <h3 class="home-service-name home-service-name--design">Design &amp; Manufacturing of Steel Structure,
+                        Piping &amp; Process
                         Equipment</h3>
                 </a>
 
@@ -297,14 +315,14 @@
                     <h3 class="home-service-name">Infrastructure</h3>
                 </a>
 
-                <a class="home-service-card" href="{{ url('/services-Scaffolding') }}" aria-label="Scaffolding" data-reveal="fade-up"
-                    data-delay="80">
+                <a class="home-service-card" href="{{ url('/services-Scaffolding') }}" aria-label="Scaffolding"
+                    data-reveal="fade-up" data-delay="80">
                     <img src="{{ asset('assets/img/services/Scaffolding.png') }}" alt="Scaffolding" loading="lazy">
                     <h3 class="home-service-name">Scaffolding</h3>
                 </a>
 
-                <a class="home-service-card" href="{{ url('/services-Equipmen-Rental') }}" aria-label="Equipment Rental and Services"
-                    data-reveal="fade-up" data-delay="120">
+                <a class="home-service-card" href="{{ url('/services-Equipmen-Rental') }}"
+                    aria-label="Equipment Rental and Services" data-reveal="fade-up" data-delay="120">
                     <img src="{{ asset('assets/img/services/Equipment Rental & Services.png') }}"
                         alt="Equipment Rental and Services" loading="lazy">
                     <h3 class="home-service-name">Equipment Rental &amp; Services</h3>
@@ -324,61 +342,32 @@
                     <h3 class="home-service-name">Procurement Services</h3>
                 </a>
 
-                <a class="home-service-card" href="{{ url('/services-major-equipment-list') }}"
+                {{-- <a class="home-service-card" href="{{ url('/services-major-equipment-list') }}"
                     aria-label="Major Equipment List" data-reveal="fade-up" data-delay="240">
                     <img src="{{ asset('assets/img/services/1.png') }}" alt="Major Equipment List" loading="lazy">
                     <h3 class="home-service-name">Major Equipment List</h3>
-                </a>
+                </a> --}}
             </div>
         </div>
     </section>
     <!-- End Homepage Services -->
 
     <!-- Start Work With Us 
-                        ============================================= -->
+                                                                ============================================= -->
     <div class="work-with-us-area home-work-with-us bg-gray">
         <div class="container">
-            <div class="content-box">
-                <div class="row align-center">
-                    <div class="col-lg-5">
-                        <div class="heading-info">
-                            <h5>Work with Us</h5>
-                            <h2>Aligned with Saudi Vision 2030</h2>
-                            <a href="#" class="btn angle btn-theme effect btn-md">Get a Quote</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-7 fun-facts-items text-center">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4">
-                                <div class="fun-fact">
-                                    <h4>Ongoing Projects</h4>
-                                    <div class="timer" data-to="28" data-speed="5000">28</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="fun-fact">
-                                    <h4>Delivered Projects</h4>
-                                    <div class="timer" data-to="56" data-speed="5000">56</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="fun-fact">
-                                    <h4>Upcoming Projects</h4>
-                                    <div class="timer" data-to="20" data-speed="5000">20</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+                <h2 style="margin: 0; font-size: clamp(22px, 3vw, 36px); font-weight: 800; color: #0D1B2E;">Aligned with Saudi Vision 2030</h2>
+                <a href="{{ url('/contact') }}" class="btn angle btn-theme effect btn-md" style="margin: 0; white-space: nowrap;">Get a Quote</a>
             </div>
         </div>
     </div>
     <!-- End Work With Us -->
 
     <!-- =====================================================
-                             PREMIUM PILLARS SECTION — Vision · Mission · Values · Standards
-                             Each pillar = full-width scroll section, alternating layout
-                        ====================================================== -->
+                                                                     PREMIUM PILLARS SECTION — Vision · Mission · Values · Standards
+                                                                     Each pillar = full-width scroll section, alternating layout
+                                                                ====================================================== -->
     <section class="pillars-wrapper" id="pillars">
 
         <!-- ── 01 VISION ───────────────────────────────────────── -->
@@ -387,20 +376,19 @@
                 <div class="pillar-row row-normal">
                     <div class="pillar-text" data-reveal="slide-right">
                         <!-- <div class="pillar-number">01</div> -->
-                        <span class="eyebrow-label">Vision</span>
-                        <h2>Our Vision,<br>Aligned with<br>Saudi Vision 2030</h2>
+                        <h2 style="color: #000000;">Vision</h2>
                         <div class="pillar-divider"></div>
                         <p>To become the premier industrial partner in the region, recognised for setting the benchmark
                             in engineering excellence, safety, and reliability. We strive to lead the energy transition
                             by delivering innovative infrastructure solutions that empower our clients and contribute to
                             a sustainable, technologically advanced industrial future.</p>
-                        <a class="pillar-cta" href="about-us.html">
-                            <span>Explore Our Story</span>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg>
-                        </a>
+                        <!-- <a class="pillar-cta" href="about-us.html">
+                                                            <span>Explore Our Story</span>
+                                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                                                <path d="M5 12h14M12 5l7 7-7 7" />
+                                                            </svg>
+                                                        </a> -->
                     </div>
                     <div class="pillar-image" data-reveal="slide-left">
                         <div class="pillar-img-wrap">
@@ -421,20 +409,20 @@
                 <div class="pillar-row row-reverse">
                     <div class="pillar-text" data-reveal="slide-left">
                         <!-- <div class="pillar-number">02</div> -->
-                        <span class="eyebrow-label">Mission</span>
-                        <h2>Delivering<br>Excellence<br>Every Time</h2>
+                        <!-- <span class="eyebrow-label">Mission</span> -->
+                        <h2>Mission</h2>
                         <div class="pillar-divider"></div>
                         <p>To deliver high-quality EPC, manufacturing, and support services through technical expertise
                             and disciplined project management. We are dedicated to providing our clients with
                             cost-effective and safe solutions while fostering a culture of continuous improvement,
                             professional integrity, and strict adherence to international quality standards.</p>
-                        <a class="pillar-cta pillar-cta-light" href="about-us.html">
-                            <span>Our Approach</span>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg>
-                        </a>
+                        <!-- <a class="pillar-cta pillar-cta-light" href="about-us.html">
+                                                            <span>Our Approach</span>
+                                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                                                <path d="M5 12h14M12 5l7 7-7 7" />
+                                                            </svg>
+                                                        </a> -->
                     </div>
                     <div class="pillar-image" data-reveal="slide-right">
                         <div class="pillar-img-wrap">
@@ -454,8 +442,8 @@
             <div class="container">
                 <div class="pillar-values-header" data-reveal="fade-up">
                     <!-- <div class="pillar-number">03</div> -->
-                    <span class="eyebrow-label">Core Values</span>
-                    <h2>The Principles<br>We Stand By</h2>
+                    <!-- <span class="eyebrow-label">Core Values</span> -->
+                    <h2>Core Values</h2>
                     <div class="pillar-divider"></div>
                 </div>
                 <div class="pillar-values-grid">
@@ -504,25 +492,48 @@
             <div class="container-fluid pillar-container">
                 <div class="pillar-row row-normal">
                     <div class="pillar-text" data-reveal="slide-right">
-                        <!-- <div class="pillar-number pillar-number-white">04</div> -->
-                        <span class="eyebrow-label eyebrow-light">Standards</span>
-                        <h2 class="text-white">Quality Assurance<br>&amp; Control</h2>
+                        <h2 class="text-white">Standards</h2>
                         <div class="pillar-divider pillar-divider-accent"></div>
-                        <p class="text-light-para">We maintain a proactive approach to excellence by implementing a
-                            systematic management framework that prevents defects before they occur. Our QA processes
-                            ensure that every project phase — from procurement to final delivery — aligns with
-                            international standards and client-specific technical requirements.</p>
-                        <p class="text-light-para">Our QC team focuses on rigorous inspection and testing of all
-                            fabrication and construction. By utilising advanced monitoring tools and stringent
-                            verification protocols, we ensure that every weld, component, and installation meets precise
-                            engineering tolerances.</p>
-                        <a class="pillar-cta pillar-cta-light" href="about-us.html">
-                            <span>Our Standards</span>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg>
-                        </a>
+
+                        <div class="standard-item" style="margin-bottom: 18px;">
+                            <h4
+                                style="color: #4f96ff; font-size: 15px; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; letter-spacing: 0.05em;">
+                                HSE POLICY</h4>
+                            <p class="text-light-para" style="margin-bottom: 0 !important;">At EIRECON, safety is a core
+                                value, not just a priority. We are committed to an incident-free workplace through strict
+                                adherence to QHSE standards, comprehensive risk assessments, and continuous safety training.
+                                Our policy ensures the protection of our personnel, the environment, and our partners'
+                                assets across all operational sites.</p>
+                        </div>
+
+                        <div class="standard-item" style="margin-bottom: 18px;">
+                            <h4
+                                style="color: #4f96ff; font-size: 15px; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; letter-spacing: 0.05em;">
+                                QUALITY ASSURANCE</h4>
+                            <p class="text-light-para" style="margin-bottom: 0 !important;">We maintain a proactive approach
+                                to excellence by implementing a systematic management framework that prevents defects before
+                                they occur. Our QA processes ensure that every project phase — from procurement to final
+                                delivery — aligns with international standards and client-specific technical requirements,
+                                guaranteeing consistent and reliable results.</p>
+                        </div>
+
+                        <div class="standard-item">
+                            <h4
+                                style="color: #4f96ff; font-size: 15px; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; letter-spacing: 0.05em;">
+                                QUALITY CONTROL</h4>
+                            <p class="text-light-para" style="margin-bottom: 0 !important;">Our QC team focuses on the
+                                rigorous inspection and testing of all fabrication and construction. By utilizing advanced
+                                monitoring tools and stringent verification protocols, we ensure that every weld, component,
+                                and installation meets the precise engineering tolerances and material specifications
+                                required for high-pressure industrial environments.</p>
+                        </div>
+                        <!-- <a class="pillar-cta pillar-cta-light" href="about-us.html">
+                                        <span>Our Standards</span>
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M5 12h14M12 5l7 7-7 7" />
+                                        </svg>
+                                    </a> -->
                     </div>
                     <div class="pillar-image" data-reveal="slide-left">
                         <div class="pillar-img-wrap">
@@ -542,8 +553,8 @@
 
     <style>
         /* =============================================================
-                           PILLARS SECTION — Premium Stacked Scroll Design
-                           ============================================================= */
+                                                                   PILLARS SECTION — Premium Stacked Scroll Design
+                                                                   ============================================================= */
 
         .pillars-wrapper {
             overflow: hidden;
@@ -1056,8 +1067,9 @@
 
 
 
+    {{--
     <!-- Start Portfolio Area 
-                        ============================================= -->
+                                                                ============================================= -->
     <div class="portfolio-area half-bg-dark default-padding">
         <div class="container">
             <div class="row">
@@ -1144,11 +1156,13 @@
         </div>
     </div>
     <!-- End Portfolio Area -->
+    --}}
 
 
 
+    {{--
     <!-- Start Testimonials Area 
-                        ============================================= -->
+                                                                ============================================= -->
     <div class="testimonials-area default-padding">
         <div class="container">
             <div class="testimonial-items">
@@ -1206,9 +1220,11 @@
         </div>
     </div>
     <!-- End Testimonials Area -->
+    --}}
 
+    {{--
     <!-- Start Blog Area 
-                        ============================================= -->
+                                                                ============================================= -->
     <div class="blog-area default-padding-bottom bg-gray-responsive">
         <div class="container">
             <div class="row">
@@ -1224,28 +1240,30 @@
             <div class="blog-items">
                 <div class="row">
                     @if($latestPosts->isNotEmpty())
-                        @foreach($latestPosts as $post)
-                            <div class="col-lg-4 col-md-6 single-item">
-                                <div class="item">
-                                    <div class="thumb">
-                                        <a href="{{ $post->public_url }}"><img src="{{ $post->featured_image_url }}"
-                                                alt="{{ $post->image_alt ?: $post->title }}" loading="lazy"></a>
-                                    </div>
-                                    <div class="info">
-                                        <div class="meta">
-                                            <ul>
-                                                <li><a href="{{ $post->public_url }}"><span>{{ $post->author_name }}</span></a></li>
-                                                <li><i class="fas fa-calendar" aria-hidden="true"></i> {{ $post->published_at->format('d M, Y') }}</li>
-                                            </ul>
-                                        </div>
-                                        <div class="content">
-                                            <h4><a href="{{ $post->public_url }}">{{ $post->title }}</a></h4>
-                                            <a class="btn circle btn-theme angle effect btn-sm" href="{{ $post->public_url }}">Read more</a>
-                                        </div>
-                                    </div>
+                    @foreach($latestPosts as $post)
+                    <div class="col-lg-4 col-md-6 single-item">
+                        <div class="item">
+                            <div class="thumb">
+                                <a href="{{ $post->public_url }}"><img src="{{ $post->featured_image_url }}"
+                                        alt="{{ $post->image_alt ?: $post->title }}" loading="lazy"></a>
+                            </div>
+                            <div class="info">
+                                <div class="meta">
+                                    <ul>
+                                        <li><a href="{{ $post->public_url }}"><span>{{ $post->author_name }}</span></a></li>
+                                        <li><i class="fas fa-calendar" aria-hidden="true"></i> {{
+                                            $post->published_at->format('d M, Y') }}</li>
+                                    </ul>
+                                </div>
+                                <div class="content">
+                                    <h4><a href="{{ $post->public_url }}">{{ $post->title }}</a></h4>
+                                    <a class="btn circle btn-theme angle effect btn-sm" href="{{ $post->public_url }}">Read
+                                        more</a>
                                 </div>
                             </div>
-                        @endforeach
+                        </div>
+                    </div>
+                    @endforeach
                     @else
                     <!-- Single Item -->
                     <div class="col-lg-4 col-md-6 single-item">
@@ -1351,8 +1369,36 @@
         </div>
     </div>
     <!-- End Blog Area -->
+    --}}
 
     <!-- Start Footer 
-                        ============================================= -->
+                                                                ============================================= -->
 
 @endsection
+
+@push('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var toggleBtn = document.getElementById('chairmanToggleBtn');
+            var moreContent = document.getElementById('chairmanMoreContent');
+            var toggleText = document.getElementById('chairmanToggleText');
+            var toggleIcon = document.getElementById('chairmanToggleIcon');
+
+            if (toggleBtn && moreContent) {
+                toggleBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var isHidden = moreContent.style.display === 'none' || moreContent.style.display === '';
+                    if (isHidden) {
+                        moreContent.style.display = 'block';
+                        toggleText.textContent = 'Read Less';
+                        toggleIcon.className = 'fas fa-arrow-up';
+                    } else {
+                        moreContent.style.display = 'none';
+                        toggleText.textContent = 'Read More';
+                        toggleIcon.className = 'fas fa-arrow-right';
+                    }
+                });
+            }
+        });
+    </script>
+@endpush

@@ -10,16 +10,17 @@
             <h1>Good to see you, {{ auth()->user()->name }}.</h1>
             <p>Control the homepage hero rotation and the complete Eirecon Energy journal from one place.</p>
         </div>
-        <a class="admin-button" href="{{ route('admin.blogs.create') }}">Create blog post</a>
+        {{-- <a class="admin-button" href="{{ route('admin.blogs.create') }}">Create blog post</a> --}}
     </div>
 
     <section class="admin-stat-grid" aria-label="Content statistics">
         <article class="admin-stat"><span>Total banners</span><strong>{{ $bannerCount }}</strong></article>
         <article class="admin-stat"><span>Active banners</span><strong>{{ $activeBannerCount }}</strong></article>
-        <article class="admin-stat"><span>Total posts</span><strong>{{ $postCount }}</strong></article>
-        <article class="admin-stat"><span>Published posts</span><strong>{{ $publishedPostCount }}</strong></article>
+        {{-- <article class="admin-stat"><span>Total posts</span><strong>{{ $postCount }}</strong></article> --}}
+        {{-- <article class="admin-stat"><span>Published posts</span><strong>{{ $publishedPostCount }}</strong></article> --}}
     </section>
 
+    {{--
     <section class="admin-card">
         <div class="admin-card-head">
             <h2>Recent blog activity</h2>
@@ -43,4 +44,5 @@
             </table>
         </div>
     </section>
+    --}}
 @endsection

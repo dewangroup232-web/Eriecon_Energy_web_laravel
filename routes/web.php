@@ -12,9 +12,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/index', [HomeController::class, 'index']);
 
-Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
-Route::get('/blog-single', [BlogController::class, 'legacy']);
-Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
+// Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
+// Route::get('/blog-single', [BlogController::class, 'legacy']);
+// Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 
 Route::post('/contact', [ContactController::class, 'store'])
     ->middleware('throttle:6,1')
@@ -29,12 +29,12 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::get('/', DashboardController::class)->name('dashboard');
     Route::post('/logout', [AuthController::class, 'destroy'])->name('logout');
     Route::resource('banners', HeroBannerController::class)->except('show');
-    Route::resource('blogs', BlogPostController::class)->except('show')
-        ->parameters(['blogs' => 'blog']);
+    // Route::resource('blogs', BlogPostController::class)->except('show')
+    //     ->parameters(['blogs' => 'blog']);
 });
 
 $pages = [
-    '1', '404', 'about-us', 'contact', 'faq', 'projects',
+    '1', '404', 'about-us', 'sectors', 'contact', 'faq', /* 'projects', */
     'services-Design-Manufacturing', 'services-EPC-Projects',
     'services-Equipmen-Rental', 'services-Infrastructure-Projects',
     'services-Plant-Maintenance-Turnarounds', 'services-Power-Automation-Projects',

@@ -22,9 +22,9 @@
                 <a class="{{ request()->routeIs('admin.banners.*') ? 'is-active' : '' }}" href="{{ route('admin.banners.index') }}">
                     <span class="admin-nav-icon">02</span> Hero banners
                 </a>
-                <a class="{{ request()->routeIs('admin.blogs.*') ? 'is-active' : '' }}" href="{{ route('admin.blogs.index') }}">
+                {{-- <a class="{{ request()->routeIs('admin.blogs.*') ? 'is-active' : '' }}" href="{{ route('admin.blogs.index') }}">
                     <span class="admin-nav-icon">03</span> Blog posts
-                </a>
+                </a> --}}
             </nav>
             <div class="admin-sidebar-footer">Eirecon Energy CMS<br>Laravel {{ app()->version() }}</div>
         </aside>

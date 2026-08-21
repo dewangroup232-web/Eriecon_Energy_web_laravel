@@ -415,98 +415,153 @@
     "use strict";
 
     document.addEventListener("DOMContentLoaded", function () {
-        const nav = document.querySelector("nav.navbar.validnavs");
-        const menu = nav ? nav.querySelector("#navbar-menu") : null;
-        const openButton = nav ? nav.querySelector(".navbar-header .navbar-toggle") : null;
-        const closeButton = menu ? menu.querySelector(":scope > .navbar-toggle") : null;
-        const overlay = document.createElement("button");
-        const mobileQuery = window.matchMedia("(max-width: 1023px)");
-        let returnFocus = null;
+        var nav = document.querySelector("nav.navbar.validnavs");
+        var menu = nav ? nav.querySelector("#navbar-menu") : null;
+        var openButton = nav ? nav.querySelector(".open-mobile-menu") : null;
+        var closeButton = menu ? menu.querySelector(".close-mobile-menu") : null;
+        var overlay = document.querySelector(".overlay-screen");
+        var serviceToggle = menu ? menu.querySelector("li.dropdown > a.dropdown-toggle") : null;
+        var serviceItem = serviceToggle ? serviceToggle.parentNode : null;
+        var serviceSubmenu = serviceToggle ? serviceToggle.nextElementSibling : null;
+        var returnFocus = null;
+        var lockedScrollY = 0;
+        var bodyLocked = false;
 
         function isMobile() {
-            return mobileQuery.matches;
+            return window.innerWidth <= 1023;
         }
 
-        function setMenuState(open) {
-            if (!menu || !nav) return;
-            menu.classList.toggle("site-mobile-open", open);
-            menu.classList.toggle("show", open);
-            nav.classList.toggle("navbar-responsive", open);
-            document.body.classList.toggle("site-menu-open", open);
-            overlay.classList.toggle("is-visible", open);
+        function toggleClass(element, className, enabled) {
+            if (!element) return;
+            if (enabled) element.classList.add(className);
+            else element.classList.remove(className);
+        }
+
+        function findLink(target) {
+            while (target && target !== menu) {
+                if (target.nodeType === 1 && target.tagName.toLowerCase() === "a") return target;
+                target = target.parentNode;
+            }
+            return null;
+        }
+
+        function setSubmenuState(open) {
+            if (!serviceItem || !serviceToggle) return;
+            toggleClass(serviceItem, "site-submenu-open", open);
+            toggleClass(serviceItem, "on", open);
+            serviceToggle.setAttribute("aria-expanded", open ? "true" : "false");
+            if (serviceSubmenu) serviceSubmenu.style.display = "";
+        }
+
+        function lockPage() {
+            if (bodyLocked) return;
+            lockedScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+            document.body.classList.add("site-menu-open");
+            document.body.style.position = "fixed";
+            document.body.style.top = "-" + lockedScrollY + "px";
+            document.body.style.left = "0";
+            document.body.style.right = "0";
+            document.body.style.width = "100%";
+            bodyLocked = true;
+        }
+
+        function unlockPage() {
+            if (!bodyLocked) return;
+            document.body.classList.remove("site-menu-open");
+            document.body.style.position = "";
+            document.body.style.top = "";
+            document.body.style.left = "";
+            document.body.style.right = "";
+            document.body.style.width = "";
+            bodyLocked = false;
+            window.scrollTo(0, lockedScrollY);
+        }
+
+        function setMenuState(open, restoreFocus) {
+            if (!menu || !nav || !overlay) return;
+            toggleClass(menu, "site-mobile-open", open);
+            toggleClass(menu, "show", open);
+            toggleClass(menu, "in", open);
+            toggleClass(nav, "navbar-responsive", open);
+            toggleClass(overlay, "opened", open);
+            toggleClass(overlay, "show", open);
             overlay.setAttribute("aria-hidden", open ? "false" : "true");
-            if (openButton) openButton.setAttribute("aria-expanded", open ? "true" : "false");
+            overlay.setAttribute("tabindex", open ? "0" : "-1");
+            openButton.setAttribute("aria-expanded", open ? "true" : "false");
+
             if (open) {
                 returnFocus = document.activeElement;
+                lockPage();
                 window.setTimeout(function () {
-                    const firstLink = menu.querySelector("a[href]:not([href='#'])");
+                    var firstLink = menu.querySelector("a[href]");
                     if (firstLink) firstLink.focus();
                 }, 220);
-            } else if (returnFocus && typeof returnFocus.focus === "function") {
-                returnFocus.focus();
+            } else {
+                setSubmenuState(false);
+                unlockPage();
+                if (restoreFocus !== false && returnFocus && typeof returnFocus.focus === "function") {
+                    returnFocus.focus();
+                }
                 returnFocus = null;
             }
         }
 
-        if (nav && menu && openButton) {
-            overlay.type = "button";
-            overlay.className = "site-nav-overlay";
-            overlay.setAttribute("aria-label", "Close navigation menu");
-            overlay.setAttribute("aria-hidden", "true");
-            document.body.appendChild(overlay);
+        if (nav && menu && openButton && overlay) {
+            openButton.addEventListener("click", function (event) {
+                if (!isMobile()) return;
+                event.preventDefault();
+                event.stopImmediatePropagation();
+                setMenuState(true);
+            }, true);
 
-            openButton.setAttribute("aria-controls", "navbar-menu");
-            openButton.setAttribute("aria-expanded", "false");
-            openButton.setAttribute("aria-label", "Open navigation menu");
-            if (closeButton) closeButton.setAttribute("aria-label", "Close navigation menu");
-
-            const serviceToggle = menu.querySelector("li.dropdown > a[href='services.html']");
-            const serviceSubmenu = serviceToggle ? serviceToggle.nextElementSibling : null;
-            if (serviceSubmenu && !serviceSubmenu.querySelector(".site-all-services")) {
-                const allServicesItem = document.createElement("li");
-                const allServicesLink = document.createElement("a");
-                allServicesItem.className = "site-all-services";
-                allServicesLink.href = "services.html";
-                allServicesLink.textContent = "All Services";
-                allServicesItem.appendChild(allServicesLink);
-                serviceSubmenu.insertBefore(allServicesItem, serviceSubmenu.firstChild);
+            if (closeButton) {
+                closeButton.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    event.stopImmediatePropagation();
+                    setMenuState(false);
+                }, true);
             }
 
-            document.addEventListener("click", function (event) {
-                if (!isMobile()) return;
+            overlay.addEventListener("click", function (event) {
+                event.preventDefault();
+                event.stopImmediatePropagation();
+                setMenuState(false);
+            }, true);
 
-                const dropdownLink = event.target.closest("#navbar-menu li.dropdown > a.dropdown-toggle");
-                if (dropdownLink) {
-                    const item = dropdownLink.parentElement;
-                    const open = !item.classList.contains("site-submenu-open");
-                    item.classList.toggle("site-submenu-open", open);
-                    item.classList.toggle("on", open);
-                    dropdownLink.setAttribute("aria-expanded", open ? "true" : "false");
+            menu.addEventListener("click", function (event) {
+                if (!isMobile()) return;
+                var link = findLink(event.target);
+                if (!link) return;
+
+                if (link === serviceToggle) {
+                    event.preventDefault();
+                    event.stopImmediatePropagation();
+                    setSubmenuState(!serviceItem.classList.contains("site-submenu-open"));
                     return;
                 }
 
-                const menuLink = event.target.closest("#navbar-menu a[href]");
-                if (menuLink && menuLink.getAttribute("href") !== "#") setMenuState(false);
-            }, false);
-
-            overlay.addEventListener("click", function () {
-                setMenuState(false);
-            });
+                if (link.getAttribute("href") && link.getAttribute("href") !== "#") {
+                    setMenuState(false, false);
+                }
+            }, true);
 
             document.addEventListener("keydown", function (event) {
-                if (event.key === "Escape" && menu.classList.contains("site-mobile-open")) {
+                if (!menu.classList.contains("site-mobile-open")) return;
+                if (event.key === "Escape" || event.keyCode === 27) {
+                    event.preventDefault();
                     setMenuState(false);
                 }
             });
 
             window.addEventListener("resize", function () {
-                if (!isMobile()) {
-                    setMenuState(false);
-                    menu.querySelectorAll(".site-submenu-open").forEach(function (item) {
-                        item.classList.remove("site-submenu-open", "on");
-                    });
+                if (!isMobile() && menu.classList.contains("site-mobile-open")) {
+                    setMenuState(false, false);
                 }
-            }, { passive: true });
+            });
+
+            window.addEventListener("pageshow", function () {
+                if (menu.classList.contains("site-mobile-open")) setMenuState(false, false);
+            });
         }
 
         const projectsSection = document.querySelector(".portfolio-area");

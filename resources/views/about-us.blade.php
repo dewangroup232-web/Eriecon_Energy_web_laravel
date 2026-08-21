@@ -3,11 +3,11 @@
 @push('styles')
     <style>
         /* .about-certificates {
-                position: relative;
-                overflow: hidden;
-                padding: clamp(50px, 6vw, 80px) 0 20px 0;
-                background: #071525;
-            } */
+                                position: relative;
+                                overflow: hidden;
+                                padding: clamp(50px, 6vw, 80px) 0 20px 0;
+                                background: #071525;
+                            } */
 
         .about-certificates-grid {
             margin-bottom: 0 !important;
@@ -34,33 +34,39 @@
     <!-- End Breadcrumb -->
 
     <!-- Start Our About
-                ============================================= -->
+                                ============================================= -->
     <div class="about-area overflow-hidden shape-box default-padding-top">
         <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-lg-6 info-content">
-                    <h2>
-                        <strong>25</strong> <span>Years Work experience in construction</span>
-                    </h2>
-                    <p>
-                        Committed to Saudi Vision 2030, EIRECON drives industrial localization
-                        and economic growth through the highest QHSE standards and advanced automation. </p>
-                    <blockquote>
-                        <p>
-                            To become the premier industrial partner in the region, recognized for setting the
-                            benchmark in engineering excellence, safety, and reliability. </p>
-                        <span>CEO OF <strong>Eirecon Energy</strong></span>
-                    </blockquote>
-                    <a href="#" class="btn btn-dark border btn-md" data-animation="animated slideInUp">Read More</a>
+                    <!-- <h2 style="font-size: clamp(32px, 4vw, 42px); font-weight: 800; margin-bottom: 8px; color: #0D1B2E;">About Us</h2> -->
+                    <h4
+                        style="color: #1B4FA8; font-style: italic; font-weight: 600; font-size: clamp(26px, 2.2vw, 26px); margin-bottom: 22px;">
+                        “Energy That Drives the World”</h4>
+                    <p style="font-size: 15.5px; line-height: 1.75; color: #444444; margin-bottom: 16px;">
+                        EIRECON ENERGY COMPANY is a leader in industrial services, providing integrated EPC solutions across
+                        the civil, mechanical, and electrical fields. We specialize in the Oil &amp; Gas and Petrochemical
+                        sectors, delivering high-pressure piping, specialized steel manufacturing, and mechanical
+                        maintenance. From upstream flowlines to downstream refinery turnarounds, we ensure the reliability
+                        and integrity of critical energy infrastructure.
+                    </p>
+                    <p style="font-size: 15.5px; line-height: 1.75; color: #444444; margin-bottom: 16px;">
+                        Our operations offer a “single-window” experience, combining high-tier equipment rental with expert
+                        rigging, scaffolding, and procurement. This streamlined approach minimizes project risk and
+                        maximizes efficiency, allowing us to support complex industrial projects with technical precision
+                        and a robust supply chain.
+                    </p>
+                    <p style="font-size: 15.5px; line-height: 1.75; color: #444444; margin-bottom: 0;">
+                        Committed to Saudi Vision 2030, EIRECON drives industrial localization and economic growth through
+                        the highest QHSE standards and advanced automation. By investing in local talent and sustainable
+                        engineering, we actively contribute to the Kingdom's transformation into a global industrial
+                        powerhouse.
+                    </p>
                 </div>
                 <div class="col-lg-6 thumb-box">
                     <div class="thumb">
-                        <img src="assets/img/ab2222.jpg" alt="Thumb">
-                        <div class="video bg-cover" style="background-image: url(assets/img/about/3.jpg);">
-                            <a href="https://www.youtube.com" class="popup-youtube video-play-button">
-                                <i class="ti-control-play"></i>
-                            </a>
-                        </div>
+                        <img src="assets/img/ab2222.jpg" alt="Eirecon Energy About Us"
+                            style="border-radius: 12px; width: 100%; box-shadow: 0 15px 35px rgba(0,0,0,0.1);">
                     </div>
                 </div>
             </div>
@@ -74,48 +80,21 @@
     <!-- End Our About -->
 
     <!-- Start Work With Us 
-                ============================================= -->
-    <div class="work-with-us-area bg-gray default-padding">
-        <div class="container">
-            <div class="content-box">
-                <div class="row align-center">
-                    <div class="col-lg-5">
-                        <div class="heading-info">
-                            <h5>Work with Us</h5>
-                            <h2> Eirecon Energy - Energy That Drives the World</h2>
-                            <a href="#" class="btn angle btn-theme effect btn-md">Get a Quote</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-7 fun-facts-items text-center">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4">
-                                <div class="fun-fact">
-                                    <h4>Ongoing Projects</h4>
-                                    <div class="timer" data-to="28" data-speed="5000">28</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="fun-fact">
-                                    <h4>Delivered Project</h4>
-                                    <div class="timer" data-to="56" data-speed="5000">56</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4">
-                                <div class="fun-fact">
-                                    <h4>Upcomming Project</h4>
-                                    <div class="timer" data-to="20" data-speed="5000">20</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                ============================================= -->
+    <!-- <div class="work-with-us-area home-work-with-us bg-gray">
+            <div class="container">
+                <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+                    <h2 style="margin: 0; font-size: clamp(22px, 3vw, 36px); font-weight: 800; color: #0D1B2E;">Aligned with
+                        Saudi Vision 2030</h2>
+                    <a href="{{ url('/contact') }}" class="btn angle btn-theme effect btn-md"
+                        style="margin: 0; white-space: nowrap;">Get a Quote</a>
                 </div>
             </div>
-        </div>
-    </div>
+        </div> -->
     <!-- End Work With Us -->
 
     <!-- Start Certificates Area
-                ============================================= -->
+                                ============================================= -->
     <section class="about-certificates" aria-labelledby="certificates-title">
         <div class="container">
             <div class="about-certificates-heading">
@@ -148,29 +127,29 @@
 
 
     <!-- Start Partners Area
-                ============================================= -->
-    @php
-        $partners = [
-            ['name' => 'Eirecon Energy Partner 01', 'logo' => 'assets/img/clients/1.png'],
-            ['name' => 'Eirecon Energy Partner 02', 'logo' => 'assets/img/clients/2.png'],
-            ['name' => 'Eirecon Energy Partner 03', 'logo' => 'assets/img/clients/3.png'],
-            ['name' => 'Eirecon Energy Partner 04', 'logo' => 'assets/img/clients/4.png'],
-            ['name' => 'Eirecon Energy Partner 05', 'logo' => 'assets/img/clients/5.png'],
+                                ============================================= -->
+    <!-- @php
+            $partners = [
+                ['name' => 'Eirecon Energy Partner 01', 'logo' => 'assets/img/clients/1.png'],
+                ['name' => 'Eirecon Energy Partner 02', 'logo' => 'assets/img/clients/2.png'],
+                ['name' => 'Eirecon Energy Partner 03', 'logo' => 'assets/img/clients/3.png'],
+                ['name' => 'Eirecon Energy Partner 04', 'logo' => 'assets/img/clients/4.png'],
+                ['name' => 'Eirecon Energy Partner 05', 'logo' => 'assets/img/clients/5.png'],
 
-            // Duplicate placeholders ? replace these logo paths with the final partner assets later.
-            ['name' => 'Eirecon Energy Partner 06', 'logo' => 'assets/img/clients/1.png'],
-            ['name' => 'Eirecon Energy Partner 07', 'logo' => 'assets/img/clients/2.png'],
-            ['name' => 'Eirecon Energy Partner 08', 'logo' => 'assets/img/clients/3.png'],
-            ['name' => 'Eirecon Energy Partner 09', 'logo' => 'assets/img/clients/4.png'],
-        ];
-    @endphp
+                // Duplicate placeholders ? replace these logo paths with the final partner assets later.
+                ['name' => 'Eirecon Energy Partner 06', 'logo' => 'assets/img/clients/1.png'],
+                ['name' => 'Eirecon Energy Partner 07', 'logo' => 'assets/img/clients/2.png'],
+                ['name' => 'Eirecon Energy Partner 08', 'logo' => 'assets/img/clients/3.png'],
+                ['name' => 'Eirecon Energy Partner 09', 'logo' => 'assets/img/clients/4.png'],
+            ];
+        @endphp
 
-    <x-partner-section :partners="$partners" />
+        <x-partner-section :partners="$partners" /> -->
     <!-- End Partners Area -->
 
 
 
     <!-- Start Footer 
-                ============================================= -->
+                                ============================================= -->
 
 @endsection

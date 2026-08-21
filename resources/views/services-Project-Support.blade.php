@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @push('styles')
-<link rel="stylesheet" href="assets/css/service-stack.css">
-<style>
+    <link rel="stylesheet" href="assets/css/service-stack.css">
+    <style>
         .service-details-row {
             background: #ffffff;
             border: 1px solid #eceff4;
@@ -32,12 +32,12 @@
         }
 
         /*
-         * IMAGE SPEC — service-image-container
-         * Source image size : 800 × 600 px  (4 : 3 ratio)
-         * Desktop: height grows to match adjacent content column (no crop).
-         *          min-height: 400px prevents collapse when content is short.
-         * Mobile:  Columns stack → image reverts to natural 4:3 crop.
-         */
+                 * IMAGE SPEC — service-image-container
+                 * Source image size : 800 × 600 px  (4 : 3 ratio)
+                 * Desktop: height grows to match adjacent content column (no crop).
+                 *          min-height: 400px prevents collapse when content is short.
+                 * Mobile:  Columns stack → image reverts to natural 4:3 crop.
+                 */
         .service-image-container {
             min-height: 400px;
             height: 100%;
@@ -160,8 +160,8 @@
 @endpush
 
 @section('content')
-<!-- Start Service Hero
-    ============================================= -->
+    <!-- Start Service Hero
+            ============================================= -->
     <div class="breadcrumb-area gradient-bg bg-cover shadow dark text-light service-editorial-hero service-hero-ready"
         style="background-image: url(assets/img/services/10.png);">
         <div class="container">
@@ -169,15 +169,15 @@
                 <div class="service-hero-content">
                     <div class="service-hero-eyebrow">People / Planning / Coordination</div>
                     <h1 class="service-hero-title">
-                        <span>Integrated Project</span>
-                        <strong>Support Services</strong>
+                        <span>Project Support</span>
+                        <strong>Services</strong>
                     </h1>
-                    <p class="service-hero-description">Flexible engineering, manpower, QA/QC, HSE, logistics, and administrative support built to strengthen project teams at every delivery stage.</p>
+                    <!-- <p class="service-hero-description">Flexible engineering, manpower, QA/QC, HSE, logistics, and administrative support built to strengthen project teams at every delivery stage.</p> -->
                     <div class="service-hero-actions">
-                        <a class="service-hero-button" href="#service-capabilities">
-                            <span>Explore Capabilities</span>
-                            <i class="fas fa-arrow-down" aria-hidden="true"></i>
-                        </a>
+                        <!-- <a class="service-hero-button" href="#service-capabilities">
+                                    <span>Explore Capabilities</span>
+                                    <i class="fas fa-arrow-down" aria-hidden="true"></i>
+                                </a> -->
                         <div class="service-hero-tags" aria-label="Service capabilities">
                             <span class="service-hero-tag">Manpower</span>
                             <span class="service-hero-tag">QA/QC</span>
@@ -191,7 +191,7 @@
     <!-- End Service Hero -->
 
     <!-- Start Services Details 
-    ============================================= -->
+            ============================================= -->
     <div class="services-details-area default-padding">
         <div class="container">
 
@@ -199,8 +199,7 @@
             <div class="row align-items-stretch service-details-row">
                 <div class="col-lg-6">
                     <div class="service-image-container">
-                        <img src="assets/img/services/11.png" alt="EPC Projects - Civil & Mechanical"
-                            class="img-fluid">
+                        <img src="assets/img/services/11.png" alt="EPC Projects - Civil & Mechanical" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -258,8 +257,7 @@
             <div class="row align-items-stretch service-details-row">
                 <div class="col-lg-6">
                     <div class="service-image-container">
-                        <img src="assets/img/services/13.png" alt="EPC Projects - Civil & Mechanical"
-                            class="img-fluid">
+                        <img src="assets/img/services/13.png" alt="EPC Projects - Civil & Mechanical" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -312,8 +310,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="service-image-container">
-                        <img src="assets/img/services/14.png" alt="EPC Projects - Civil & Mechanical"
-                            class="img-fluid">
+                        <img src="assets/img/services/14.png" alt="EPC Projects - Civil & Mechanical" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -321,8 +318,7 @@
             <div class="row align-items-stretch service-details-row">
                 <div class="col-lg-6">
                     <div class="service-image-container">
-                        <img src="assets/img/services/15.png" alt="EPC Projects - Civil & Mechanical"
-                            class="img-fluid">
+                        <img src="assets/img/services/15.png" alt="EPC Projects - Civil & Mechanical" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -790,9 +786,9 @@
     <!-- End Services Details -->
 
     <!-- Start Footer 
-    ============================================= -->
+            ============================================= -->
 @endsection
 
 @push('scripts')
-<script src="assets/js/service-stack.js"></script>
+    <script src="assets/js/service-stack.js"></script>
 @endpush
