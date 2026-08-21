@@ -617,23 +617,35 @@
 
     });
 
-    $("ul.nav>li>a").click(function(){
-        $(".navbar-collapse.collapse").removeClass("show");
+    // Close mobile side menu when clicking non-dropdown page links
+    $(document).on('click', 'ul.nav li a:not(.dropdown-toggle)', function() {
+        $(".navbar-collapse").removeClass("show").removeClass("in");
         $(".overlay-screen").removeClass("opened");
+        $(".navbar").removeClass("navbar-responsive");
     });
 
+    // Close mobile side menu when clicking overlay screen or close toggle
+    $(document).on('click', '.overlay-screen, .close-mobile-menu', function() {
+        $(".navbar-collapse").removeClass("show").removeClass("in");
+        $(".overlay-screen").removeClass("opened");
+        $(".navbar").removeClass("navbar-responsive");
+    });
 
 	/* ==================================================
-	# Smooth Scroll
+	# Smooth Scroll (Only for hash links)
 	===============================================*/
-
-	$('ul.nav>li>a').on('click', function(event) {
-		var $anchor = $(this);
-		var headerH = '90';
-		$('html, body').stop().animate({
-			scrollTop: $($anchor.attr('href')).offset().top - headerH + "px"
-		}, 50, 'easeInOutExpo');
-		event.preventDefault();
+	$(document).on('click', 'a.smooth-menu, a[href^="#"]:not([href="#"])', function(event) {
+		var href = $(this).attr('href');
+		if (href && href.indexOf('#') === 0 && href.length > 1) {
+			var $target = $(href);
+			if ($target.length) {
+				var headerH = 90;
+				$('html, body').stop().animate({
+					scrollTop: $target.offset().top - headerH + "px"
+				}, 50, 'easeInOutExpo');
+				event.preventDefault();
+			}
+		}
 	});
 
 }(jQuery));

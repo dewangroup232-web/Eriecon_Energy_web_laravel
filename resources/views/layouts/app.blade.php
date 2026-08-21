@@ -421,6 +421,9 @@
     <div class="se-pre-con"></div>
     <!-- Preloader Ends -->
 
+    <!-- Overlay Screen for Mobile Navigation -->
+    <div class="overlay-screen"></div>
+
     <!-- Header 
     ============================================= -->
     <header>
@@ -445,10 +448,10 @@
 
                 <!-- Start Header Navigation -->
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu" aria-label="Toggle navigation">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="{{ url('/') }}">
                         <img src="assets/img/logo-light.png" class="logo logo-display" alt="Logo">
                         <img src="assets/img/logo_aa.png" class="logo logo-scrolled" alt="Eirecon Energy Company">
                     </a>
@@ -457,56 +460,48 @@
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
-
-                    <img src="assets/img/logo_aa.png" alt="Eirecon Energy Company">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
+                    <div class="d-flex justify-content-between align-items-center mb-3 d-lg-none">
+                        <img src="assets/img/logo_aa.png" alt="Eirecon Energy Company" style="max-height: 42px;">
+                        <button type="button" class="navbar-toggle close-mobile-menu" aria-label="Close navigation">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
 
                     <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="">
-                            <a href="index.html"
-                                class="dropdown-toggle {{ request()->is('/') || request()->is('index*') ? 'active' : '' }}"
-                                data-toggle="">Home</a>
-
-                        </li>
-                        <li class="">
-                            <a href="about-us.html" class="dropdown-toggle smooth-menu" data-toggle="">About Us</a>
-
-                        </li>
-                        <li class="">
-                            <a href="projects.html"
-                                class="dropdown-toggle {{ request()->is('projects*') ? 'active' : '' }}"
-                                data-toggle="">Projects</a>
-
-                        </li>
-                        <li class="dropdown">
-                            <a href="services.html" class="dropdown-toggle" data-toggle="dropdown">Services</a>
-                            <ul class="dropdown-menu dropdown-services bg-dark-transparent">
-                                <li><a href="services-EPC-Projects.html">EPC Projects</a></li>
-                                <li><a href="services-Plant-Maintenance-Turnarounds.html">Plant Maintenance &
-                                        Turnarounds</a></li>
-                                <li><a href="services-Design-Manufacturing.html">Design & Manufacturing of Steel
-                                        Structure, Piping & Process Equipment</a></li>
-                                <li><a href="services-Power-Automation-Projects.html">Power & Automation Projects &
-                                        Services</a></li>
-                                <li><a href="services-Rigging-Lifting-Projects.html">Rigging & Lifting Projects &
-                                        Services</a></li>
-                                <li><a href="services-Infrastructure-Projects.html">Infrastructure</a></li>
-                                <li><a href="services-Scaffolding.html">Scaffolding</a></li>
-                                <li><a href="services-Equipmen-Rental.html">Equipment Rental & Services</a></li>
-                                <li><a href="services-Project-Support.html">Project Support Services</a></li>
-                                <li><a href="services-Procurement.html">Procurement Services</a></li>
-                                <li><a href="services-major-equipment-list.html">Major Equipment List</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="">
-                            <a href="blog.html" class="dropdown-toggle" data-toggle="">Blog</a>
-
+                        <li>
+                            <a href="{{ url('/index.html') }}"
+                                class="{{ request()->is('/') || request()->is('index*') ? 'active' : '' }}">Home</a>
                         </li>
                         <li>
-                            <a href="contact.html">Contact Us</a>
+                            <a href="{{ url('/about-us.html') }}"
+                                class="{{ request()->is('about-us*') ? 'active' : '' }}">About Us</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/projects.html') }}"
+                                class="{{ request()->is('projects*') ? 'active' : '' }}">Projects</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="{{ url('/services.html') }}" class="dropdown-toggle {{ request()->is('services*') ? 'active' : '' }}" data-toggle="dropdown">Services</a>
+                            <ul class="dropdown-menu dropdown-services bg-dark-transparent">
+                                <li><a href="{{ url('/services.html') }}">All Services</a></li>
+                                <li><a href="{{ url('/services-EPC-Projects.html') }}">EPC Projects</a></li>
+                                <li><a href="{{ url('/services-Plant-Maintenance-Turnarounds.html') }}">Plant Maintenance & Turnarounds</a></li>
+                                <li><a href="{{ url('/services-Design-Manufacturing.html') }}">Design & Manufacturing of Steel Structure, Piping & Process Equipment</a></li>
+                                <li><a href="{{ url('/services-Power-Automation-Projects.html') }}">Power & Automation Projects & Services</a></li>
+                                <li><a href="{{ url('/services-Rigging-Lifting-Projects.html') }}">Rigging & Lifting Projects & Services</a></li>
+                                <li><a href="{{ url('/services-Infrastructure-Projects.html') }}">Infrastructure</a></li>
+                                <li><a href="{{ url('/services-Scaffolding.html') }}">Scaffolding</a></li>
+                                <li><a href="{{ url('/services-Equipmen-Rental.html') }}">Equipment Rental & Services</a></li>
+                                <li><a href="{{ url('/services-Project-Support.html') }}">Project Support Services</a></li>
+                                <li><a href="{{ url('/services-Procurement.html') }}">Procurement Services</a></li>
+                                <li><a href="{{ url('/services-major-equipment-list.html') }}">Major Equipment List</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{{ url('/blog.html') }}" class="{{ request()->is('blog*') ? 'active' : '' }}">Blog</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/contact.html') }}" class="{{ request()->is('contact*') ? 'active' : '' }}">Contact Us</a>
                         </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->

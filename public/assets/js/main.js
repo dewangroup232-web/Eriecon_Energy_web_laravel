@@ -472,18 +472,8 @@
             document.addEventListener("click", function (event) {
                 if (!isMobile()) return;
 
-                const toggle = event.target.closest(".navbar-toggle");
-                if (toggle && nav.contains(toggle)) {
-                    event.preventDefault();
-                    event.stopImmediatePropagation();
-                    setMenuState(toggle === openButton);
-                    return;
-                }
-
                 const dropdownLink = event.target.closest("#navbar-menu li.dropdown > a.dropdown-toggle");
                 if (dropdownLink) {
-                    event.preventDefault();
-                    event.stopImmediatePropagation();
                     const item = dropdownLink.parentElement;
                     const open = !item.classList.contains("site-submenu-open");
                     item.classList.toggle("site-submenu-open", open);
@@ -494,7 +484,7 @@
 
                 const menuLink = event.target.closest("#navbar-menu a[href]");
                 if (menuLink && menuLink.getAttribute("href") !== "#") setMenuState(false);
-            }, true);
+            }, false);
 
             overlay.addEventListener("click", function () {
                 setMenuState(false);
