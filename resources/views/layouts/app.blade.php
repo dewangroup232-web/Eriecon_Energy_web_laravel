@@ -535,6 +535,90 @@
                 display: inline-block !important;
             }
         }
+
+        /* Blog Section Formatting Fix - Single Line Meta & Tight Card Layout */
+        .blog-area .blog-items .item {
+            display: flex !important;
+            flex-direction: column !important;
+            height: 100% !important;
+            border-radius: 8px !important;
+            overflow: hidden !important;
+            background: #ffffff !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+        }
+
+        .blog-area .blog-items .item .info {
+            display: flex !important;
+            flex-direction: column !important;
+            flex: 1 1 auto !important;
+            padding: 22px 20px 24px !important;
+        }
+
+        .blog-area .blog-items .item .info .meta {
+            margin-bottom: 12px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            width: 100% !important;
+        }
+
+        .blog-area .blog-items .item .info .meta ul {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            list-style: none !important;
+            flex-wrap: nowrap !important;
+        }
+
+        .blog-area .blog-items .item .info .meta ul li {
+            font-size: 12px !important;
+            white-space: nowrap !important;
+            color: #666666 !important;
+            font-weight: 500 !important;
+            margin-right: 0 !important;
+            padding-right: 0 !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 4px !important;
+        }
+
+        .blog-area .blog-items .item .info .meta ul li::after {
+            display: none !important;
+        }
+
+        .blog-area .blog-items .item .info .meta ul li a span,
+        .blog-area .blog-items .item .info .meta ul li span {
+            font-size: 12px !important;
+            white-space: nowrap !important;
+            color: #555555 !important;
+            font-weight: 600 !important;
+        }
+
+        .blog-area .blog-items .item .info .content {
+            display: flex !important;
+            flex-direction: column !important;
+            flex: 1 1 auto !important;
+            justify-content: space-between !important;
+        }
+
+        .blog-area .blog-items .item .info .content h4 {
+            font-size: 17px !important;
+            line-height: 1.45 !important;
+            font-weight: 700 !important;
+            margin-bottom: 15px !important;
+        }
+
+        .blog-area .blog-items .item .info .content h4 a {
+            color: #111111 !important;
+        }
+
+        .blog-area .blog-items .item .info .content a.btn {
+            margin-top: auto !important;
+            align-self: flex-start !important;
+        }
     </style>
 
     @stack('styles')

@@ -1234,7 +1234,7 @@
                                     <div class="info">
                                         <div class="meta">
                                             <ul>
-                                                <li><a href="{{ $post->public_url }}"><span>{{ $post->author_name }}</span></a></li>
+                                                <li><a href="{{ $post->public_url }}"><span>{{ $post->author_name == 'Eirecon Engineering Team' ? 'Eirecon Team' : \Illuminate\Support\Str::limit($post->author_name, 16) }}</span></a></li>
                                                 <li><i class="fas fa-calendar" aria-hidden="true"></i> {{ $post->published_at->format('d M, Y') }}</li>
                                             </ul>
                                         </div>

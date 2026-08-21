@@ -349,11 +349,14 @@
             # Testimonials Carousel
          ===============================================*/
         $('.testimonials-carousel').owlCarousel({
-            loop: false,
+            loop: true,
             nav: true,
             dots: false,
             items: 1,
             autoplay: true,
+            autoplayTimeout: 4000,
+            autoplayHoverPause: true,
+            smartSpeed: 800,
             navText: [
                 "<i class='fa fa-angle-left'></i>",
                 "<i class='fa fa-angle-right'></i>"
