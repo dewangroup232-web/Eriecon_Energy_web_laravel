@@ -305,7 +305,7 @@
                         
                         <div class="info-row">
                             <i class="fas fa-map-marker-alt"></i>
-                            <p>Athlone<br>Co. Westmeath<br>Ireland</p>
+                            <p>Athlone, Co. Westmeath<br>Ireland</p>
                         </div>
                         
                         <div class="info-row">
@@ -330,7 +330,6 @@
         <div class="container">
             <div class="contact-items">
                 <div class="row align-center justify-content-center">
-                    
                     <div class="col-lg-8 left-item">
                         <div class="content">
                             <h2>Let's Talk About Your Idea</h2>

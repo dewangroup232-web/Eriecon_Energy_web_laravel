@@ -619,6 +619,21 @@
             margin-top: auto !important;
             align-self: flex-start !important;
         }
+
+        /* Services Page - Optimal Card Padding & Line Flow */
+        .services-area.icon-only .services-box .item {
+            padding: 28px 12px !important;
+        }
+
+        .services-area.icon-only .services-box .item h4 {
+            padding: 0 4px !important;
+        }
+
+        .services-area.icon-only .services-box .item h4 a {
+            font-size: 15.5px !important;
+            line-height: 1.4 !important;
+            word-wrap: break-word !important;
+        }
     </style>
 
     @stack('styles')
