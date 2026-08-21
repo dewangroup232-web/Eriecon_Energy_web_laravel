@@ -624,11 +624,13 @@
         $(".navbar").addClass("navbar-responsive");
     });
 
-    // Close mobile side menu when clicking non-dropdown page links
+    // Close mobile side menu when clicking non-dropdown page links (Mobile Viewport Only)
     $(document).on('click', 'ul.nav li a:not(.dropdown-toggle)', function() {
-        $(".navbar-collapse").removeClass("show").removeClass("in");
-        $(".overlay-screen").removeClass("opened");
-        $(".navbar").removeClass("navbar-responsive");
+        if ($(window).width() < 1024) {
+            $(".navbar-collapse").removeClass("show").removeClass("in");
+            $(".overlay-screen").removeClass("opened");
+            $(".navbar").removeClass("navbar-responsive");
+        }
     });
 
     // Close mobile side menu when clicking overlay screen or close toggle

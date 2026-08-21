@@ -608,7 +608,7 @@
                                 class="{{ request()->is('projects*') ? 'active' : '' }}">Projects</a>
                         </li>
                         <li class="dropdown">
-                            <a href="{{ url('/services.html') }}" class="dropdown-toggle {{ request()->is('services*') ? 'active' : '' }}" data-toggle="dropdown">Services</a>
+                            <a href="{{ url('/services.html') }}" class="dropdown-toggle {{ request()->is('services*') ? 'active' : '' }}">Services</a>
                             <ul class="dropdown-menu dropdown-services bg-dark-transparent">
                                 <li><a href="{{ url('/services.html') }}">All Services</a></li>
                                 <li><a href="{{ url('/services-EPC-Projects.html') }}">EPC Projects</a></li>

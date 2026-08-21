@@ -511,12 +511,6 @@
         if (projectsSection && !projectsSection.id) projectsSection.id = "projects";
         if (newsSection && !newsSection.id) newsSection.id = "latest-news";
 
-        document.querySelectorAll("header .navbar-nav > li > a").forEach(function (link) {
-            const label = link.textContent.trim().toLowerCase();
-            if (label === "projects") link.href = "projects.html";
-            if (label === "blog") link.href = "blog.html";
-        });
-
         const footerRoutes = {
             "oil & gas": "services-EPC-Projects.html",
             "chemical research": "services-Procurement.html",
