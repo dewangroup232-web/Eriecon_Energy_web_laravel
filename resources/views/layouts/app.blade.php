@@ -472,6 +472,11 @@
 
         /* Mobile Navigation Side Drawer - Fail-safe Chrome & iOS Fix */
         @media (max-width: 1023px) {
+            header,
+            nav.navbar.validnavs {
+                z-index: 99995 !important;
+            }
+
             nav.navbar.validnavs.mobile-sidenav .navbar-collapse {
                 position: fixed !important;
                 left: -100% !important;
@@ -483,12 +488,17 @@
                 background: #ffffff !important;
                 overflow-y: auto !important;
                 -webkit-overflow-scrolling: touch !important;
-                z-index: 99999 !important;
+                z-index: 100000 !important;
                 transition: left 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
                 display: block !important;
                 visibility: visible !important;
                 padding: 25px 20px !important;
                 box-shadow: 4px 0 25px rgba(0, 0, 0, 0.15) !important;
+                pointer-events: auto !important;
+            }
+
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse * {
+                pointer-events: auto !important;
             }
 
             nav.navbar.validnavs.mobile-sidenav .navbar-collapse.show,
@@ -985,7 +995,6 @@
             document.addEventListener("DOMContentLoaded", function () {
                 function openMobileMenu(e) {
                     if (e) {
-                        e.preventDefault();
                         e.stopPropagation();
                     }
                     var navMenu = document.getElementById("navbar-menu");
@@ -1009,7 +1018,6 @@
 
                 function closeMobileMenu(e) {
                     if (e) {
-                        e.preventDefault();
                         e.stopPropagation();
                     }
                     var navMenu = document.getElementById("navbar-menu");
@@ -1032,12 +1040,10 @@
 
                 document.querySelectorAll(".navbar-header .navbar-toggle, .open-mobile-menu").forEach(function (btn) {
                     btn.addEventListener("click", openMobileMenu);
-                    btn.addEventListener("touchstart", openMobileMenu, { passive: false });
                 });
 
                 document.querySelectorAll(".close-mobile-menu, .overlay-screen").forEach(function (btn) {
                     btn.addEventListener("click", closeMobileMenu);
-                    btn.addEventListener("touchstart", closeMobileMenu, { passive: false });
                 });
 
                 document.querySelectorAll("#navbar-menu ul.nav li a:not(.dropdown-toggle)").forEach(function (link) {
