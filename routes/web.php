@@ -11,12 +11,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/index', [HomeController::class, 'index']);
-Route::get('/index.html', [HomeController::class, 'index']);
 
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
-Route::get('/blog.html', [BlogController::class, 'index']);
 Route::get('/blog-single', [BlogController::class, 'legacy']);
-Route::get('/blog-single.html', [BlogController::class, 'legacy']);
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 
 Route::post('/contact', [ContactController::class, 'store'])
@@ -48,5 +45,12 @@ $pages = [
 
 foreach ($pages as $page) {
     Route::view('/'.$page, $page);
-    Route::view('/'.$page.'.html', $page);
 }
+
+// 301 Permanent Redirect for any legacy .html URLs to clean URLs
+Route::get('/{path}.html', function ($path) {
+    if ($path === 'index') {
+        return redirect('/', 301);
+    }
+    return redirect('/' . $path, 301);
+})->where('path', '[a-zA-Z0-9\-_]+');

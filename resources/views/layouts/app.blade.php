@@ -680,39 +680,39 @@
 
                     <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
                         <li>
-                            <a href="{{ url('/index.html') }}"
+                            <a href="{{ url('/') }}"
                                 class="{{ request()->is('/') || request()->is('index*') ? 'active' : '' }}">Home</a>
                         </li>
                         <li>
-                            <a href="{{ url('/about-us.html') }}"
+                            <a href="{{ url('/about-us') }}"
                                 class="{{ request()->is('about-us*') ? 'active' : '' }}">About Us</a>
                         </li>
                         <li>
-                            <a href="{{ url('/projects.html') }}"
+                            <a href="{{ url('/projects') }}"
                                 class="{{ request()->is('projects*') ? 'active' : '' }}">Projects</a>
                         </li>
                         <li class="dropdown">
-                            <a href="{{ url('/services.html') }}" class="dropdown-toggle {{ request()->is('services*') ? 'active' : '' }}">Services</a>
+                            <a href="{{ url('/services') }}" class="dropdown-toggle {{ request()->is('services*') ? 'active' : '' }}">Services</a>
                             <ul class="dropdown-menu dropdown-services bg-dark-transparent">
-                                <li><a href="{{ url('/services.html') }}">All Services</a></li>
-                                <li><a href="{{ url('/services-EPC-Projects.html') }}">EPC Projects</a></li>
-                                <li><a href="{{ url('/services-Plant-Maintenance-Turnarounds.html') }}">Plant Maintenance & Turnarounds</a></li>
-                                <li><a href="{{ url('/services-Design-Manufacturing.html') }}">Design & Manufacturing of Steel Structure, Piping & Process Equipment</a></li>
-                                <li><a href="{{ url('/services-Power-Automation-Projects.html') }}">Power & Automation Projects & Services</a></li>
-                                <li><a href="{{ url('/services-Rigging-Lifting-Projects.html') }}">Rigging & Lifting Projects & Services</a></li>
-                                <li><a href="{{ url('/services-Infrastructure-Projects.html') }}">Infrastructure</a></li>
-                                <li><a href="{{ url('/services-Scaffolding.html') }}">Scaffolding</a></li>
-                                <li><a href="{{ url('/services-Equipmen-Rental.html') }}">Equipment Rental & Services</a></li>
-                                <li><a href="{{ url('/services-Project-Support.html') }}">Project Support Services</a></li>
-                                <li><a href="{{ url('/services-Procurement.html') }}">Procurement Services</a></li>
-                                <li><a href="{{ url('/services-major-equipment-list.html') }}">Major Equipment List</a></li>
+                                <li><a href="{{ url('/services') }}">All Services</a></li>
+                                <li><a href="{{ url('/services-EPC-Projects') }}">EPC Projects</a></li>
+                                <li><a href="{{ url('/services-Plant-Maintenance-Turnarounds') }}">Plant Maintenance & Turnarounds</a></li>
+                                <li><a href="{{ url('/services-Design-Manufacturing') }}">Design & Manufacturing of Steel Structure, Piping & Process Equipment</a></li>
+                                <li><a href="{{ url('/services-Power-Automation-Projects') }}">Power & Automation Projects & Services</a></li>
+                                <li><a href="{{ url('/services-Rigging-Lifting-Projects') }}">Rigging & Lifting Projects & Services</a></li>
+                                <li><a href="{{ url('/services-Infrastructure-Projects') }}">Infrastructure</a></li>
+                                <li><a href="{{ url('/services-Scaffolding') }}">Scaffolding</a></li>
+                                <li><a href="{{ url('/services-Equipmen-Rental') }}">Equipment Rental & Services</a></li>
+                                <li><a href="{{ url('/services-Project-Support') }}">Project Support Services</a></li>
+                                <li><a href="{{ url('/services-Procurement') }}">Procurement Services</a></li>
+                                <li><a href="{{ url('/services-major-equipment-list') }}">Major Equipment List</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="{{ url('/blog.html') }}" class="{{ request()->is('blog*') ? 'active' : '' }}">Blog</a>
+                            <a href="{{ url('/blog') }}" class="{{ request()->is('blog*') ? 'active' : '' }}">Blog</a>
                         </li>
                         <li>
-                            <a href="{{ url('/contact.html') }}" class="{{ request()->is('contact*') ? 'active' : '' }}">Contact Us</a>
+                            <a href="{{ url('/contact') }}" class="{{ request()->is('contact*') ? 'active' : '' }}">Contact Us</a>
                         </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
@@ -723,7 +723,7 @@
                         <ul>
                             <li class="search"><a href="#"><i class="far fa-search"></i></a></li>
                             <li class="button">
-                                <a href="contact.html">Consult Us</a>
+                                <a href="{{ url('/contact') }}">Consult Us</a>
                             </li>
 
                         </ul>
@@ -899,13 +899,12 @@
                                 </svg> India
                             </h4>
                             <p>
-                                2-A/3, Kundan Mansion , Turkman Gate, Asaf Ali Road
-
+                                3 Rd, Okhla Phase III, Delhi, India, 110020
                             </p>
                             <ul>
                                 <li>
                                     <i class="fas fa-map-marker-alt"></i>
-                                    New Delhi, India
+                                    Delhi, India - 110020
                                 </li>
                                 <li
                                     style="white-space: nowrap; display: flex; align-items: center; gap: 8px; font-size: 13.5px;">

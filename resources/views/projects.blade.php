@@ -23,7 +23,7 @@
                         <a class="projects-primary-cta" href="#project-portfolio">
                             Explore our work <i class="fas fa-arrow-down" aria-hidden="true"></i>
                         </a>
-                        <a class="projects-text-link" href="contact.html">
+                        <a class="projects-text-link" href="/contact">
                             Discuss a project <i class="fas fa-arrow-right" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -75,7 +75,7 @@
 
                 <div class="projects-grid" aria-live="polite">
                     <article class="project-card project-card-featured" data-project-card data-category="epc">
-                        <a href="services-EPC-Projects.html" aria-label="Explore integrated EPC project delivery">
+                        <a href="/services-EPC-Projects" aria-label="Explore integrated EPC project delivery">
                             <img src="assets/img/services/1.png" alt="Large industrial energy facility" loading="eager">
                             <div class="project-card-shade"></div>
                             <div class="project-card-top"><span>01</span><span>EPC / Energy</span></div>
@@ -89,7 +89,7 @@
                     </article>
 
                     <article class="project-card" data-project-card data-category="infrastructure">
-                        <a href="services-Infrastructure-Projects.html" aria-label="Explore infrastructure and utilities projects">
+                        <a href="/services-Infrastructure-Projects" aria-label="Explore infrastructure and utilities projects">
                             <img src="assets/img/services/6.png" alt="Industrial infrastructure development viewed from above"
                                 loading="lazy">
                             <div class="project-card-shade"></div>
@@ -104,7 +104,7 @@
                     </article>
 
                     <article class="project-card" data-project-card data-category="maintenance">
-                        <a href="services-Plant-Maintenance-Turnarounds.html" aria-label="Explore plant maintenance and turnaround projects">
+                        <a href="/services-Plant-Maintenance-Turnarounds" aria-label="Explore plant maintenance and turnaround projects">
                             <img src="assets/img/services/8.png" alt="Industrial maintenance team working at a plant"
                                 loading="lazy">
                             <div class="project-card-shade"></div>
@@ -119,7 +119,7 @@
                     </article>
 
                     <article class="project-card project-card-wide" data-project-card data-category="fabrication">
-                        <a href="services-Design-Manufacturing.html" aria-label="Explore steel structure fabrication projects">
+                        <a href="/services-Design-Manufacturing" aria-label="Explore steel structure fabrication projects">
                             <img src="assets/img/services/11.png" alt="Steel structure fabrication and industrial piping"
                                 loading="lazy">
                             <div class="project-card-shade"></div>
@@ -134,7 +134,7 @@
                     </article>
 
                     <article class="project-card" data-project-card data-category="power">
-                        <a href="services-Power-Automation-Projects.html" aria-label="Explore power and automation projects">
+                        <a href="/services-Power-Automation-Projects" aria-label="Explore power and automation projects">
                             <img src="assets/img/services/10.png" alt="Industrial process and automation installation"
                                 loading="lazy">
                             <div class="project-card-shade"></div>
@@ -149,7 +149,7 @@
                     </article>
 
                     <article class="project-card" data-project-card data-category="fabrication epc">
-                        <a href="services-Design-Manufacturing.html" aria-label="Explore process equipment and piping projects">
+                        <a href="/services-Design-Manufacturing" aria-label="Explore process equipment and piping projects">
                             <img src="assets/img/services/12.png" alt="Process piping installed across an industrial facility"
                                 loading="lazy">
                             <div class="project-card-shade"></div>
@@ -164,7 +164,7 @@
                     </article>
 
                     <article class="project-card project-card-wide" data-project-card data-category="epc infrastructure">
-                        <a href="services-Rigging-Lifting-Projects.html" aria-label="Explore rigging and heavy lifting projects">
+                        <a href="/services-Rigging-Lifting-Projects" aria-label="Explore rigging and heavy lifting projects">
                             <img src="assets/img/services/13.png" alt="Complex industrial access and lifting structure"
                                 loading="lazy">
                             <div class="project-card-shade"></div>
@@ -179,7 +179,7 @@
                     </article>
 
                     <article class="project-card" data-project-card data-category="maintenance infrastructure">
-                        <a href="services-Scaffolding.html" aria-label="Explore industrial scaffolding projects">
+                        <a href="/services-Scaffolding" aria-label="Explore industrial scaffolding projects">
                             <img src="assets/img/services/14.png" alt="Industrial piping and access systems inside a plant"
                                 loading="lazy">
                             <div class="project-card-shade"></div>
@@ -222,7 +222,7 @@
                 <div class="projects-cta-inner" data-project-reveal>
                     <p class="projects-section-label">Your next project</p>
                     <h2 id="projectsCtaTitle">Bring us the challenge.<br><span>We’ll build the delivery path.</span></h2>
-                    <a href="contact.html">Start a conversation <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    <a href="/contact">Start a conversation <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
             </div>
         </section>

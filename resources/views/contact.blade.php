@@ -271,7 +271,7 @@
                         
                         <div class="info-row">
                             <i class="fas fa-map-marker-alt"></i>
-                            <p>2-A/3, Kundan Mansion<br>Turkman Gate, Asaf Ali Road<br>New Delhi-110002, India</p>
+                            <p>3 Rd, Okhla Phase III<br>Delhi, India, 110020</p>
                         </div>
                         
                         <div class="info-row">
