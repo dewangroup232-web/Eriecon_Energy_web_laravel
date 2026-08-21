@@ -551,7 +551,7 @@
             display: flex !important;
             flex-direction: column !important;
             flex: 1 1 auto !important;
-            padding: 22px 20px 24px !important;
+            padding: 18px 12px 22px !important;
         }
 
         .blog-area .blog-items .item .info .meta {
@@ -574,7 +574,7 @@
         }
 
         .blog-area .blog-items .item .info .meta ul li {
-            font-size: 12px !important;
+            font-size: 11.5px !important;
             white-space: nowrap !important;
             color: #666666 !important;
             font-weight: 500 !important;
@@ -591,7 +591,7 @@
 
         .blog-area .blog-items .item .info .meta ul li a span,
         .blog-area .blog-items .item .info .meta ul li span {
-            font-size: 12px !important;
+            font-size: 11.5px !important;
             white-space: nowrap !important;
             color: #555555 !important;
             font-weight: 600 !important;
@@ -602,17 +602,26 @@
             flex-direction: column !important;
             flex: 1 1 auto !important;
             justify-content: space-between !important;
+            text-align: left !important;
         }
 
         .blog-area .blog-items .item .info .content h4 {
-            font-size: 17px !important;
-            line-height: 1.45 !important;
+            font-size: 16.5px !important;
+            line-height: 1.4 !important;
             font-weight: 700 !important;
+            margin-top: 0 !important;
             margin-bottom: 15px !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            text-align: left !important;
         }
 
         .blog-area .blog-items .item .info .content h4 a {
             color: #111111 !important;
+            text-align: left !important;
+            display: block !important;
         }
 
         .blog-area .blog-items .item .info .content a.btn {
