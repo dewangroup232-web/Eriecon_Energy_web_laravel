@@ -469,6 +469,62 @@
             line-height: 1 !important;
             font-weight: 700 !important;
         }
+
+        /* Mobile Navigation Side Drawer - Fail-safe Chrome & iOS Fix */
+        @media (max-width: 1023px) {
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse {
+                position: fixed !important;
+                left: -100% !important;
+                top: 0 !important;
+                width: 320px !important;
+                max-width: 85vw !important;
+                height: 100vh !important;
+                min-height: 100vh !important;
+                background: #ffffff !important;
+                overflow-y: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+                z-index: 99999 !important;
+                transition: left 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+                display: block !important;
+                visibility: visible !important;
+                padding: 25px 20px !important;
+                box-shadow: 4px 0 25px rgba(0, 0, 0, 0.15) !important;
+            }
+
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.show,
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.in,
+            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.site-mobile-open {
+                left: 0 !important;
+            }
+
+            .overlay-screen {
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100vw !important;
+                height: 100vh !important;
+                background: rgba(0, 0, 0, 0.6) !important;
+                z-index: 99990 !important;
+                opacity: 0 !important;
+                visibility: hidden !important;
+                transition: opacity 0.3s ease, visibility 0.3s ease !important;
+                pointer-events: none !important;
+            }
+
+            .overlay-screen.opened,
+            .overlay-screen.show {
+                opacity: 1 !important;
+                visibility: visible !important;
+                pointer-events: auto !important;
+            }
+
+            .navbar-header .navbar-toggle {
+                cursor: pointer !important;
+                pointer-events: auto !important;
+                z-index: 100 !important;
+                display: inline-block !important;
+            }
+        }
     </style>
 
     @stack('styles')
@@ -920,6 +976,73 @@
                 if (isPaused) carousel.pause();
                 else carousel.cycle();
                 updateToggle();
+            });
+        })();
+
+        /* Fail-safe Mobile Side Navbar Drawer Controller */
+        (function () {
+            "use strict";
+            document.addEventListener("DOMContentLoaded", function () {
+                function openMobileMenu(e) {
+                    if (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                    }
+                    var navMenu = document.getElementById("navbar-menu");
+                    var overlay = document.querySelector(".overlay-screen");
+                    var navbar = document.querySelector("nav.navbar");
+
+                    if (navMenu) {
+                        navMenu.classList.add("show");
+                        navMenu.classList.add("in");
+                        navMenu.classList.add("site-mobile-open");
+                        navMenu.classList.add("collapse-mobile");
+                    }
+                    if (overlay) {
+                        overlay.classList.add("opened");
+                        overlay.classList.add("show");
+                    }
+                    if (navbar) {
+                        navbar.classList.add("navbar-responsive");
+                    }
+                }
+
+                function closeMobileMenu(e) {
+                    if (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                    }
+                    var navMenu = document.getElementById("navbar-menu");
+                    var overlay = document.querySelector(".overlay-screen");
+                    var navbar = document.querySelector("nav.navbar");
+
+                    if (navMenu) {
+                        navMenu.classList.remove("show");
+                        navMenu.classList.remove("in");
+                        navMenu.classList.remove("site-mobile-open");
+                    }
+                    if (overlay) {
+                        overlay.classList.remove("opened");
+                        overlay.classList.remove("show");
+                    }
+                    if (navbar) {
+                        navbar.classList.remove("navbar-responsive");
+                    }
+                }
+
+                document.querySelectorAll(".navbar-header .navbar-toggle, .open-mobile-menu").forEach(function (btn) {
+                    btn.addEventListener("click", openMobileMenu);
+                    btn.addEventListener("touchstart", openMobileMenu, { passive: false });
+                });
+
+                document.querySelectorAll(".close-mobile-menu, .overlay-screen").forEach(function (btn) {
+                    btn.addEventListener("click", closeMobileMenu);
+                    btn.addEventListener("touchstart", closeMobileMenu, { passive: false });
+                });
+
+                document.querySelectorAll("#navbar-menu ul.nav li a:not(.dropdown-toggle)").forEach(function (link) {
+                    link.addEventListener("click", closeMobileMenu);
+                });
             });
         })();
     </script>
