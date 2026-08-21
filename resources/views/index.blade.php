@@ -94,19 +94,13 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-lg-10 offset-lg-1">
-                    <div class="slider-thumb bg-cover" style="background-image: url(assets/img/banner/13.jpg);"></div>
-                    <div class="box-table shadow dark">
-                        <div class="box-cell">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-10 offset-lg-1">
                                         <div class="content">
                                             <h2 data-animation="animated slideInDown">EIRECON ENERGY COMPANY
                                             </h2>
                                             <h3 data-animation="animated slideInRight">
                                                 "Energy That Drives the World" </h3>
                                             <a data-animation="animated slideInUp"
-                                                class="btn circle btn-light effect btn-md angle" href="/projects">View
+                                                class="btn circle btn-light effect btn-md angle" href="projects.html">View
                                                 Projects</a>
                                         </div>
                                     </div>
@@ -129,7 +123,7 @@
                                             <h3 data-animation="animated slideInRight">
                                                 "Energy That Drives the World" </h3>
                                             <a data-animation="animated slideInUp"
-                                                class="btn circle btn-light effect btn-md angle" href="/projects">View
+                                                class="btn circle btn-light effect btn-md angle" href="projects.html">View
                                                 Projects</a>
                                         </div>
                                     </div>
@@ -152,7 +146,7 @@
                                             <h3 data-animation="animated slideInRight">
                                                 "Energy That Drives the World" </h3>
                                             <a data-animation="animated slideInUp"
-                                                class="btn circle btn-light effect btn-md angle" href="/projects">View
+                                                class="btn circle btn-light effect btn-md angle" href="projects.html">View
                                                 Projects</a>
                                         </div>
                                     </div>
@@ -175,7 +169,7 @@
                                             <h3 data-animation="animated slideInRight">
                                                 "Energy That Drives the World" </h3>
                                             <a data-animation="animated slideInUp"
-                                                class="btn circle btn-light effect btn-md angle" href="/projects">View
+                                                class="btn circle btn-light effect btn-md angle" href="projects.html">View
                                                 Projects</a>
                                         </div>
                                     </div>
@@ -231,7 +225,7 @@
                             </p>
                             <div class="home-ceo-actions">
                                 <span class="home-ceo-signature">CEO <strong>Manawar Khan</strong></span>
-                                <a class="home-ceo-link" href="/about-us">
+                                <a class="home-ceo-link" href="{{ url('/about-us') }}">
                                     Know More <i class="fas fa-arrow-right" aria-hidden="true"></i>
                                 </a>
                             </div>
@@ -261,20 +255,20 @@
             </div>
 
             <div class="home-services-grid">
-                <a class="home-service-card" href="/services-EPC-Projects" aria-label="EPC Projects"
+                <a class="home-service-card" href="{{ url('/services-EPC-Projects') }}" aria-label="EPC Projects"
                     data-reveal="fade-up" data-delay="0">
                     <img src="{{ asset('assets/img/services/EPC PROJECTS.png') }}" alt="EPC Projects" loading="lazy">
                     <h3 class="home-service-name">EPC Projects</h3>
                 </a>
 
-                <a class="home-service-card" href="/services-Plant-Maintenance-Turnarounds"
+                <a class="home-service-card" href="{{ url('/services-Plant-Maintenance-Turnarounds') }}"
                     aria-label="Plant Maintenance and Turnarounds" data-reveal="fade-up" data-delay="80">
                     <img src="{{ asset('assets/img/services/Plant Maintenance & Turnarounds.png') }}"
                         alt="Plant Maintenance and Turnarounds" loading="lazy">
                     <h3 class="home-service-name">Plant Maintenance &amp; Turnarounds</h3>
                 </a>
 
-                <a class="home-service-card" href="/services-Design-Manufacturing"
+                <a class="home-service-card" href="{{ url('/services-Design-Manufacturing') }}"
                     aria-label="Design and Manufacturing of Steel Structure, Piping and Process Equipment"
                     data-reveal="fade-up" data-delay="120">
                     <img src="{{ asset('assets/img/services/Design and Manufacturing of Steel Structure, Piping & Process Equipment.png') }}"
@@ -283,56 +277,65 @@
                         Equipment</h3>
                 </a>
 
-                <a class="home-service-card" href="/services-Power-Automation-Projects"
+                <a class="home-service-card" href="{{ url('/services-Power-Automation-Projects') }}"
                     aria-label="Power and Automation Projects and Services" data-reveal="fade-up" data-delay="160">
                     <img src="{{ asset('assets/img/services/Power & Automation Projects & Services.png') }}"
                         alt="Power and Automation Projects and Services" loading="lazy">
                     <h3 class="home-service-name">Power &amp; Automation Projects &amp; Services</h3>
                 </a>
 
-                <a class="home-service-card" href="/services-Rigging-Lifting-Projects"
+                <a class="home-service-card" href="{{ url('/services-Rigging-Lifting-Projects') }}"
                     aria-label="Rigging and Lifting Projects and Services" data-reveal="fade-up" data-delay="200">
                     <img src="{{ asset('assets/img/services/Rigging & Lifting Projects.png') }}"
                         alt="Rigging and Lifting Projects and Services" loading="lazy">
                     <h3 class="home-service-name">Rigging &amp; Lifting Projects &amp; Services</h3>
                 </a>
 
-                <a class="home-service-card" href="/services-Infrastructure-Projects"
+                <a class="home-service-card" href="{{ url('/services-Infrastructure-Projects') }}"
                     aria-label="Infrastructure" data-reveal="fade-up" data-delay="0">
                     <img src="{{ asset('assets/img/services/Infrastructure.png') }}" alt="Infrastructure" loading="lazy">
                     <h3 class="home-service-name">Infrastructure</h3>
                 </a>
 
-                <a class="home-service-card" href="/services-Scaffolding" aria-label="Scaffolding" data-reveal="fade-up"
+                <a class="home-service-card" href="{{ url('/services-Scaffolding') }}" aria-label="Scaffolding" data-reveal="fade-up"
                     data-delay="80">
                     <img src="{{ asset('assets/img/services/Scaffolding.png') }}" alt="Scaffolding" loading="lazy">
                     <h3 class="home-service-name">Scaffolding</h3>
                 </a>
 
-                <a class="home-service-card" href="/services-Equipmen-Rental" aria-label="Equipment Rental and Services"
+                <a class="home-service-card" href="{{ url('/services-Equipmen-Rental') }}" aria-label="Equipment Rental and Services"
                     data-reveal="fade-up" data-delay="120">
                     <img src="{{ asset('assets/img/services/Equipment Rental & Services.png') }}"
                         alt="Equipment Rental and Services" loading="lazy">
                     <h3 class="home-service-name">Equipment Rental &amp; Services</h3>
                 </a>
 
-                <a class="home-service-card" href="/services-Project-Support"
+                <a class="home-service-card" href="{{ url('/services-Project-Support') }}"
                     aria-label="Project Support Services" data-reveal="fade-up" data-delay="160">
                     <img src="{{ asset('assets/img/services/Project Support Services.png') }}"
                         alt="Project Support Services" loading="lazy">
                     <h3 class="home-service-name">Project Support Services</h3>
                 </a>
 
-                <a class="home-service-card" href="/services-Procurement" aria-label="Procurement Services"
+                <a class="home-service-card" href="{{ url('/services-Procurement') }}" aria-label="Procurement Services"
                     data-reveal="fade-up" data-delay="200">
                     <img src="{{ asset('assets/img/services/Procurement Services.png') }}" alt="Procurement Services"
                         loading="lazy">
                     <h3 class="home-service-name">Procurement Services</h3>
                 </a>
 
-                <a class="home-service-card" href="/services-major-equipment-list"
+                <a class="home-service-card" href="{{ url('/services-major-equipment-list') }}"
                     aria-label="Major Equipment List" data-reveal="fade-up" data-delay="240">
                     <img src="{{ asset('assets/img/services/1.png') }}" alt="Major Equipment List" loading="lazy">
+                    <h3 class="home-service-name">Major Equipment List</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- End Homepage Services -->
+
+    <!-- Start Work With Us 
+                        ============================================= -->
     <div class="work-with-us-area home-work-with-us bg-gray">
         <div class="container">
             <div class="content-box">
@@ -1231,7 +1234,7 @@
                                     <div class="info">
                                         <div class="meta">
                                             <ul>
-                                                <li><a href="{{ $post->public_url }}"><span>{{ $post->author_name == 'Eirecon Engineering Team' ? 'Eirecon Team' : \Illuminate\Support\Str::limit($post->author_name, 16) }}</span></a></li>
+                                                <li><a href="{{ $post->public_url }}"><span>{{ $post->author_name }}</span></a></li>
                                                 <li><i class="fas fa-calendar" aria-hidden="true"></i> {{ $post->published_at->format('d M, Y') }}</li>
                                             </ul>
                                         </div>
