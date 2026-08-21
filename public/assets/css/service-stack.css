@@ -1,0 +1,2168 @@
+/* Shared service-detail experience — aligned with Design & Manufacturing */
+:root {
+    --service-stack-top: 84px;
+    --service-blue: #4d8ef0;
+    --service-navy: #07111f;
+}
+
+body.service-stack-page {
+    background: #050910;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Pre-render guard: these rules apply before the enhancement script runs. */
+.top-bar-area {
+    display: none !important;
+}
+
+.breadcrumb-area > .container {
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+.breadcrumb-area.service-hero-ready > .container {
+    visibility: visible !important;
+    opacity: 1 !important;
+    transition: none !important;
+}
+
+.service-stack-page .breadcrumb-area {
+    --service-mouse-x: 50%;
+    --service-mouse-y: 50%;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    min-height: calc(100svh - var(--service-stack-top));
+    padding: clamp(64px, 8vw, 100px) 24px;
+    overflow: hidden;
+    isolation: isolate;
+    background-position: center;
+    background-size: cover;
+}
+
+.service-stack-page .breadcrumb-area::before {
+    position: absolute;
+    z-index: -2;
+    inset: 0;
+    content: "";
+    background:
+        radial-gradient(circle 360px at var(--service-mouse-x) var(--service-mouse-y), rgba(77, 142, 240, 0.25), transparent 68%),
+        linear-gradient(90deg, rgba(5, 12, 24, 0.98) 0%, rgba(7, 22, 45, 0.93) 46%, rgba(9, 24, 48, 0.60) 74%, rgba(10, 18, 38, 0.46) 100%);
+}
+
+.service-stack-page .breadcrumb-area::after {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    content: "";
+    opacity: 0.22;
+    background-image:
+        linear-gradient(rgba(94, 151, 247, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(94, 151, 247, 0.12) 1px, transparent 1px);
+    background-size: 54px 54px;
+    mask-image: linear-gradient(to bottom, transparent 2%, #000 32%, #000 78%, transparent);
+}
+
+.service-stack-page .breadcrumb-area .shape-bg {
+    display: none;
+}
+
+.service-stack-page .breadcrumb-area .container {
+    width: min(1240px, 100%);
+}
+
+.service-hero-shell {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 100%;
+    text-align: left;
+}
+
+.service-hero-content {
+    width: min(930px, 82%);
+}
+
+.service-hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 19px;
+    color: #8bb6ff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+}
+
+.service-hero-eyebrow::before {
+    width: 42px;
+    height: 2px;
+    content: "";
+    background: #5c9cff;
+}
+
+.service-stack-page .breadcrumb-area h1.service-hero-title {
+    max-width: 920px;
+    margin: 0 0 22px !important;
+    color: #fff;
+    font-size: clamp(46px, 5.3vw, 76px) !important;
+    font-weight: 900 !important;
+    line-height: 0.96;
+    letter-spacing: -0.045em !important;
+    text-transform: none;
+    text-wrap: balance;
+    text-shadow: 0 12px 40px rgba(0, 0, 0, 0.42) !important;
+}
+
+.service-hero-title span,
+.service-hero-title strong {
+    display: block;
+}
+
+.service-hero-title strong {
+    color: #6fa7ff;
+    font-weight: inherit;
+}
+
+.service-stack-page .breadcrumb-area p.service-hero-description {
+    max-width: 780px;
+    margin: 0 0 31px;
+    color: rgba(255, 255, 255, 0.67) !important;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.7;
+}
+
+.service-hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px 28px;
+}
+
+.service-hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 224px;
+    min-height: 49px;
+    padding: 0 22px;
+    color: #fff !important;
+    border: 1px solid rgba(113, 169, 255, 0.68);
+    background: rgba(12, 41, 82, 0.56);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    transition: background 250ms ease, border-color 250ms ease, transform 250ms ease;
+}
+
+.service-hero-button:hover,
+.service-hero-button:focus {
+    color: #fff !important;
+    border-color: #8cb8ff;
+    background: rgba(45, 102, 197, 0.78);
+    transform: translateY(-2px);
+}
+
+.service-hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.service-hero-tag {
+    display: inline-flex;
+    min-height: 33px;
+    align-items: center;
+    padding: 0 13px;
+    color: rgba(255, 255, 255, 0.62);
+    border-left: 2px solid #4d8ef0;
+    background: rgba(255, 255, 255, 0.055);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.service-stack-page .services-details-area {
+    position: relative;
+    z-index: 7;
+    padding: 0 !important;
+    overflow: visible;
+    background: #050910;
+    scroll-margin-top: var(--service-stack-top);
+}
+
+.service-stack-page .services-details-area > .container {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+}
+
+.service-stack-page .service-details-row {
+    --service-mouse-x: 50%;
+    --service-mouse-y: 50%;
+    --service-image-shift-x: 0px;
+    --service-image-shift-y: 0px;
+    position: relative;
+    display: flex;
+    align-items: center !important;
+    min-height: calc(100svh - var(--service-stack-top));
+    margin: 0 !important;
+    padding: clamp(38px, 6vh, 68px) max(5vw, 28px);
+    overflow: hidden;
+    isolation: isolate;
+    color: #fff;
+    border-top: 1px solid rgba(109, 165, 255, 0.15);
+    background: #07101d;
+    box-shadow: 0 -22px 55px rgba(0, 0, 0, 0.34);
+}
+
+.service-stack-page .service-details-row:nth-child(4n + 2) {
+    background: #0b0d1c;
+}
+
+.service-stack-page .service-details-row:nth-child(4n + 3) {
+    background: #071410;
+}
+
+.service-stack-page .service-details-row:nth-child(4n) {
+    background: #151009;
+}
+
+.service-stack-page .service-details-row::before {
+    position: absolute;
+    z-index: -2;
+    inset: -3%;
+    content: "";
+    opacity: 0.17;
+    background-image: var(--service-panel-image);
+    background-position: center;
+    background-size: cover;
+    filter: saturate(0.65);
+}
+
+.service-stack-page .service-details-row::after {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    content: "";
+    pointer-events: none;
+    background:
+        radial-gradient(circle 310px at var(--service-mouse-x) var(--service-mouse-y), rgba(77, 142, 240, 0.18), transparent 72%),
+        linear-gradient(105deg, rgba(5, 9, 16, 0.92), rgba(8, 15, 29, 0.82));
+}
+
+.service-stack-page .service-details-row > [class*="col-"] {
+    position: relative;
+    z-index: 2;
+    padding-right: clamp(18px, 3vw, 42px);
+    padding-left: clamp(18px, 3vw, 42px);
+}
+
+.service-stack-page .service-image-container {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    min-height: 320px;
+    border: 1px solid rgba(126, 175, 255, 0.22);
+    border-radius: 20px;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.46);
+    background: #0d1726;
+}
+
+.service-stack-page .service-image-container::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    pointer-events: none;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), transparent 32%, rgba(20, 67, 144, 0.15));
+}
+
+.service-stack-page .service-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate3d(var(--service-image-shift-x), var(--service-image-shift-y), 0) scale(1.04);
+    transition: transform 180ms ease-out;
+}
+
+.service-stack-page .service-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    padding: 0 !important;
+    color: var(--service-blue) !important;
+    font-size: 11px !important;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    background: none !important;
+    border: 0 !important;
+}
+
+.service-stack-page .service-badge::before {
+    width: 25px;
+    height: 2px;
+    content: "";
+    background: currentColor;
+}
+
+.service-stack-page .service-meta-text {
+    margin-bottom: 12px;
+    color: rgba(255, 255, 255, 0.46) !important;
+    font-size: 11px !important;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+}
+
+.service-stack-page .service-scroll-group .service-badge {
+    margin-bottom: 12px;
+    font-size: clamp(12px, 0.92vw, 14px) !important;
+    letter-spacing: 0.20em;
+}
+
+.service-stack-page .service-scroll-group .service-badge::before {
+    width: 38px;
+}
+
+.service-stack-page .service-scroll-group .service-meta-text {
+    margin-bottom: 18px;
+    padding-left: 13px;
+    color: rgba(255, 255, 255, 0.72) !important;
+    border-left: 3px solid #4d8ef0;
+    font-size: clamp(15px, 1.1vw, 18px) !important;
+    font-weight: 800;
+    line-height: 1.35;
+    letter-spacing: 0.085em;
+}
+
+.service-stack-page .service-main-title {
+    margin: 0 0 24px !important;
+    color: #fff !important;
+    font-size: clamp(30px, 3.2vw, 48px) !important;
+    font-weight: 900 !important;
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+}
+
+.service-shared-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-anchor: none;
+}
+
+.service-shared-accord-item {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.035);
+    backdrop-filter: blur(10px);
+    transition: border-color 280ms ease, background 280ms ease;
+}
+
+.service-shared-accord-item:hover,
+.service-shared-accord-item.open {
+    border-color: rgba(77, 142, 240, 0.48);
+    background: rgba(77, 142, 240, 0.075);
+}
+
+.service-stack-page .service-sub-title.service-shared-accord-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 56px;
+    margin: 0 !important;
+    padding: 13px 18px !important;
+    color: #e4ebfb !important;
+    font-size: 12px !important;
+    font-weight: 800;
+    line-height: 1.35;
+    letter-spacing: 0.09em;
+    cursor: pointer;
+    user-select: none;
+}
+
+.service-stack-page .service-sub-title.service-shared-accord-header > i:first-child {
+    display: grid;
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    margin: 0;
+    color: var(--service-blue);
+    border-radius: 9px;
+    background: rgba(77, 142, 240, 0.16);
+}
+
+.service-shared-arrow {
+    margin-left: auto;
+    color: rgba(255, 255, 255, 0.34);
+    font-size: 10px;
+    transition: transform 300ms ease, color 300ms ease;
+}
+
+.service-part-label {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+    min-height: 24px;
+    margin-left: 4px;
+    padding: 4px 9px;
+    color: #83b4ff;
+    border: 1px solid rgba(131, 180, 255, 0.28);
+    border-radius: 999px;
+    background: rgba(77, 142, 240, 0.10);
+    font-size: 9px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+}
+
+.service-shared-accord-item.open .service-shared-arrow {
+    color: var(--service-blue);
+    transform: rotate(180deg);
+}
+
+.service-shared-accord-body {
+    height: 0;
+    overflow: hidden;
+    transition: height 420ms cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: height;
+}
+
+.service-stack-page .service-list {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px 18px;
+    margin: 0 !important;
+    padding: 2px 18px 17px !important;
+}
+
+.service-stack-page .service-list li,
+.service-stack-page .service-list li[class*="col-"] {
+    width: auto;
+    max-width: none;
+    padding: 0 !important;
+    color: rgba(255, 255, 255, 0.67) !important;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.45;
+}
+
+.service-stack-page .service-list li > i {
+    margin-right: 7px;
+    color: var(--service-blue) !important;
+    font-size: 9px;
+}
+
+.service-pointer-glow {
+    position: absolute;
+    z-index: 1;
+    width: 260px;
+    height: 260px;
+    left: var(--service-mouse-x);
+    top: var(--service-mouse-y);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    background: rgba(77, 142, 240, 0.12);
+    filter: blur(54px);
+    transform: translate(-50%, -50%);
+    transition: opacity 250ms ease;
+}
+
+.service-stack-layer.is-pointer-active > .service-pointer-glow {
+    opacity: 1;
+}
+
+/* Nested capability stack */
+.service-stack-page .service-details-row.service-scroll-group {
+    display: block;
+    min-height: calc(100svh - var(--service-stack-top) + var(--service-inner-distance));
+    padding: 0;
+    overflow: visible;
+    isolation: auto;
+    border: 0;
+    background: transparent !important;
+    box-shadow: none;
+}
+
+.service-stack-page .service-details-row.service-scroll-group::before,
+.service-stack-page .service-details-row.service-scroll-group::after {
+    display: none;
+}
+
+.service-scroll-stage {
+    --service-mouse-x: 50%;
+    --service-mouse-y: 50%;
+    position: sticky;
+    top: var(--service-stack-top);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: calc(100svh - var(--service-stack-top));
+    padding: clamp(22px, 3.2vh, 42px) max(5vw, 28px);
+    overflow: hidden;
+    isolation: isolate;
+    color: #fff;
+    border-top: 1px solid rgba(109, 165, 255, 0.15);
+    background: #07101d;
+    box-shadow: 0 -22px 55px rgba(0, 0, 0, 0.34);
+}
+
+.service-scroll-group:nth-child(4n + 2) .service-scroll-stage {
+    background: #0b0d1c;
+}
+
+.service-scroll-group:nth-child(4n + 3) .service-scroll-stage {
+    background: #071410;
+}
+
+.service-scroll-group:nth-child(4n) .service-scroll-stage {
+    background: #151009;
+}
+
+.service-scroll-stage::before {
+    position: absolute;
+    z-index: -2;
+    inset: -3%;
+    content: "";
+    opacity: 0.17;
+    background-image: var(--service-panel-image);
+    background-position: center;
+    background-size: cover;
+    filter: saturate(0.65);
+}
+
+.service-scroll-stage::after {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    content: "";
+    pointer-events: none;
+    background:
+        radial-gradient(circle 340px at var(--service-mouse-x) var(--service-mouse-y), rgba(77, 142, 240, 0.18), transparent 72%),
+        linear-gradient(105deg, rgba(5, 9, 16, 0.94), rgba(8, 15, 29, 0.84));
+}
+
+.service-scroll-stage > [class*="col-"] {
+    position: relative;
+    z-index: 2;
+    padding-right: clamp(22px, 3.2vw, 52px);
+    padding-left: clamp(22px, 3.2vw, 52px);
+}
+
+.service-scroll-stage > .service-stage-image {
+    order: 1 !important;
+}
+
+.service-scroll-stage > .service-stage-content {
+    order: 2 !important;
+    display: flex;
+    height: 100%;
+    min-height: 0;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.service-scroll-group .service-image-container {
+    height: min(62vh, 540px);
+    max-height: 100%;
+    min-height: 390px;
+    aspect-ratio: auto;
+}
+
+.service-scroll-group .service-shared-accordion {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: clamp(350px, 53vh, 440px);
+    min-height: 0;
+    margin-top: 12px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.service-scroll-group .service-shared-accordion::after,
+.service-scroll-group .service-shared-accordion::before {
+    display: none;
+}
+
+.service-scroll-group .service-shared-accord-item {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(24px, 2.7vw, 36px);
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    border-color: rgba(113, 169, 255, 0.20);
+    background:
+        linear-gradient(135deg, rgba(30, 56, 96, 0.88), rgba(8, 19, 36, 0.96) 72%),
+        rgba(9, 20, 38, 0.94);
+    box-shadow: 0 28px 65px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.055);
+    transform: translate3d(0, 110px, 0) scale(0.965);
+    transition: opacity 420ms ease, transform 640ms cubic-bezier(0.16, 1, 0.3, 1), border-color 360ms ease;
+}
+
+.service-scroll-group .service-shared-accord-item::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    content: "";
+    opacity: 0;
+    background: linear-gradient(90deg, #4d8ef0, #83b4ff 62%, transparent);
+    transition: opacity 360ms ease;
+}
+
+.service-scroll-group .service-shared-accord-item.is-active {
+    z-index: 3;
+    opacity: 1;
+    pointer-events: auto;
+    border-color: rgba(90, 153, 251, 0.60);
+    transform: translate3d(0, 0, 0) scale(1);
+}
+
+.service-scroll-group .service-shared-accord-item.is-active::before {
+    opacity: 1;
+}
+
+.service-scroll-group .service-shared-accord-item.is-past {
+    transform: translate3d(0, -90px, 0) scale(0.965);
+}
+
+.service-scroll-group .service-shared-accord-item.is-future {
+    transform: translate3d(0, 110px, 0) scale(0.965);
+}
+
+.service-scroll-group .service-shared-accord-body {
+    height: auto !important;
+    overflow: visible;
+    transition: none;
+}
+
+.service-scroll-group .service-shared-arrow {
+    display: none;
+}
+
+.service-stack-page .service-scroll-group .service-sub-title.service-shared-accord-header {
+    min-height: 64px;
+    margin-bottom: 17px !important;
+    padding: 0 !important;
+    font-size: clamp(18px, 1.55vw, 23px) !important;
+    line-height: 1.25;
+    letter-spacing: 0.035em;
+    cursor: default;
+}
+
+.service-stack-page .service-scroll-group .service-sub-title.service-shared-accord-header > i:first-child {
+    flex-basis: 48px;
+    width: 48px;
+    height: 48px;
+    border-radius: 13px;
+    font-size: 18px;
+}
+
+.service-stack-page .service-scroll-group .service-list {
+    gap: 11px 25px;
+    padding: 0 !important;
+}
+
+.service-stack-page .service-scroll-group .service-list li,
+.service-stack-page .service-scroll-group .service-list li[class*="col-"] {
+    position: relative;
+    display: flex !important;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: clamp(14px, 1.05vw, 16px);
+    line-height: 1.55;
+    letter-spacing: 0.005em;
+}
+
+.service-stack-page .service-scroll-group .service-list li > i {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    flex: 0 0 7px;
+    width: 7px;
+    height: 7px;
+    margin: 8px 0 0 !important;
+    overflow: hidden;
+    color: transparent !important;
+    border-radius: 50%;
+    background: #5596f5;
+    font-size: 0 !important;
+    line-height: 0;
+    transform: none !important;
+}
+
+.service-scroll-group .service-shared-accord-item.is-dense {
+    padding: clamp(22px, 2.25vw, 30px);
+}
+
+.service-stack-page .service-scroll-group .service-shared-accord-item.is-dense .service-sub-title {
+    min-height: 55px;
+    margin-bottom: 12px !important;
+    font-size: clamp(17px, 1.4vw, 21px) !important;
+}
+
+.service-stack-page .service-scroll-group .service-shared-accord-item.is-dense .service-list {
+    gap: 8px 22px;
+}
+
+.service-stack-page .service-scroll-group .service-shared-accord-item.is-dense .service-list li {
+    font-size: clamp(13.5px, 0.96vw, 15px);
+    line-height: 1.45;
+}
+
+.service-stack-page .service-scroll-group .service-shared-accord-item.is-very-dense .service-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (min-width: 992px) {
+    .service-stack-page .service-details-row:not(.service-scroll-group) {
+        position: sticky;
+        top: var(--service-stack-top);
+        min-height: calc(100svh - var(--service-stack-top));
+    }
+
+    .service-stack-page .breadcrumb-area {
+        position: relative;
+        top: auto;
+        min-height: calc(100svh - var(--service-stack-top));
+        margin: 0;
+    }
+
+}
+
+@media (max-width: 1199px) {
+    .service-stack-page .service-details-row {
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+
+    .service-stack-page .service-details-row > [class*="col-"] {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 991px) {
+    .service-stack-page .breadcrumb-area {
+        min-height: 76svh;
+    }
+
+    .service-hero-content {
+        width: 100%;
+    }
+
+    .service-stack-page .service-details-row {
+        position: relative;
+        min-height: auto;
+        padding: 66px 8px;
+    }
+
+    .service-stack-page .service-details-row.service-scroll-group {
+        min-height: auto;
+        padding: 0;
+    }
+
+    .service-scroll-stage {
+        position: relative;
+        top: auto;
+        flex-wrap: wrap;
+        height: auto;
+        min-height: 0;
+        padding: 66px 8px;
+        overflow: hidden;
+    }
+
+    .service-scroll-stage > .service-stage-image,
+    .service-scroll-stage > .service-stage-content {
+        order: 1 !important;
+    }
+
+    .service-scroll-stage > .service-stage-content {
+        order: 2 !important;
+        display: block;
+        height: auto;
+    }
+
+    .service-scroll-stage > [class*="col-"] + [class*="col-"] {
+        margin-top: 34px;
+    }
+
+    .service-scroll-group .service-image-container {
+        height: auto;
+        min-height: 280px;
+        aspect-ratio: 4 / 3;
+    }
+
+    .service-scroll-group .service-shared-accordion {
+        display: flex;
+        height: auto;
+        min-height: 0;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .service-scroll-group .service-shared-accordion::before,
+    .service-scroll-group .service-shared-accordion::after {
+        display: none;
+    }
+
+    .service-scroll-group .service-shared-accord-item,
+    .service-scroll-group .service-shared-accord-item.is-active,
+    .service-scroll-group .service-shared-accord-item.is-past,
+    .service-scroll-group .service-shared-accord-item.is-future {
+        position: relative;
+        inset: auto;
+        padding: 24px;
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+    }
+
+    .service-stack-page .service-scroll-group .service-badge {
+        margin-top: 4px;
+        font-size: 12px !important;
+    }
+
+    .service-stack-page .service-scroll-group .service-meta-text {
+        margin-bottom: 24px;
+        font-size: clamp(16px, 3vw, 19px) !important;
+    }
+
+    .service-stack-page .service-scroll-group .service-shared-accord-item.is-very-dense .service-list {
+        grid-template-columns: 1fr;
+    }
+
+    .service-stack-page .service-details-row > [class*="col-"] + [class*="col-"] {
+        margin-top: 34px;
+    }
+
+    .service-stack-page .service-image-container {
+        min-height: 280px;
+    }
+}
+
+@media (max-width: 575px) {
+    .service-stack-page .breadcrumb-area {
+        min-height: 70svh;
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .service-stack-page .breadcrumb-area h1 {
+        font-size: clamp(38px, 13vw, 58px) !important;
+    }
+
+    .service-hero-eyebrow {
+        font-size: 9px;
+        letter-spacing: 0.17em;
+    }
+
+    .service-hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .service-hero-button {
+        width: 100%;
+    }
+
+    .service-stack-page .service-details-row {
+        padding: 52px 0;
+    }
+
+    .service-scroll-stage {
+        padding: 46px 4px;
+    }
+
+    .service-scroll-stage > [class*="col-"] {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .service-stack-page .service-list {
+        grid-template-columns: 1fr;
+    }
+
+    .service-stack-page .service-image-container {
+        min-height: 230px;
+        border-radius: 14px;
+    }
+
+    .service-scroll-group .service-shared-accord-item,
+    .service-scroll-group .service-shared-accord-item.is-active,
+    .service-scroll-group .service-shared-accord-item.is-past,
+    .service-scroll-group .service-shared-accord-item.is-future {
+        padding: 22px 18px;
+        border-radius: 16px;
+    }
+
+    .service-stack-page .service-scroll-group .service-sub-title.service-shared-accord-header {
+        min-height: 54px;
+        margin-bottom: 14px !important;
+        font-size: 17px !important;
+    }
+
+    .service-stack-page .service-scroll-group .service-sub-title.service-shared-accord-header > i:first-child {
+        flex-basis: 42px;
+        width: 42px;
+        height: 42px;
+        font-size: 15px;
+    }
+
+    .service-stack-page .service-scroll-group .service-list li,
+    .service-stack-page .service-scroll-group .service-list li[class*="col-"] {
+        font-size: 14.5px;
+        line-height: 1.55;
+    }
+
+}
+
+/* Desktop capability cards: premium technical surface without changing scroll geometry. */
+@media (min-width: 992px) {
+    .service-scroll-group .service-shared-accord-item,
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-item {
+        isolation: isolate;
+        border: 1px solid rgba(106, 166, 255, 0.42) !important;
+        border-radius: 26px !important;
+        background:
+            radial-gradient(circle at 92% 6%, rgba(71, 139, 247, 0.20), transparent 31%),
+            linear-gradient(145deg, rgba(22, 49, 86, 0.98), rgba(7, 20, 39, 0.99) 72%) !important;
+        box-shadow:
+            0 30px 80px rgba(0, 0, 0, 0.42),
+            0 10px 28px rgba(15, 72, 155, 0.16),
+            inset 0 1px 0 rgba(255, 255, 255, 0.10),
+            inset 0 0 0 1px rgba(104, 167, 255, 0.04) !important;
+    }
+
+    .service-scroll-group .service-shared-accord-item::before,
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-item::before {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 26px;
+        width: min(190px, 38%);
+        height: 3px;
+        content: "";
+        opacity: 0;
+        border-radius: 0 0 999px 999px;
+        background: linear-gradient(90deg, #66adff, #4d7fff 68%, transparent);
+        box-shadow: 0 0 22px rgba(75, 143, 255, 0.68);
+        transition: opacity 360ms ease;
+    }
+
+    .service-scroll-group .service-shared-accord-item.is-active::before,
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-item.is-active::before {
+        opacity: 1;
+    }
+
+    .service-scroll-group .service-shared-accord-item::after,
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-item::after {
+        position: absolute;
+        z-index: 0;
+        inset: 0;
+        content: "";
+        pointer-events: none;
+        opacity: 0.10;
+        background-image:
+            linear-gradient(rgba(126, 180, 255, 0.24) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(126, 180, 255, 0.24) 1px, transparent 1px);
+        background-position: right -1px top -1px;
+        background-size: 32px 32px;
+        -webkit-mask-image: linear-gradient(125deg, transparent 18%, #000 100%);
+        mask-image: linear-gradient(125deg, transparent 18%, #000 100%);
+    }
+
+    .service-scroll-group .service-shared-accord-body,
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-body,
+    .service-stack-page .service-scroll-group .service-sub-title.service-shared-accord-header,
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-header {
+        position: relative;
+        z-index: 1;
+    }
+
+    .service-stack-page .service-scroll-group .service-sub-title.service-shared-accord-header,
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-header {
+        min-height: 68px !important;
+        margin-bottom: 18px !important;
+        padding: 0 0 18px !important;
+        border-bottom: 1px solid rgba(133, 184, 255, 0.16) !important;
+    }
+
+    .service-stack-page .service-scroll-group .service-sub-title.service-shared-accord-header > i:first-child,
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-icon {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(124, 180, 255, 0.34) !important;
+        background: linear-gradient(145deg, rgba(46, 108, 198, 0.88), rgba(19, 55, 107, 0.94)) !important;
+        box-shadow:
+            0 12px 28px rgba(16, 75, 160, 0.32),
+            inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    }
+
+    .service-stack-page .service-scroll-group .service-sub-title.service-shared-accord-header > i:first-child::after,
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-icon::after {
+        position: absolute;
+        inset: 5px;
+        content: "";
+        pointer-events: none;
+        border: 1px solid rgba(159, 203, 255, 0.12);
+        border-radius: 9px;
+    }
+
+    .service-stack-page .service-scroll-group .service-sub-title.service-shared-accord-header,
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-title {
+        color: #f5f8ff !important;
+        text-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+    }
+
+    .service-stack-page .service-scroll-group .service-list,
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-body-inner {
+        position: relative;
+        z-index: 1;
+        gap: 10px 14px !important;
+    }
+
+    .service-stack-page .service-scroll-group .service-list li,
+    .service-stack-page .service-scroll-group .service-list li[class*="col-"],
+    .design-manufacturing-page .dm-service-scroll-stage .svc-feat-item {
+        min-width: 0;
+        padding: 9px 11px !important;
+        color: rgba(229, 237, 250, 0.82) !important;
+        border: 1px solid rgba(128, 180, 255, 0.10);
+        border-radius: 11px;
+        background: linear-gradient(110deg, rgba(255, 255, 255, 0.052), rgba(255, 255, 255, 0.018));
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025);
+        transition: color 200ms ease, border-color 200ms ease, background-color 200ms ease;
+    }
+
+    .service-stack-page .service-scroll-group .service-list li:hover,
+    .service-stack-page .service-scroll-group .service-list li[class*="col-"]:hover,
+    .design-manufacturing-page .dm-service-scroll-stage .svc-feat-item:hover {
+        color: #ffffff !important;
+        border-color: rgba(113, 174, 255, 0.30);
+        background: rgba(69, 126, 211, 0.13);
+    }
+
+    .service-stack-page .service-scroll-group .service-list li > i,
+    .design-manufacturing-page .dm-service-scroll-stage .svc-feat-item > i {
+        margin-top: 7px !important;
+        background: #68a8ff;
+        box-shadow: 0 0 0 4px rgba(74, 145, 244, 0.11), 0 0 13px rgba(85, 158, 255, 0.56);
+    }
+
+    .service-stack-page .service-scroll-group .service-shared-accord-item.is-dense .service-list li,
+    .service-stack-page .service-scroll-group .service-shared-accord-item.is-very-dense .service-list li {
+        padding: 6px 8px !important;
+    }
+}
+
+@media (hover: none), (pointer: coarse) {
+    .service-stack-page .service-pointer-glow {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .service-stack-page .service-image-container img,
+    .service-shared-accord-body,
+    .service-shared-arrow {
+        transition: none !important;
+    }
+}
+
+/* Homepage footer is the single footer treatment across the site. */
+.service-stack-page footer,
+.service-stack-page footer.bg-dark {
+    position: relative !important;
+    top: auto !important;
+    display: block !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    overflow: hidden;
+    background: var(--dark) !important;
+    box-shadow: none !important;
+}
+
+.service-stack-page footer .footer-bottom {
+    margin-top: -10px;
+}
+
+/* Design & Manufacturing now shares the premium service-card typography. */
+.design-manufacturing-page .svc-cat-label {
+    font-size: clamp(12px, 0.92vw, 14px);
+    letter-spacing: 0.20em;
+}
+
+.design-manufacturing-page .svc-card-title {
+    font-size: clamp(34px, 3.7vw, 52px);
+    line-height: 1.02;
+}
+
+.design-manufacturing-page .svc-accord-item {
+    border-color: rgba(113, 169, 255, 0.18);
+    background: linear-gradient(135deg, rgba(26, 49, 84, 0.72), rgba(8, 18, 34, 0.88));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035);
+}
+
+.design-manufacturing-page .svc-accord-item.open {
+    border-color: rgba(90, 153, 251, 0.58);
+    background: linear-gradient(135deg, rgba(31, 61, 106, 0.82), rgba(9, 21, 40, 0.94));
+}
+
+.design-manufacturing-page .svc-accord-title {
+    font-size: clamp(13px, 1vw, 15px);
+    letter-spacing: 0.075em;
+}
+
+.design-manufacturing-page .svc-feat-item {
+    font-size: clamp(13px, 0.98vw, 15px);
+    line-height: 1.55;
+}
+
+@media (min-width: 992px) {
+    .design-manufacturing-page .svc-panel .svc-panel-img-col {
+        order: 1 !important;
+    }
+
+    .design-manufacturing-page .svc-panel .svc-panel-content-col {
+        order: 2 !important;
+    }
+
+    .design-manufacturing-page .svc-img-frame {
+        height: min(62vh, 540px);
+        aspect-ratio: auto;
+        border: 1px solid rgba(113, 169, 255, 0.22);
+        box-shadow: 0 28px 65px rgba(0, 0, 0, 0.34);
+    }
+}
+
+@media (max-width: 991px) {
+    .design-manufacturing-page .svc-panel .svc-panel-img-col {
+        order: 1 !important;
+    }
+
+    .design-manufacturing-page .svc-panel .svc-panel-content-col {
+        order: 2 !important;
+    }
+
+    .design-manufacturing-page .svc-card-title {
+        font-size: clamp(31px, 8vw, 44px);
+    }
+
+    .design-manufacturing-page .svc-accord-title,
+    .design-manufacturing-page .svc-feat-item {
+        font-size: 14px;
+    }
+}
+
+/* Unified nested-card presentation for Design & Manufacturing. */
+.design-manufacturing-page .services-details-area,
+.design-manufacturing-page .svc-stack-wrap {
+    overflow: visible !important;
+    background: #050910 !important;
+}
+
+.design-manufacturing-page .svc-panel.dm-service-scroll-group {
+    position: relative !important;
+    top: auto !important;
+    display: block !important;
+    min-height: calc(100svh - var(--service-stack-top) + var(--dm-inner-distance)) !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    transform: none !important;
+    filter: none !important;
+}
+
+.design-manufacturing-page .dm-service-scroll-stage {
+    --service-mouse-x: 50%;
+    --service-mouse-y: 50%;
+    position: sticky;
+    top: var(--service-stack-top);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: calc(100svh - var(--service-stack-top));
+    padding: clamp(24px, 3.3vh, 42px) max(5vw, 28px);
+    overflow: hidden;
+    isolation: isolate;
+    color: #fff;
+    border-top: 1px solid rgba(109, 165, 255, 0.15);
+    background: #07101d;
+    box-shadow: 0 -22px 55px rgba(0, 0, 0, 0.34);
+}
+
+.design-manufacturing-page .svc-panel:nth-child(4n + 2) .dm-service-scroll-stage { background: #0b0d1c; }
+.design-manufacturing-page .svc-panel:nth-child(4n + 3) .dm-service-scroll-stage { background: #071410; }
+.design-manufacturing-page .svc-panel:nth-child(4n) .dm-service-scroll-stage { background: #151009; }
+
+.design-manufacturing-page .dm-service-scroll-stage::before {
+    position: absolute;
+    z-index: -2;
+    inset: -3%;
+    content: "";
+    opacity: 0.17;
+    background: var(--dm-panel-image) center / cover;
+    filter: saturate(0.65);
+}
+
+.design-manufacturing-page .dm-service-scroll-stage::after {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    content: "";
+    pointer-events: none;
+    background:
+        radial-gradient(circle 340px at var(--service-mouse-x) var(--service-mouse-y), rgba(77, 142, 240, 0.18), transparent 72%),
+        linear-gradient(105deg, rgba(5, 9, 16, 0.94), rgba(8, 15, 29, 0.84));
+}
+
+.design-manufacturing-page .dm-service-scroll-stage > .svc-panel-bg { display: none !important; }
+
+.design-manufacturing-page .dm-service-scroll-stage .svc-panel-inner {
+    position: relative !important;
+    z-index: 2;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    align-items: center;
+    gap: clamp(42px, 6vw, 88px);
+    width: min(1220px, 100%) !important;
+    height: 100%;
+    min-height: 0 !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+}
+
+.design-manufacturing-page .dm-service-scroll-stage .svc-panel-img-col,
+.design-manufacturing-page .svc-panel:nth-child(even) .dm-service-scroll-stage .svc-panel-img-col {
+    order: 1 !important;
+}
+
+.design-manufacturing-page .dm-service-scroll-stage .svc-panel-content-col,
+.design-manufacturing-page .svc-panel:nth-child(even) .dm-service-scroll-stage .svc-panel-content-col {
+    order: 2 !important;
+    display: flex;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.design-manufacturing-page .dm-service-scroll-stage .svc-img-frame {
+    width: 100% !important;
+    height: min(62vh, 540px) !important;
+    min-height: 390px;
+    border: 1px solid rgba(113, 169, 255, 0.24);
+    border-radius: 22px !important;
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.38);
+    transform: translate3d(var(--service-image-shift-x, 0), var(--service-image-shift-y, 0), 0);
+    transition: transform 240ms ease;
+}
+
+.design-manufacturing-page .dm-service-scroll-stage .svc-cat-label {
+    margin-bottom: 10px !important;
+    color: #5b9cff !important;
+    font-size: clamp(11px, 0.85vw, 13px) !important;
+    letter-spacing: 0.2em !important;
+}
+
+.design-manufacturing-page .dm-service-scroll-stage .svc-card-title {
+    margin: 0 0 16px !important;
+    color: #f6f8ff !important;
+    font-size: clamp(34px, 3.25vw, 52px) !important;
+    line-height: 1.02 !important;
+    letter-spacing: -0.035em !important;
+}
+
+.design-manufacturing-page .dm-service-scroll-stage .svc-card-title br { display: none; }
+
+.design-manufacturing-page .dm-service-scroll-stage .svc-accord {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: clamp(350px, 53vh, 440px);
+    min-height: 0;
+    margin-top: 6px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.design-manufacturing-page .dm-service-scroll-stage .svc-accord-item {
+    position: absolute !important;
+    inset: 0;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 !important;
+    padding: clamp(24px, 2.7vw, 36px) !important;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    border: 1px solid rgba(113, 169, 255, 0.20) !important;
+    border-radius: 20px !important;
+    background: linear-gradient(135deg, rgba(30, 56, 96, 0.88), rgba(8, 19, 36, 0.96) 72%) !important;
+    box-shadow: 0 28px 65px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.055) !important;
+    transform: translate3d(0, 110px, 0) scale(0.965);
+    transition: opacity 420ms ease, transform 640ms cubic-bezier(0.16, 1, 0.3, 1), border-color 360ms ease;
+}
+
+.design-manufacturing-page .dm-service-scroll-stage .svc-accord-item.is-active {
+    z-index: 3;
+    opacity: 1;
+    pointer-events: auto;
+    border-color: rgba(90, 153, 251, 0.60) !important;
+    transform: translate3d(0, 0, 0) scale(1);
+}
+
+.design-manufacturing-page .dm-service-scroll-stage .svc-accord-item.is-past {
+    transform: translate3d(0, -90px, 0) scale(0.965);
+}
+
+.design-manufacturing-page .dm-service-scroll-stage .svc-accord-item.is-future {
+    transform: translate3d(0, 110px, 0) scale(0.965);
+}
+
+.design-manufacturing-page .dm-service-scroll-stage .svc-accord-header {
+    min-height: 64px !important;
+    padding: 0 !important;
+    cursor: default !important;
+    border: 0 !important;
+    background: transparent !important;
+}
+
+.design-manufacturing-page .dm-service-scroll-stage .svc-accord-title {
+    font-size: clamp(20px, 1.65vw, 25px) !important;
+    letter-spacing: 0.025em !important;
+}
+
+.design-manufacturing-page .dm-service-scroll-stage .svc-accord-icon {
+    width: 48px !important;
+    height: 48px !important;
+    flex-basis: 48px;
+    border-radius: 13px !important;
+    font-size: 18px;
+}
+
+.design-manufacturing-page .dm-service-scroll-stage .svc-accord-arrow { display: none !important; }
+
+.design-manufacturing-page .dm-service-scroll-stage .svc-accord-body {
+    height: auto !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    transition: none !important;
+}
+
+.design-manufacturing-page .dm-service-scroll-stage .svc-accord-body-inner {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px 25px !important;
+    padding: 14px 0 0 !important;
+}
+
+.design-manufacturing-page .dm-service-scroll-stage .svc-feat-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.72) !important;
+    font-size: clamp(14px, 1.05vw, 16px) !important;
+    line-height: 1.55 !important;
+}
+
+.design-manufacturing-page .dm-service-scroll-stage .svc-feat-item > i {
+    flex: 0 0 7px;
+    width: 7px;
+    height: 7px;
+    margin-top: 8px;
+    overflow: hidden;
+    color: transparent !important;
+    border-radius: 50%;
+    background: #5596f5;
+    font-size: 0 !important;
+}
+
+.design-manufacturing-page .dm-service-scroll-group > .svc-scroll-hint { display: none !important; }
+.design-manufacturing-page .dm-service-scroll-group.is-pointer-active .service-pointer-glow { opacity: 1; }
+
+@media (max-width: 991px) {
+    .design-manufacturing-page .svc-panel.dm-service-scroll-group { min-height: auto !important; }
+    .design-manufacturing-page .dm-service-scroll-stage {
+        position: relative;
+        top: auto;
+        height: auto;
+        min-height: 0;
+        padding: 60px 22px;
+    }
+    .design-manufacturing-page .dm-service-scroll-stage .svc-panel-inner {
+        grid-template-columns: 1fr !important;
+        gap: 34px;
+        height: auto;
+    }
+    .design-manufacturing-page .dm-service-scroll-stage .svc-img-frame {
+        height: auto !important;
+        min-height: 280px;
+        aspect-ratio: 4 / 3;
+    }
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord {
+        display: flex;
+        height: auto;
+        flex-direction: column;
+        gap: 14px;
+        overflow: visible;
+    }
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-item,
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-item.is-active,
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-item.is-past,
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-item.is-future {
+        position: relative !important;
+        inset: auto;
+        padding: 24px !important;
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+    }
+
+    .design-manufacturing-page .dm-service-scroll-stage .svc-panel-content-col {
+        display: block;
+        height: auto;
+    }
+
+    .design-manufacturing-page .dm-service-scroll-stage .svc-cat-label {
+        margin-bottom: 12px !important;
+        font-size: 10px !important;
+        letter-spacing: 0.2em !important;
+    }
+
+    .design-manufacturing-page .dm-service-scroll-stage .svc-card-title {
+        margin-bottom: 22px !important;
+        font-size: clamp(34px, 8vw, 46px) !important;
+        line-height: 1.02 !important;
+    }
+
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord {
+        gap: 10px;
+    }
+
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-item,
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-item.is-active,
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-item.is-past,
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-item.is-future {
+        justify-content: flex-start;
+        padding: 0 !important;
+        border-radius: 13px !important;
+        background: linear-gradient(135deg, rgba(27, 53, 91, 0.96), rgba(8, 21, 39, 0.98)) !important;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22) !important;
+    }
+
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-header {
+        min-height: 58px !important;
+        padding: 10px 14px !important;
+        cursor: pointer !important;
+    }
+
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-icon {
+        width: 38px !important;
+        height: 38px !important;
+        flex-basis: 38px;
+        border-radius: 10px !important;
+        font-size: 14px;
+    }
+
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-title {
+        font-size: clamp(14px, 2.4vw, 17px) !important;
+        line-height: 1.35;
+        letter-spacing: 0.045em !important;
+    }
+
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-arrow {
+        display: block !important;
+        margin-left: auto;
+        color: rgba(255, 255, 255, 0.5);
+        transform: rotate(0);
+        transition: transform 280ms ease, color 280ms ease;
+    }
+
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-item.open .svc-accord-arrow {
+        color: #63a0ff;
+        transform: rotate(180deg);
+    }
+
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-body {
+        height: auto !important;
+        max-height: 0;
+        overflow: hidden !important;
+        opacity: 0 !important;
+        transition: max-height 480ms cubic-bezier(0.16, 1, 0.3, 1), opacity 240ms ease !important;
+    }
+
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-item.open .svc-accord-body {
+        max-height: 900px;
+        opacity: 1 !important;
+    }
+
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-body-inner {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px 16px !important;
+        padding: 0 16px 17px !important;
+    }
+
+    .design-manufacturing-page .dm-service-scroll-stage .svc-feat-item {
+        font-size: clamp(13px, 2.1vw, 15px) !important;
+        line-height: 1.45 !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .design-manufacturing-page .dm-service-scroll-stage { padding: 48px 16px; }
+    .design-manufacturing-page .dm-service-scroll-stage .svc-card-title {
+        font-size: clamp(30px, 10vw, 42px) !important;
+    }
+    .design-manufacturing-page .dm-service-scroll-stage .svc-img-frame {
+        min-height: 230px;
+        border-radius: 16px !important;
+    }
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-item { padding: 0 !important; }
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-body-inner {
+        grid-template-columns: 1fr;
+        gap: 8px !important;
+        padding: 0 14px 16px !important;
+    }
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-title { font-size: 13px !important; }
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-header {
+        min-height: 54px !important;
+        padding: 8px 12px !important;
+    }
+    .design-manufacturing-page .dm-service-scroll-stage .svc-feat-item {
+        font-size: 12.5px !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-item,
+    .design-manufacturing-page .dm-service-scroll-stage .svc-img-frame {
+        transition: none !important;
+    }
+}
+
+/* Mobile service heroes: remove the oversized empty area above the copy. */
+@media (max-width: 991px) {
+    .service-stack-page .breadcrumb-area {
+        align-items: flex-start !important;
+        min-height: auto !important;
+        padding-top: clamp(44px, 8vw, 64px) !important;
+        padding-bottom: clamp(48px, 9vw, 72px) !important;
+    }
+
+    .service-stack-page .service-hero-shell {
+        min-height: 0;
+    }
+
+    .design-manufacturing-page .dm-hero {
+        align-items: flex-start !important;
+        min-height: auto !important;
+    }
+
+    .design-manufacturing-page .dm-hero-inner {
+        padding-top: clamp(40px, 8vw, 56px) !important;
+        padding-bottom: clamp(44px, 9vw, 64px) !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .service-stack-page .breadcrumb-area {
+        padding-top: 38px !important;
+        padding-bottom: 46px !important;
+    }
+
+    .design-manufacturing-page .dm-hero-inner {
+        padding-top: 36px !important;
+        padding-bottom: 46px !important;
+    }
+}
+
+/* Premium, readable typography for every service-detail page. */
+.service-stack-page .service-hero-eyebrow,
+.design-manufacturing-page .dm-hero-kicker {
+    font-family: var(--font-heading) !important;
+    font-size: clamp(12px, 0.82vw, 14px) !important;
+    font-weight: 650 !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.14em !important;
+    overflow-wrap: anywhere;
+}
+
+.service-stack-page .breadcrumb-area h1.service-hero-title,
+.design-manufacturing-page .dm-hero h1 {
+    max-width: 20ch;
+    height: auto !important;
+    overflow: visible !important;
+    font-family: var(--font-heading) !important;
+    font-size: clamp(44px, 5vw, 72px) !important;
+    font-weight: 750 !important;
+    line-height: 1.04 !important;
+    letter-spacing: -0.04em !important;
+    text-wrap: balance;
+    overflow-wrap: anywhere;
+}
+
+.service-stack-page .breadcrumb-area p.service-hero-description,
+.design-manufacturing-page .dm-hero-summary {
+    font-family: var(--font-body) !important;
+    font-size: clamp(16px, 1.1vw, 18px) !important;
+    font-weight: 400 !important;
+    line-height: 1.65 !important;
+    letter-spacing: 0 !important;
+    overflow-wrap: anywhere;
+}
+
+.service-stack-page .service-hero-button,
+.design-manufacturing-page .dm-hero-cta {
+    font-size: 13px !important;
+    font-weight: 650 !important;
+    line-height: 1.35 !important;
+    letter-spacing: 0.075em !important;
+    white-space: normal !important;
+}
+
+.service-stack-page .service-hero-tag,
+.design-manufacturing-page .dm-hero-tags span {
+    font-family: var(--font-heading) !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    line-height: 1.35 !important;
+    letter-spacing: 0.04em !important;
+    white-space: normal !important;
+}
+
+.service-stack-page .service-badge,
+.design-manufacturing-page .svc-cat-label {
+    font-family: var(--font-heading) !important;
+    font-size: clamp(12px, 0.88vw, 14px) !important;
+    font-weight: 650 !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.11em !important;
+    overflow-wrap: anywhere;
+}
+
+.service-stack-page .service-meta-text {
+    font-family: var(--font-heading) !important;
+    font-size: clamp(16px, 1.2vw, 20px) !important;
+    font-weight: 600 !important;
+    line-height: 1.35 !important;
+    letter-spacing: 0.035em !important;
+    overflow-wrap: anywhere;
+}
+
+.service-stack-page .service-scroll-group .service-sub-title.service-shared-accord-header,
+.design-manufacturing-page .dm-service-scroll-stage .svc-accord-title {
+    font-family: var(--font-heading) !important;
+    font-size: clamp(19px, 1.5vw, 24px) !important;
+    font-weight: 650 !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.012em !important;
+    overflow-wrap: anywhere;
+}
+
+.service-stack-page .service-scroll-group .service-list li,
+.service-stack-page .service-scroll-group .service-list li[class*="col-"],
+.design-manufacturing-page .dm-service-scroll-stage .svc-feat-item {
+    font-family: var(--font-body) !important;
+    font-size: clamp(15px, 1vw, 17px) !important;
+    font-weight: 450 !important;
+    line-height: 1.55 !important;
+    letter-spacing: 0 !important;
+    overflow-wrap: anywhere;
+}
+
+.design-manufacturing-page .dm-service-scroll-stage .svc-card-title {
+    max-width: 18ch;
+    height: auto !important;
+    overflow: visible !important;
+    font-family: var(--font-heading) !important;
+    font-weight: 700 !important;
+    line-height: 1.08 !important;
+    text-wrap: balance;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 991px) {
+    .service-stack-page .breadcrumb-area h1.service-hero-title,
+    .design-manufacturing-page .dm-hero h1 {
+        max-width: 18ch;
+        font-size: clamp(36px, 8.5vw, 56px) !important;
+        line-height: 1.07 !important;
+        letter-spacing: -0.032em !important;
+    }
+
+    .service-stack-page .breadcrumb-area p.service-hero-description,
+    .design-manufacturing-page .dm-hero-summary {
+        font-size: 16px !important;
+        line-height: 1.62 !important;
+    }
+
+    .service-stack-page .service-scroll-group .service-sub-title.service-shared-accord-header,
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-title {
+        font-size: clamp(16px, 3vw, 20px) !important;
+        line-height: 1.35 !important;
+    }
+
+    .service-stack-page .service-scroll-group .service-list li,
+    .service-stack-page .service-scroll-group .service-list li[class*="col-"],
+    .design-manufacturing-page .dm-service-scroll-stage .svc-feat-item {
+        font-size: 15px !important;
+        line-height: 1.55 !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .service-stack-page .breadcrumb-area h1.service-hero-title,
+    .design-manufacturing-page .dm-hero h1 {
+        max-width: 100%;
+        font-size: clamp(32px, 10vw, 44px) !important;
+        line-height: 1.09 !important;
+        letter-spacing: -0.026em !important;
+    }
+
+    .service-stack-page .service-hero-eyebrow,
+    .design-manufacturing-page .dm-hero-kicker {
+        font-size: 11px !important;
+        line-height: 1.45 !important;
+        letter-spacing: 0.1em !important;
+    }
+
+    .service-stack-page .service-hero-button,
+    .design-manufacturing-page .dm-hero-cta {
+        font-size: 12px !important;
+        letter-spacing: 0.055em !important;
+    }
+
+    .service-stack-page .service-hero-tag,
+    .design-manufacturing-page .dm-hero-tags span {
+        font-size: 11.5px !important;
+    }
+
+    .service-stack-page .service-scroll-group .service-sub-title.service-shared-accord-header,
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-title {
+        font-size: 15px !important;
+        line-height: 1.4 !important;
+    }
+
+    .service-stack-page .service-scroll-group .service-list li,
+    .service-stack-page .service-scroll-group .service-list li[class*="col-"],
+    .design-manufacturing-page .dm-service-scroll-stage .svc-feat-item {
+        font-size: 14.5px !important;
+        line-height: 1.55 !important;
+    }
+}
+
+/* Final desktop-only density overrides for the shared premium service-card skin. */
+@media (min-width: 992px) {
+    .service-scroll-group .service-shared-accord-item {
+        padding: clamp(20px, 1.8vw, 26px);
+    }
+
+    .service-stack-page .service-scroll-group .service-sub-title.service-shared-accord-header {
+        min-height: 56px !important;
+        margin-bottom: 12px !important;
+        padding: 0 0 12px !important;
+    }
+
+    .service-stack-page .service-scroll-group .service-list {
+        gap: 8px 12px !important;
+    }
+
+    .service-stack-page .service-scroll-group .service-list li,
+    .service-stack-page .service-scroll-group .service-list li[class*="col-"] {
+        padding: 6px 9px !important;
+        font-size: clamp(13.5px, 0.94vw, 15px) !important;
+        line-height: 1.4 !important;
+    }
+
+    .service-stack-page .service-scroll-group .service-shared-accord-item.is-dense {
+        padding: 18px 20px;
+    }
+
+    .service-stack-page .service-scroll-group .service-shared-accord-item.is-dense .service-list,
+    .service-stack-page .service-scroll-group .service-shared-accord-item.is-very-dense .service-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 7px 9px !important;
+    }
+
+    .service-stack-page .service-scroll-group .service-shared-accord-item.is-dense .service-list li,
+    .service-stack-page .service-scroll-group .service-shared-accord-item.is-very-dense .service-list li {
+        padding: 5px 7px !important;
+        font-size: clamp(12.5px, 0.82vw, 14px) !important;
+        line-height: 1.35 !important;
+    }
+
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-item {
+        padding: clamp(20px, 1.8vw, 26px) !important;
+        border: 1px solid rgba(106, 166, 255, 0.42) !important;
+        border-radius: 26px !important;
+        background:
+            radial-gradient(circle at 92% 6%, rgba(71, 139, 247, 0.20), transparent 31%),
+            linear-gradient(145deg, rgba(22, 49, 86, 0.98), rgba(7, 20, 39, 0.99) 72%) !important;
+        box-shadow:
+            0 30px 80px rgba(0, 0, 0, 0.42),
+            0 10px 28px rgba(15, 72, 155, 0.16),
+            inset 0 1px 0 rgba(255, 255, 255, 0.10),
+            inset 0 0 0 1px rgba(104, 167, 255, 0.04) !important;
+    }
+
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-header {
+        min-height: 56px !important;
+        margin-bottom: 12px !important;
+        padding: 0 0 12px !important;
+        border: 0 !important;
+        border-bottom: 1px solid rgba(133, 184, 255, 0.16) !important;
+    }
+
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-body-inner {
+        gap: 8px 12px !important;
+        padding-top: 0 !important;
+    }
+
+    .design-manufacturing-page .dm-service-scroll-stage .svc-feat-item {
+        padding: 6px 9px !important;
+        color: rgba(229, 237, 250, 0.82) !important;
+        font-size: clamp(13.5px, 0.94vw, 15px) !important;
+        line-height: 1.4 !important;
+        border: 1px solid rgba(128, 180, 255, 0.10);
+        border-radius: 11px;
+        background: linear-gradient(110deg, rgba(255, 255, 255, 0.052), rgba(255, 255, 255, 0.018));
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025);
+    }
+
+    .design-manufacturing-page .dm-service-scroll-stage .svc-feat-item:hover {
+        color: #ffffff !important;
+        border-color: rgba(113, 174, 255, 0.30);
+        background: rgba(69, 126, 211, 0.13);
+    }
+
+    .design-manufacturing-page .dm-service-scroll-stage .svc-feat-item > i {
+        margin-top: 6px !important;
+    }
+
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-item.is-dense {
+        padding: 18px 20px !important;
+    }
+
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-item.is-dense .svc-accord-header {
+        min-height: 50px !important;
+        margin-bottom: 9px !important;
+        padding-bottom: 9px !important;
+    }
+
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-item.is-dense .svc-accord-body-inner,
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-item.is-very-dense .svc-accord-body-inner {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 7px 9px !important;
+    }
+
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-item.is-dense .svc-feat-item,
+    .design-manufacturing-page .dm-service-scroll-stage .svc-accord-item.is-very-dense .svc-feat-item {
+        padding: 5px 7px !important;
+        font-size: clamp(12.5px, 0.82vw, 14px) !important;
+        line-height: 1.35 !important;
+    }
+
+    .design-manufacturing-page .dm-service-scroll-stage .svc-card-title br {
+        display: block;
+    }
+}
+
+/* Desktop outer section stack. Nested capability-card stacking remains independent. */
+@media (min-width: 992px) {
+    .service-stack-page .services-details-area {
+        z-index: 11;
+    }
+
+    .design-manufacturing-page .dm-hero.page-stack-layer {
+        top: var(--service-stack-top) !important;
+        height: 100svh !important;
+        min-height: 100svh !important;
+        margin: 0 !important;
+    }
+
+    .design-manufacturing-page .dm-hero.page-stack-layer .dm-hero-inner {
+        max-height: 100%;
+        padding-top: clamp(30px, 5vh, 54px);
+        padding-bottom: clamp(30px, 5vh, 54px);
+    }
+
+    .service-stack-page .breadcrumb-area.service-stack-layer {
+        position: sticky;
+        top: var(--service-stack-top);
+        height: 100svh !important;
+        min-height: 100svh !important;
+        margin: 0 !important;
+        isolation: isolate;
+        box-shadow: 0 -24px 64px rgba(0, 0, 0, 0.42);
+    }
+
+    .service-stack-page .breadcrumb-area.service-stack-layer .service-hero-shell {
+        max-height: 100%;
+    }
+
+    .service-stack-page .service-details-row.service-stack-layer,
+    .design-manufacturing-page .svc-panel.service-outer-stack-layer {
+        position: relative !important;
+        isolation: isolate;
+    }
+
+    .service-scroll-stage,
+    .design-manufacturing-page .dm-service-scroll-stage {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        box-shadow:
+            0 -28px 68px rgba(0, 0, 0, 0.48),
+            inset 0 1px 0 rgba(125, 179, 255, 0.13);
+    }
+
+    .service-scroll-stage::before,
+    .design-manufacturing-page .dm-service-scroll-stage::before,
+    .service-stack-page .service-details-row:not(.service-scroll-group)::before {
+        transform: translate3d(
+            var(--service-image-shift-x, 0px),
+            var(--service-image-shift-y, 0px),
+            0
+        ) scale(1.045);
+        transition: transform 240ms ease-out;
+        will-change: transform;
+    }
+
+    .service-stack-page .service-scroll-group.is-layout-reversed .service-stage-image {
+        order: 2 !important;
+    }
+
+    .service-stack-page .service-scroll-group.is-layout-reversed .service-stage-content {
+        order: 1 !important;
+    }
+
+    .service-stack-page .service-details-row.is-layout-reversed:not(.service-scroll-group) > .service-stage-image {
+        order: 2 !important;
+    }
+
+    .service-stack-page .service-details-row.is-layout-reversed:not(.service-scroll-group) > .service-stage-content {
+        order: 1 !important;
+    }
+
+    .design-manufacturing-page .svc-panel.is-layout-reversed .dm-service-scroll-stage .svc-panel-img-col {
+        order: 2 !important;
+    }
+
+    .design-manufacturing-page .svc-panel.is-layout-reversed .dm-service-scroll-stage .svc-panel-content-col {
+        order: 1 !important;
+    }
+
+    .service-stack-page .service-stack-layer.is-pointer-active .service-pointer-glow,
+    .design-manufacturing-page .service-outer-stack-layer.is-pointer-active .service-pointer-glow {
+        opacity: 1;
+    }
+
+    .design-manufacturing-page footer.service-outer-stack-footer {
+        position: relative !important;
+        isolation: isolate;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .service-scroll-stage::before,
+    .design-manufacturing-page .dm-service-scroll-stage::before,
+    .service-stack-page .service-details-row:not(.service-scroll-group)::before {
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+/* Mobile-only service card system. Desktop geometry and stacking stay unchanged. */
+.service-mobile-card-title {
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .service-stack-page .service-scroll-stage {
+        padding: 60px 22px;
+        background: #07101d;
+    }
+
+    .service-stack-page .service-scroll-stage > .service-stage-image,
+    .service-stack-page .service-scroll-stage > .service-stage-content {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .service-stack-page .service-scroll-stage > .service-stage-content {
+        margin-top: 28px !important;
+    }
+
+    .service-stack-page .service-scroll-group .service-image-container {
+        width: 100%;
+        height: auto;
+        min-height: 280px;
+        margin: 0;
+        aspect-ratio: 4 / 3;
+        border-color: rgba(113, 169, 255, 0.24);
+        border-radius: 20px;
+        box-shadow: 0 24px 56px rgba(0, 0, 0, 0.38) !important;
+    }
+
+    .service-stack-page .service-image-container img {
+        transform: none;
+    }
+
+    .service-stack-page .service-scroll-group .service-badge {
+        display: inline-flex;
+        margin: 0 0 12px !important;
+        color: #5b9cff !important;
+        font-size: 10px !important;
+        letter-spacing: 0.2em !important;
+    }
+
+    .service-stack-page .service-scroll-group .service-badge::before {
+        width: 24px;
+    }
+
+    .service-stack-page .service-scroll-group .service-meta-text {
+        display: none;
+    }
+
+    .service-stack-page .service-mobile-card-title {
+        display: block;
+        max-width: 18ch;
+        margin: 0 0 22px !important;
+        color: #f6f8ff !important;
+        font-family: var(--font-heading) !important;
+        font-size: clamp(30px, 7vw, 42px) !important;
+        font-weight: 700 !important;
+        line-height: 1.04 !important;
+        letter-spacing: -0.03em !important;
+        text-wrap: balance;
+    }
+
+    .service-stack-page .service-scroll-group .service-shared-accordion {
+        display: flex;
+        height: auto;
+        margin-top: 0;
+        gap: 10px;
+        overflow: visible;
+        border-radius: 0;
+    }
+
+    .service-stack-page .service-scroll-group .service-shared-accord-item,
+    .service-stack-page .service-scroll-group .service-shared-accord-item.is-active,
+    .service-stack-page .service-scroll-group .service-shared-accord-item.is-past,
+    .service-stack-page .service-scroll-group .service-shared-accord-item.is-future {
+        position: relative;
+        inset: auto;
+        display: block;
+        padding: 0 !important;
+        opacity: 1;
+        pointer-events: auto;
+        border-color: rgba(113, 169, 255, 0.18);
+        border-radius: 13px;
+        background: linear-gradient(135deg, rgba(27, 53, 91, 0.96), rgba(8, 21, 39, 0.98));
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+        transform: none;
+    }
+
+    .service-stack-page .service-scroll-group .service-shared-accord-item.open {
+        border-color: rgba(90, 153, 251, 0.58);
+        background: linear-gradient(135deg, rgba(31, 61, 106, 0.96), rgba(9, 21, 40, 0.98));
+    }
+
+    .service-stack-page .service-scroll-group .service-sub-title.service-shared-accord-header {
+        min-height: 58px;
+        margin: 0 !important;
+        padding: 10px 14px !important;
+        color: #e4ebfb !important;
+        font-size: clamp(14px, 2.4vw, 17px) !important;
+        line-height: 1.35 !important;
+        letter-spacing: 0.045em !important;
+        cursor: pointer;
+        touch-action: manipulation;
+    }
+
+    .service-stack-page .service-scroll-group .service-sub-title.service-shared-accord-header > i:first-child {
+        flex: 0 0 38px;
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        font-size: 14px;
+    }
+
+    .service-stack-page .service-scroll-group .service-shared-arrow {
+        display: block !important;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .service-stack-page .service-scroll-group .service-shared-accord-body {
+        height: auto !important;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 480ms cubic-bezier(0.16, 1, 0.3, 1), opacity 240ms ease;
+    }
+
+    .service-stack-page .service-scroll-group .service-shared-accord-item.open .service-shared-accord-body {
+        max-height: 1600px;
+        opacity: 1;
+    }
+
+    .service-stack-page .service-scroll-group .service-list,
+    .service-stack-page .service-scroll-group .service-shared-accord-item.is-dense .service-list,
+    .service-stack-page .service-scroll-group .service-shared-accord-item.is-very-dense .service-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px 16px !important;
+        padding: 0 16px 17px !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .service-stack-page .service-scroll-stage {
+        padding: 48px 16px;
+    }
+
+    .service-stack-page .service-scroll-group .service-image-container {
+        min-height: 230px;
+        border-radius: 16px;
+    }
+
+    .service-stack-page .service-mobile-card-title {
+        font-size: clamp(28px, 9vw, 38px) !important;
+    }
+
+    .service-stack-page .service-scroll-group .service-sub-title.service-shared-accord-header {
+        min-height: 54px;
+        padding: 8px 12px !important;
+        font-size: 13px !important;
+    }
+
+    .service-stack-page .service-scroll-group .service-list,
+    .service-stack-page .service-scroll-group .service-shared-accord-item.is-dense .service-list,
+    .service-stack-page .service-scroll-group .service-shared-accord-item.is-very-dense .service-list {
+        grid-template-columns: 1fr;
+        gap: 8px !important;
+        padding: 0 14px 16px !important;
+    }
+}
