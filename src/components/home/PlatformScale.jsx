@@ -106,7 +106,7 @@ export default function PlatformScale() {
             works, telecom infrastructure, mining and logistics, oil &amp; gas, trading and retail.
           </p>
 
-          <div className="platform-filter-tabs-wrapper" style={{ position: 'relative', zIndex: 20 }}>
+          {/* <div className="platform-filter-tabs-wrapper" style={{ position: 'relative', zIndex: 20 }}>
             <div className="platform-filter-tabs" role="tablist" aria-label="Metric Filters">
               {[
                 { id: 'all', label: 'All Indicators' },
@@ -129,7 +129,7 @@ export default function PlatformScale() {
                 </button>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Metric Cards inside container so they have proper gap from both left and right sides */}
