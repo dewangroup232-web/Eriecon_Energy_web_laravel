@@ -7,10 +7,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="@yield('meta_description', 'Eirecon Energy Company - Energy that drives the world.')">
+    <meta name="description"
+        content="@yield('meta_description', 'Omega Group - A Visionary Consortium Delivering Excellence.')">
 
     <!-- ========== Page Title ========== -->
-    <title>@yield('title', 'Eirecon Energy Company - Energy that drives the world.')</title>
+    <title>@yield('title', 'Omega Group - A Visionary Consortium Delivering Excellence')</title>
 
     <!-- ========== Favicon Icon ========== -->
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
@@ -28,15 +29,57 @@
     <link rel="stylesheet" href="assets/css/bootsnav.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- ========== Google Fonts (Lexend, Poppins, Source Sans 3) ========== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
     <!-- ========== End Stylesheet ========== -->
 
     <style>
+        /* ============================================================== 
+           # Global Scroll-Reveal Engine (UI-UX-PRO-MAX) 
+           ============================================================== */
+        [data-reveal] {
+            opacity: 0;
+            will-change: transform, opacity;
+            transition-property: opacity, transform;
+            transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+            transition-duration: 0.85s;
+        }
+        [data-reveal="fade-up"] {
+            transform: translateY(38px);
+        }
+        [data-reveal="fade-down"] {
+            transform: translateY(-38px);
+        }
+        [data-reveal="slide-right"] {
+            transform: translateX(-45px);
+        }
+        [data-reveal="slide-left"] {
+            transform: translateX(45px);
+        }
+        [data-reveal="zoom-in"] {
+            transform: scale(0.93);
+        }
+        [data-reveal].is-visible {
+            opacity: 1 !important;
+            transform: translate(0, 0) scale(1) !important;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            [data-reveal],
+            [data-reveal].is-visible {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+        }
+
         /* Homepage services showcase */
         .home-services {
             position: relative;
             isolation: isolate;
             overflow: hidden;
-            padding: clamp(88px, 9vw, 132px) 0;
+            padding: clamp(42px, 4.5vw, 60px) 0 clamp(75px, 7.5vw, 105px);
             background: #07111f;
             color: #ffffff;
         }
@@ -72,7 +115,7 @@
 
         .home-services-heading {
             max-width: 880px;
-            margin: 0 auto clamp(44px, 6vw, 72px);
+            margin: 0 auto clamp(26px, 3.2vw, 40px);
             text-align: center;
         }
 
@@ -406,219 +449,314 @@
                 padding: 64px 0 72px !important;
             }
 
-        /* Mobile Navigation Drawer Header - iOS Safari & Chrome Compatibility */
-        .mobile-menu-header {
-            display: -webkit-flex !important;
-            display: flex !important;
-            -webkit-box-align: center !important;
-            -webkit-align-items: center !important;
-            align-items: center !important;
-            -webkit-box-pack: justify !important;
-            -webkit-justify-content: space-between !important;
-            justify-content: space-between !important;
-            width: 100% !important;
-            padding-bottom: 15px !important;
-            margin-bottom: 20px !important;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
-            position: relative !important;
-            box-sizing: border-box !important;
-        }
-
-        nav.navbar.validnavs .navbar-collapse.collapse .mobile-menu-header img.mobile-nav-logo {
-            display: block !important;
-            height: 38px !important;
-            max-height: 38px !important;
-            width: auto !important;
-            margin: 0 !important;
-            float: none !important;
-            vertical-align: middle !important;
-        }
-
-        nav.navbar.validnavs .navbar-collapse.collapse button.mobile-menu-close {
-            position: relative !important;
-            top: auto !important;
-            right: auto !important;
-            left: auto !important;
-            bottom: auto !important;
-            margin: 0 !important;
-            height: 36px !important;
-            width: 36px !important;
-            min-width: 36px !important;
-            line-height: 34px !important;
-            text-align: center !important;
-            border: 1px solid #dcdcdc !important;
-            border-radius: 50% !important;
-            color: #222222 !important;
-            background-color: #f5f5f5 !important;
-            font-size: 16px !important;
-            display: -webkit-inline-flex !important;
-            display: inline-flex !important;
-            -webkit-align-items: center !important;
-            align-items: center !important;
-            -webkit-justify-content: center !important;
-            justify-content: center !important;
-            -webkit-appearance: none !important;
-            box-sizing: border-box !important;
-            cursor: pointer !important;
-            padding: 0 !important;
-            outline: none !important;
-        }
-
-        nav.navbar.validnavs .navbar-collapse.collapse button.mobile-menu-close i {
-            font-size: 16px !important;
-            line-height: 1 !important;
-            font-weight: 700 !important;
-        }
-
-        /* Mobile Navigation Side Drawer - Fail-safe Chrome & iOS Fix */
-        @media (max-width: 1023px) {
-            header,
-            nav.navbar.validnavs {
-                z-index: 99995 !important;
+            /* Mobile Navigation Drawer Header - iOS Safari & Chrome Compatibility */
+            .mobile-menu-header {
+                display: -webkit-flex !important;
+                display: flex !important;
+                -webkit-box-align: center !important;
+                -webkit-align-items: center !important;
+                align-items: center !important;
+                -webkit-box-pack: justify !important;
+                -webkit-justify-content: space-between !important;
+                justify-content: space-between !important;
+                width: 100% !important;
+                padding-bottom: 15px !important;
+                margin-bottom: 20px !important;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+                position: relative !important;
+                box-sizing: border-box !important;
             }
 
-            nav.navbar.validnavs.mobile-sidenav .navbar-collapse {
-                position: fixed !important;
-                left: -100% !important;
-                top: 0 !important;
-                width: 320px !important;
-                max-width: 85vw !important;
-                height: 100vh !important;
-                min-height: 100vh !important;
-                background: #ffffff !important;
-                overflow-y: auto !important;
-                -webkit-overflow-scrolling: touch !important;
-                z-index: 100000 !important;
-                transition: left 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+            nav.navbar.validnavs .navbar-collapse.collapse .mobile-menu-header img.mobile-nav-logo {
                 display: block !important;
-                visibility: visible !important;
-                padding: 25px 20px !important;
-                box-shadow: 4px 0 25px rgba(0, 0, 0, 0.15) !important;
-                pointer-events: auto !important;
+                height: 38px !important;
+                max-height: 38px !important;
+                width: auto !important;
+                margin: 0 !important;
+                float: none !important;
+                vertical-align: middle !important;
             }
 
-            nav.navbar.validnavs.mobile-sidenav .navbar-collapse * {
-                pointer-events: auto !important;
-            }
-
-            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.show,
-            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.in,
-            nav.navbar.validnavs.mobile-sidenav .navbar-collapse.site-mobile-open {
-                left: 0 !important;
-            }
-
-            .overlay-screen {
-                position: fixed !important;
-                top: 0 !important;
-                left: 0 !important;
-                width: 100vw !important;
-                height: 100vh !important;
-                background: rgba(0, 0, 0, 0.6) !important;
-                z-index: 99990 !important;
-                opacity: 0 !important;
-                visibility: hidden !important;
-                transition: opacity 0.3s ease, visibility 0.3s ease !important;
-                pointer-events: none !important;
-            }
-
-            .overlay-screen.opened,
-            .overlay-screen.show {
-                opacity: 1 !important;
-                visibility: visible !important;
-                pointer-events: auto !important;
-            }
-
-            .navbar-header .navbar-toggle {
+            nav.navbar.validnavs .navbar-collapse.collapse button.mobile-menu-close {
+                position: relative !important;
+                top: auto !important;
+                right: auto !important;
+                left: auto !important;
+                bottom: auto !important;
+                margin: 0 !important;
+                height: 36px !important;
+                width: 36px !important;
+                min-width: 36px !important;
+                line-height: 34px !important;
+                text-align: center !important;
+                border: 1px solid #dcdcdc !important;
+                border-radius: 50% !important;
+                color: #222222 !important;
+                background-color: #f5f5f5 !important;
+                font-size: 16px !important;
+                display: -webkit-inline-flex !important;
+                display: inline-flex !important;
+                -webkit-align-items: center !important;
+                align-items: center !important;
+                -webkit-justify-content: center !important;
+                justify-content: center !important;
+                -webkit-appearance: none !important;
+                box-sizing: border-box !important;
                 cursor: pointer !important;
-                pointer-events: auto !important;
-                z-index: 100 !important;
-                display: inline-block !important;
+                padding: 0 !important;
+                outline: none !important;
             }
-        }
 
-        /* Blog Section Formatting Fix - Single Line Meta & Tight Card Layout */
-        .blog-area .blog-items .item {
-            display: flex !important;
-            flex-direction: column !important;
-            height: 100% !important;
-            border-radius: 8px !important;
-            overflow: hidden !important;
-            background: #ffffff !important;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
-        }
+            nav.navbar.validnavs .navbar-collapse.collapse button.mobile-menu-close i {
+                font-size: 16px !important;
+                line-height: 1 !important;
+                font-weight: 700 !important;
+            }
 
-        .blog-area .blog-items .item .info {
-            display: flex !important;
-            flex-direction: column !important;
-            flex: 1 1 auto !important;
-            padding: 22px 20px 24px !important;
-        }
+            /* Mobile Navigation Side Drawer - Fail-safe Chrome & iOS Fix */
+            @media (max-width: 1023px) {
 
-        .blog-area .blog-items .item .info .meta {
-            margin-bottom: 12px !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: space-between !important;
-            width: 100% !important;
-        }
+                header,
+                nav.navbar.validnavs {
+                    z-index: 99995 !important;
+                }
 
-        .blog-area .blog-items .item .info .meta ul {
-            display: flex !important;
-            align-items: center !important;
-            justify-content: space-between !important;
-            width: 100% !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            list-style: none !important;
-            flex-wrap: nowrap !important;
-        }
+                nav.navbar.validnavs.mobile-sidenav .navbar-collapse {
+                    position: fixed !important;
+                    left: -100% !important;
+                    top: 0 !important;
+                    width: 320px !important;
+                    max-width: 85vw !important;
+                    height: 100vh !important;
+                    min-height: 100vh !important;
+                    background: #ffffff !important;
+                    overflow-y: auto !important;
+                    -webkit-overflow-scrolling: touch !important;
+                    z-index: 100000 !important;
+                    transition: left 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+                    display: block !important;
+                    visibility: visible !important;
+                    padding: 25px 20px !important;
+                    box-shadow: 4px 0 25px rgba(0, 0, 0, 0.15) !important;
+                    pointer-events: auto !important;
+                }
 
-        .blog-area .blog-items .item .info .meta ul li {
-            font-size: 12px !important;
-            white-space: nowrap !important;
-            color: #666666 !important;
-            font-weight: 500 !important;
-            margin-right: 0 !important;
-            padding-right: 0 !important;
-            display: inline-flex !important;
-            align-items: center !important;
-            gap: 4px !important;
-        }
+                nav.navbar.validnavs.mobile-sidenav .navbar-collapse * {
+                    pointer-events: auto !important;
+                }
 
-        .blog-area .blog-items .item .info .meta ul li::after {
-            display: none !important;
-        }
+                nav.navbar.validnavs.mobile-sidenav .navbar-collapse.show,
+                nav.navbar.validnavs.mobile-sidenav .navbar-collapse.in,
+                nav.navbar.validnavs.mobile-sidenav .navbar-collapse.site-mobile-open {
+                    left: 0 !important;
+                }
 
-        .blog-area .blog-items .item .info .meta ul li a span,
-        .blog-area .blog-items .item .info .meta ul li span {
-            font-size: 12px !important;
-            white-space: nowrap !important;
-            color: #555555 !important;
-            font-weight: 600 !important;
-        }
+                .overlay-screen {
+                    position: fixed !important;
+                    top: 0 !important;
+                    left: 0 !important;
+                    width: 100vw !important;
+                    height: 100vh !important;
+                    background: rgba(0, 0, 0, 0.6) !important;
+                    z-index: 99990 !important;
+                    opacity: 0 !important;
+                    visibility: hidden !important;
+                    transition: opacity 0.3s ease, visibility 0.3s ease !important;
+                    pointer-events: none !important;
+                }
 
-        .blog-area .blog-items .item .info .content {
-            display: flex !important;
-            flex-direction: column !important;
-            flex: 1 1 auto !important;
-            justify-content: space-between !important;
-        }
+                .overlay-screen.opened,
+                .overlay-screen.show {
+                    opacity: 1 !important;
+                    visibility: visible !important;
+                    pointer-events: auto !important;
+                }
 
-        .blog-area .blog-items .item .info .content h4 {
-            font-size: 17px !important;
-            line-height: 1.45 !important;
-            font-weight: 700 !important;
-            margin-bottom: 15px !important;
-        }
+                .navbar-header .navbar-toggle {
+                    cursor: pointer !important;
+                    pointer-events: auto !important;
+                    z-index: 100 !important;
+                    display: inline-block !important;
+                }
+            }
 
-        .blog-area .blog-items .item .info .content h4 a {
-            color: #111111 !important;
-        }
+            /* Blog Section Formatting Fix - Single Line Meta & Tight Card Layout */
+            .blog-area .blog-items .item {
+                display: flex !important;
+                flex-direction: column !important;
+                height: 100% !important;
+                border-radius: 8px !important;
+                overflow: hidden !important;
+                background: #ffffff !important;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+            }
 
-        .blog-area .blog-items .item .info .content a.btn {
-            margin-top: auto !important;
-            align-self: flex-start !important;
-        }
+            .blog-area .blog-items .item .info {
+                display: flex !important;
+                flex-direction: column !important;
+                flex: 1 1 auto !important;
+                padding: 22px 20px 24px !important;
+            }
+
+            .blog-area .blog-items .item .info .meta {
+                margin-bottom: 12px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                width: 100% !important;
+            }
+
+            .blog-area .blog-items .item .info .meta ul {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                list-style: none !important;
+                flex-wrap: nowrap !important;
+            }
+
+            .blog-area .blog-items .item .info .meta ul li {
+                font-size: 12px !important;
+                white-space: nowrap !important;
+                color: #666666 !important;
+                font-weight: 500 !important;
+                margin-right: 0 !important;
+                padding-right: 0 !important;
+                display: inline-flex !important;
+                align-items: center !important;
+                gap: 4px !important;
+            }
+
+            .blog-area .blog-items .item .info .meta ul li::after {
+                display: none !important;
+            }
+
+            .blog-area .blog-items .item .info .meta ul li a span,
+            .blog-area .blog-items .item .info .meta ul li span {
+                font-size: 12px !important;
+                white-space: nowrap !important;
+                color: #555555 !important;
+                font-weight: 600 !important;
+            }
+
+            .blog-area .blog-items .item .info .content {
+                display: flex !important;
+                flex-direction: column !important;
+                flex: 1 1 auto !important;
+                justify-content: space-between !important;
+            }
+
+            .blog-area .blog-items .item .info .content h4 {
+                font-size: 17px !important;
+                line-height: 1.45 !important;
+                font-weight: 700 !important;
+                margin-bottom: 15px !important;
+            }
+
+            .blog-area .blog-items .item .info .content h4 a {
+                color: #111111 !important;
+            }
+
+            .blog-area .blog-items .item .info .content a.btn {
+                margin-top: auto !important;
+                align-self: flex-start !important;
+            }
+
+            /* ============================================================== 
+           # Omega Group Signature Bottom Contact Strip (Image 4)
+        ================================================================= */
+            .omega-footer-strip-wrapper {
+                width: 100%;
+                background: #061122;
+            }
+
+            .omega-footer-strip {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                box-shadow: 0 -4px 25px rgba(0, 0, 0, 0.35);
+                position: relative;
+                z-index: 10;
+            }
+
+            .omega-strip-item {
+                flex: 1 1 0;
+                min-width: 250px;
+                padding: 18px 24px;
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                color: #ffffff !important;
+                text-decoration: none !important;
+                transition: filter 0.2s ease, transform 0.2s ease;
+            }
+
+            .omega-strip-item:hover {
+                filter: brightness(1.12);
+            }
+
+            .omega-strip-item.item-green {
+                background: #0b7b64;
+            }
+
+            .omega-strip-item.item-blue {
+                background: #008ed6;
+            }
+
+            .omega-strip-item.item-teal {
+                background: #006859;
+            }
+
+            .omega-strip-cap {
+                width: 24px;
+                background: #cf2027;
+                flex-shrink: 0;
+            }
+
+            .omega-strip-icon {
+                font-size: 24px;
+                flex-shrink: 0;
+                color: #ffffff;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.15);
+            }
+
+            .omega-strip-content h5 {
+                margin: 0 0 2px;
+                font-size: 16px;
+                font-weight: 700;
+                color: #ffffff;
+                line-height: 1.25;
+                letter-spacing: -0.2px;
+            }
+
+            .omega-strip-content p {
+                margin: 0;
+                font-size: 12.5px;
+                color: rgba(255, 255, 255, 0.85);
+                line-height: 1.35;
+            }
+
+            @media (max-width: 767px) {
+                .omega-strip-item {
+                    flex: 1 1 100%;
+                    min-width: 100%;
+                    padding: 14px 18px;
+                }
+
+                .omega-strip-cap {
+                    display: none;
+                }
+            }
     </style>
 
     @stack('styles')
@@ -661,8 +799,8 @@
                         <i class="fa fa-bars"></i>
                     </button>
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <img src="assets/img/logo-light.png" class="logo logo-display" alt="Logo">
-                        <img src="assets/img/logo_aa.png" class="logo logo-scrolled" alt="Eirecon Energy Company">
+                        <img src="assets/img/omega-logo-light.png" class="logo logo-display" alt="Omega Group">
+                        <img src="assets/img/omega-logo.png" class="logo logo-scrolled" alt="Omega Group">
                     </a>
                 </div>
                 <!-- End Header Navigation -->
@@ -671,48 +809,26 @@
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <div class="mobile-menu-header d-lg-none">
                         <a href="{{ url('/') }}" class="mobile-logo-link">
-                            <img src="assets/img/logo_aa.png" alt="Eirecon Energy Company" class="mobile-nav-logo">
+                            <img src="assets/img/omega-logo.png" alt="Omega Group" class="mobile-nav-logo">
                         </a>
-                        <button type="button" class="navbar-toggle mobile-menu-close close-mobile-menu" aria-label="Close navigation">
+                        <button type="button" class="navbar-toggle mobile-menu-close close-mobile-menu"
+                            aria-label="Close navigation">
                             <i class="fa-solid fa-xmark"></i>
                         </button>
                     </div>
 
                     <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
                         <li>
-                            <a href="{{ url('/index.html') }}"
+                            <a href="{{ url('/') }}"
                                 class="{{ request()->is('/') || request()->is('index*') ? 'active' : '' }}">Home</a>
                         </li>
                         <li>
-                            <a href="{{ url('/about-us.html') }}"
+                            <a href="{{ url('/about-us') }}"
                                 class="{{ request()->is('about-us*') ? 'active' : '' }}">About Us</a>
                         </li>
                         <li>
-                            <a href="{{ url('/projects.html') }}"
-                                class="{{ request()->is('projects*') ? 'active' : '' }}">Projects</a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="{{ url('/services.html') }}" class="dropdown-toggle {{ request()->is('services*') ? 'active' : '' }}">Services</a>
-                            <ul class="dropdown-menu dropdown-services bg-dark-transparent">
-                                <li><a href="{{ url('/services.html') }}">All Services</a></li>
-                                <li><a href="{{ url('/services-EPC-Projects.html') }}">EPC Projects</a></li>
-                                <li><a href="{{ url('/services-Plant-Maintenance-Turnarounds.html') }}">Plant Maintenance & Turnarounds</a></li>
-                                <li><a href="{{ url('/services-Design-Manufacturing.html') }}">Design & Manufacturing of Steel Structure, Piping & Process Equipment</a></li>
-                                <li><a href="{{ url('/services-Power-Automation-Projects.html') }}">Power & Automation Projects & Services</a></li>
-                                <li><a href="{{ url('/services-Rigging-Lifting-Projects.html') }}">Rigging & Lifting Projects & Services</a></li>
-                                <li><a href="{{ url('/services-Infrastructure-Projects.html') }}">Infrastructure</a></li>
-                                <li><a href="{{ url('/services-Scaffolding.html') }}">Scaffolding</a></li>
-                                <li><a href="{{ url('/services-Equipmen-Rental.html') }}">Equipment Rental & Services</a></li>
-                                <li><a href="{{ url('/services-Project-Support.html') }}">Project Support Services</a></li>
-                                <li><a href="{{ url('/services-Procurement.html') }}">Procurement Services</a></li>
-                                <li><a href="{{ url('/services-major-equipment-list.html') }}">Major Equipment List</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="{{ url('/blog.html') }}" class="{{ request()->is('blog*') ? 'active' : '' }}">Blog</a>
-                        </li>
-                        <li>
-                            <a href="{{ url('/contact.html') }}" class="{{ request()->is('contact*') ? 'active' : '' }}">Contact Us</a>
+                            <a href="{{ url('/contact') }}"
+                                class="{{ request()->is('contact*') ? 'active' : '' }}">Contact Us</a>
                         </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
@@ -721,11 +837,9 @@
                     <!-- Start Atribute Navigation -->
                     <div class="attr-nav">
                         <ul>
-                            <li class="search"><a href="#"><i class="far fa-search"></i></a></li>
                             <li class="button">
-                                <a href="contact.html">Consult Us</a>
+                                <a href="{{ url('/contact') }}">Contact Us</a>
                             </li>
-
                         </ul>
                     </div>
                     <!-- End Atribute Navigation -->
@@ -735,7 +849,7 @@
                         <a href="#" class="close-side"><i class="icon_close"></i></a>
                         <div class="widget">
                             <div class="logo">
-                                <img src="assets/img/logo-light.png" alt="Logo">
+                                <img src="assets/img/omega-logo-light.png" alt="Omega Group">
                             </div>
                             <p>
                                 Arrived compass prepare an on as. Reasonable particular on my it in sympathize. Size now
@@ -803,221 +917,167 @@
         <!-- End Navigation -->
     </header>
     @yield('content')
-    <footer class="bg-dark text-light">
-        <!-- Footer Top -->
-        <div class="footer-top text-center bg-dark text-light">
-            <div class="container">
-                <!-- <div class="row align-center">
-                    <div class="logo col-lg-3 text-start">
-                        <a href="#"><img src="assets/img/logo-light.png" alt="Logo"></a>
+    <footer class="bg-dark text-light" style="background: #050e1c !important; position: relative;">
+        <!-- Omega Group Signature Contact Strip (Image 4) -->
+        <!-- <div class="omega-footer-strip-wrapper">
+            <div class="omega-footer-strip">
+                <a href="tel:01141630318" class="omega-strip-item item-green">
+                    <span class="omega-strip-icon"><i class="fas fa-phone-alt"></i></span>
+                    <div class="omega-strip-content">
+                        <h5>011-41630318</h5>
+                        <p>Corporate office, New Delhi</p>
                     </div>
-                    <div class="subscribe-form col-lg-6">
-                        <form action="#">
-                            <input type="email" name="email" class="form-control" placeholder="Enter your e-mail here">
-                            <button type="submit"><i class="fa fa-paper-plane"></i></button>
-                        </form>
+                </a>
+
+                <div class="omega-strip-item item-blue">
+                    <span class="omega-strip-icon"><i class="fas fa-map-marker-alt"></i></span>
+                    <div class="omega-strip-content">
+                        <h5>DPT 322, Okhla Prime Tower</h5>
+                        <p>Phase-1, New Delhi &ndash; 110020</p>
                     </div>
-                    <div class="col-lg-3 phone text-end">
-                        <h4><i class="fas fa-phone"></i> +966 123 456 78</h4>
+                </div>
+
+                <a href="mailto:info@omegainfram.com" class="omega-strip-item item-teal">
+                    <span class="omega-strip-icon"><i class="fas fa-envelope"></i></span>
+                    <div class="omega-strip-content">
+                        <h5>info@omegainfram.com</h5>
+                        <p>www.omegainfram.com</p>
                     </div>
-                </div> -->
+                </a>
+
+                <div class="omega-strip-cap"></div>
             </div>
-        </div>
-        <!-- End Footer Top -->
+        </div> -->
 
         <div class="container">
-            <div class="f-items default-padding">
+            <div class="f-items default-padding" style="padding-top: 60px !important; padding-bottom: 50px !important;">
                 <div class="row">
-
-                    <!-- Single Item -->
-                    <div class="col-lg-3 col-md-6 single-item">
-                        <div class="f-item contact">
-                            <h4 class="widget-title">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="50" height="35"
-                                    class="rounded"
-                                    style="display:inline-block; vertical-align:middle; margin-right:8px; margin-top:-4px; border:1px solid rgba(255,255,255,0.2);">
-                                    <rect width="300" height="200" fill="#006C35" />
-                                    <path d="M 240 135 L 60 135 M 75 125 L 60 135 L 75 145 M 220 125 L 220 145"
-                                        stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" /><text x="150" y="95"
-                                        fill="#FFFFFF" font-size="18" font-family="sans-serif" text-anchor="middle"
-                                        font-weight="bold">لا إله إلا الله</text><text x="150" y="115" fill="#FFFFFF"
-                                        font-size="12" font-family="sans-serif" text-anchor="middle"
-                                        font-weight="bold">محمد رسول الله</text>
-                                </svg> Saudi Arabia
-                            </h4>
-                            <p>
-                                Prince Faisal Ibn Fahad Rd. Al Hizam Al Akhdar Dist.
+                    <!-- Column 1: Brand & Consortium Overview -->
+                    <div class="col-lg-4 col-md-6 single-item mb-4 mb-lg-0">
+                        <div class="f-item about">
+                            <img src="assets/img/omega-logo-light.png" alt="Omega Group"
+                                style="height: 48px; max-width: 100%; object-fit: contain; margin-bottom: 20px;">
+                            <p
+                                style="color: rgba(255, 255, 255, 0.75); font-size: 14px; line-height: 1.65; margin-bottom: 18px;">
+                                An established holding platform with roots since 2003, structured as a consortium of
+                                specialised operating companies across EPC, renewable energy, infrastructure, commercial
+                                operations and international delivery.
                             </p>
-                            <ul>
-                                <li>
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    Al Khobar, KSA
+                            <div
+                                style="display: flex; gap: 6px; height: 4px; width: 90px; border-radius: 2px; overflow: hidden;">
+                                <span style="flex: 1; background: #008ed6;"></span>
+                                <span style="flex: 1; background: #cf2027;"></span>
+                                <span style="flex: 1; background: #0b7b64;"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Head Office -->
+                    <div class="col-lg-3 col-md-6 single-item mb-4 mb-lg-0">
+                        <div class="f-item contact">
+                            <h4 class="widget-title"
+                                style="color: #ffffff; font-size: 18px; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px;">
+                                Corporate Office</h4>
+                            <p
+                                style="color: rgba(255, 255, 255, 0.78); font-size: 14px; line-height: 1.6; margin-bottom: 14px;">
+                                DPT 322, Okhla Prime Tower,<br>Phase-1, New Delhi &ndash; 110020
+                            </p>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li
+                                    style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px; color: rgba(255, 255, 255, 0.78); font-size: 13.5px;">
+                                    <i class="fas fa-phone-alt" style="color: #008ed6; font-size: 14px;"></i>
+                                    <span>011-41630318</span>
                                 </li>
                                 <li
-                                    style="white-space: nowrap; display: flex; align-items: center; gap: 8px; font-size: 13.5px;">
-                                    <i class="fas fa-envelope-open" style="margin-top: 0; flex-shrink: 0;"></i>
-                                    <span>info@eireconenergy.com</span>
+                                    style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px; color: rgba(255, 255, 255, 0.78); font-size: 13.5px;">
+                                    <i class="fas fa-envelope" style="color: #008ed6; font-size: 14px;"></i>
+                                    <span>info@omegainfram.com</span>
                                 </li>
                                 <li
-                                    style="white-space: nowrap; display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 13.5px;">
-                                    <i class="fas fa-phone" style="margin-top: 0; flex-shrink: 0;"></i>
-                                    <span>+966 123 456 78</span>
+                                    style="display: flex; align-items: center; gap: 10px; color: rgba(255, 255, 255, 0.78); font-size: 13.5px;">
+                                    <i class="fas fa-globe" style="color: #008ed6; font-size: 14px;"></i>
+                                    <span>www.omegainfram.com</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <!-- End Single Item -->
 
-                    <!-- Single Item -->
-                    <div class="col-lg-3 col-md-6 single-item">
-                        <div class="f-item contact">
-                            <h4 class="widget-title">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="50" height="35"
-                                    class="rounded"
-                                    style="display:inline-block; vertical-align:middle; margin-right:8px; margin-top:-4px; border:1px solid rgba(255,255,255,0.2);">
-                                    <rect width="900" height="200" fill="#FF9933" />
-                                    <rect y="200" width="900" height="200" fill="#FFFFFF" />
-                                    <rect y="400" width="900" height="200" fill="#138808" />
-                                    <circle cx="450" cy="300" r="80" fill="none" stroke="#000080" stroke-width="6" />
-                                    <circle cx="450" cy="300" r="15" fill="#000080" />
-                                    <g stroke="#000080" stroke-width="4">
-                                        <line x1="450" y1="220" x2="450" y2="380" />
-                                        <line x1="370" y1="300" x2="530" y2="300" />
-                                        <line x1="393" y1="243" x2="507" y2="357" />
-                                        <line x1="393" y1="357" x2="507" y2="243" />
-                                        <line x1="420" y1="225" x2="480" y2="375" />
-                                        <line x1="480" y1="225" x2="420" y2="375" />
-                                        <line x1="450" y1="300" x2="375" y2="275" />
-                                        <line x1="450" y1="300" x2="525" y2="325" />
-                                        <line x1="450" y1="300" x2="375" y2="325" />
-                                        <line x1="450" y1="300" x2="525" y2="275" />
-                                        <line x1="450" y1="300" x2="425" y2="225" />
-                                        <line x1="450" y1="300" x2="475" y2="375" />
-                                        <line x1="450" y1="300" x2="475" y2="225" />
-                                        <line x1="450" y1="300" x2="425" y2="375" />
-                                    </g>
-                                </svg> India
-                            </h4>
-                            <p>
-                                2-A/3, Kundan Mansion , Turkman Gate, Asaf Ali Road
-
+                    <!-- Column 3: Branch Network -->
+                    <div class="col-lg-3 col-md-6 single-item mb-4 mb-md-0">
+                        <div class="f-item branch">
+                            <h4 class="widget-title"
+                                style="color: #ffffff; font-size: 18px; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px;">
+                                Branch Presence</h4>
+                            <p
+                                style="color: rgba(255, 255, 255, 0.75); font-size: 13.5px; line-height: 1.6; margin-bottom: 15px;">
+                                Strategic hubs and operating presences across India and international markets:
                             </p>
-                            <ul>
-                                <li>
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    New Delhi, India
-                                </li>
-                                <li
-                                    style="white-space: nowrap; display: flex; align-items: center; gap: 8px; font-size: 13.5px;">
-                                    <i class="fas fa-envelope-open" style="margin-top: 0; flex-shrink: 0;"></i>
-                                    <span>info@eireconenergy.com</span>
-                                </li>
-                                <li
-                                    style="white-space: nowrap; display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 13.5px;">
-                                    <i class="fas fa-phone" style="margin-top: 0; flex-shrink: 0;"></i>
-                                    <span>+966 123 456 78</span>
-                                </li>
-                            </ul>
+                            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                <span
+                                    style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); padding: 5px 12px; border-radius: 6px; font-size: 12px; color: #e2e8f0;">Dubai</span>
+                                <span
+                                    style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); padding: 5px 12px; border-radius: 6px; font-size: 12px; color: #e2e8f0;">New
+                                    Delhi</span>
+                                <span
+                                    style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); padding: 5px 12px; border-radius: 6px; font-size: 12px; color: #e2e8f0;">Bengaluru</span>
+                                <span
+                                    style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); padding: 5px 12px; border-radius: 6px; font-size: 12px; color: #e2e8f0;">Hyderabad</span>
+                                <span
+                                    style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); padding: 5px 12px; border-radius: 6px; font-size: 12px; color: #e2e8f0;">Mumbai</span>
+                                <span
+                                    style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); padding: 5px 12px; border-radius: 6px; font-size: 12px; color: #e2e8f0;">Pune</span>
+                            </div>
                         </div>
                     </div>
-                    <!-- End Single Item -->
 
-                    <!-- Single Item -->
-                    <div class="col-lg-3 col-md-6 single-item">
-                        <div class="f-item contact">
-                            <h4 class="widget-title">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="50" height="35"
-                                    class="rounded"
-                                    style="display:inline-block; vertical-align:middle; margin-right:8px; margin-top:-4px; border:1px solid rgba(255,255,255,0.2);">
-                                    <rect width="200" height="300" fill="#169B62" />
-                                    <rect x="200" width="200" height="300" fill="#FFFFFF" />
-                                    <rect x="400" width="200" height="300" fill="#FF883E" />
-                                </svg> Ireland
-                            </h4>
-                            <p>
-                                Athlone, Co. Westmeath,<br>Ireland
-                            </p>
-                            <ul>
-                                <li>
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    Ireland
-                                </li>
-                                <li
-                                    style="white-space: nowrap; display: flex; align-items: center; gap: 8px; font-size: 13.5px;">
-                                    <i class="fas fa-envelope-open" style="margin-top: 0; flex-shrink: 0;"></i>
-                                    <span>info@eireconenergy.com</span>
-                                </li>
-                                <li
-                                    style="white-space: nowrap; display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 13.5px;">
-                                    <i class="fas fa-phone" style="margin-top: 0; flex-shrink: 0;"></i>
-                                    <span>+966 123 456 78</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- End Single Item -->
-
-                    <!-- Single Item -->
-                    <div class="col-lg-3 col-md-6 single-item">
+                    <!-- Column 4: Quick Links -->
+                    <div class="col-lg-2 col-md-6 single-item">
                         <div class="f-item link">
-                            <h4 class="widget-title">Know More</h4>
-                            <ul>
-                                <li>
-                                    <a href="/about-us">About Us</a>
+                            <h4 class="widget-title"
+                                style="color: #ffffff; font-size: 18px; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px;">
+                                Navigation</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 12px;">
+                                    <a href="{{ url('/') }}"
+                                        style="color: rgba(255, 255, 255, 0.75); text-decoration: none; font-size: 14px; transition: color 0.2s;"><i
+                                            class="fas fa-chevron-right me-2"
+                                            style="font-size: 10px; color: #008ed6;"></i> Home</a>
                                 </li>
-                                <li>
-                                    <a href="#">Teams</a>
+                                <li style="margin-bottom: 12px;">
+                                    <a href="{{ url('/about-us') }}"
+                                        style="color: rgba(255, 255, 255, 0.75); text-decoration: none; font-size: 14px; transition: color 0.2s;"><i
+                                            class="fas fa-chevron-right me-2"
+                                            style="font-size: 10px; color: #008ed6;"></i> About Us</a>
                                 </li>
-                                <li>
-                                    <a href="/services">Services</a>
-                                </li>
-                                <li>
-                                    <a href="/services-Infrastructure-Projects">Infrastructure</a>
-                                </li>
-                                <li>
-                                    <a href="/projects">Projects</a>
-                                </li>
-                                <li>
-                                    <a href="/blog">Blog</a>
+                                <li style="margin-bottom: 12px;">
+                                    <a href="{{ url('/contact') }}"
+                                        style="color: rgba(255, 255, 255, 0.75); text-decoration: none; font-size: 14px; transition: color 0.2s;"><i
+                                            class="fas fa-chevron-right me-2"
+                                            style="font-size: 10px; color: #008ed6;"></i> Contact Us</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <!-- End Single Item -->
-
                 </div>
             </div>
         </div>
-        <!-- Fixed Shape -->
 
-        <div class="footer-bottom">
+        <div class="footer-bottom"
+            style="background: #030811; border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 22px 0;">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <p>&copy; Copyright 2026. All Rights Reserved by <a href="#">EireconEnergy</a></p>
+                <div class="row align-items-center">
+                    <div class="col-lg-6 text-center text-lg-start mb-2 mb-lg-0">
+                        <p style="margin: 0; color: rgba(255, 255, 255, 0.6); font-size: 13.5px;">&copy; Copyright
+                            {{ date('Y') }}. All Rights Reserved by <a href="{{ url('/') }}"
+                                style="color: #008ed6; font-weight: 600;">Omega Group</a></p>
                     </div>
-                    <div class="col-lg-6 text-end">
-                        <ul>
-                            <li>
-                                <a href="#">Terms of user</a>
-                            </li>
-                            <li>
-                                <a href="#">License</a>
-                            </li>
-                            <li>
-                                <a href="#">Support</a>
-                            </li>
-                        </ul>
+                    <div class="col-lg-6 text-center text-lg-end">
+                        <span style="color: rgba(255, 255, 255, 0.6); font-size: 13px;">Execution Discipline &bull;
+                            Technical Resilience &bull; Responsible Delivery</span>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Start Footer Bottom -->
-
-        <div class="fixed-shape">
-            <img src="assets/img/shape/3.svg" alt="Shape">
-        </div>
-        <!-- End Fixed Shape -->
     </footer>
     <!-- End Footer -->
 
@@ -1134,6 +1194,41 @@
                     link.addEventListener("click", closeMobileMenu);
                 });
             });
+        })();
+    </script>
+        <!-- Global Scroll-Reveal IntersectionObserver -->
+    <script>
+        (function () {
+            function initGlobalScrollReveal() {
+                var els = document.querySelectorAll("[data-reveal]");
+                if (!els.length) return;
+                if (!("IntersectionObserver" in window)) {
+                    els.forEach(function (el) { el.classList.add("is-visible"); });
+                    return;
+                }
+                var observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            var target = entry.target;
+                            var delay = parseInt(target.getAttribute("data-delay") || "0", 10);
+                            if (delay > 0) {
+                                setTimeout(function () {
+                                    target.classList.add("is-visible");
+                                }, delay);
+                            } else {
+                                target.classList.add("is-visible");
+                            }
+                            observer.unobserve(target);
+                        }
+                    });
+                }, { threshold: 0.08, rootMargin: "0px 0px -40px 0px" });
+                els.forEach(function (el) { observer.observe(el); });
+            }
+            if (document.readyState === "loading") {
+                document.addEventListener("DOMContentLoaded", initGlobalScrollReveal);
+            } else {
+                initGlobalScrollReveal();
+            }
         })();
     </script>
     @stack('scripts')
